@@ -47,7 +47,7 @@
 
 ## 如何开始：
 
-1. 由每个团队的技术负责人[Fork](https://github.com/geeeeeeeeek/git-recipes/wiki/3.3-%E5%88%9B%E5%BB%BA-Pull-Request#mary-fork%E4%BA%86%E5%AE%98%E6%96%B9%E9%A1%B9%E7%9B%AE)一份项目启动代码库（`https://github.com/tws-practice/tw-movie-theater`），所有成员共同使用这一代码库协作开发
+1. 由每个团队的技术负责人[Fork](https://github.com/geeeeeeeeek/git-recipes/wiki/3.3-%E5%88%9B%E5%BB%BA-Pull-Request#mary-fork%E4%BA%86%E5%AE%98%E6%96%B9%E9%A1%B9%E7%9B%AE)一份项目[启动代码库](https://github.com/tws-practice/tw-movie-theater)，所有成员共同使用这一代码库协作开发
 
 ## 学习资源
 
