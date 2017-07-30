@@ -15,7 +15,7 @@
 
 - API服务器：[Express.js](https://expressjs.com/en/starter/installing.html)
 
-- ORM（数据关系模型）：[orm](https://www.npmjs.com/package/orm)
+- ORM（数据关系模型）框架：[orm](https://www.npmjs.com/package/orm)
 
 - 数据库：[SQLite](https://www.sqlite.org/quickstart.html)
 
