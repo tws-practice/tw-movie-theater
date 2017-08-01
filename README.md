@@ -81,6 +81,76 @@ Per.find({id:1},function (err,ans) {
 ```
 [orm中文文档地址](https://wizardforcel.gitbooks.io/orm2-doc-zh-cn/content/index.html)
 
+[orm官方文档的地址](https://www.npmjs.com/package/orm)
+## 结合express使用orm
+```
+//引入依赖文件
+let express = require('express');
+let orm = require('orm');
+let app = express();
+//express引入数据对象
+app.use(orm.express("sqlite:testDB.db", {
+    define: function (db, models, next) {
+        models.Per = db.define("person", {
+            id: {type: 'number'},
+            name: {type: 'text'},
+            age: {type: 'text'},
+            continent: {type: 'text'},
+            photo: {type: 'text'}
+        });
+        //otherTable...
+        next();
+    }
+}));
+//数据添加
+app.get('/',function (req,res) {
+    req.models.Per.create({
+        id:1,
+        name:"小王"
+    },function (err) {
+        console.log(err);
+    })
+});
+/*
+    用浏览器访问根地址既可以在数据库中添加一条数据
+*/
+//数据查询
+app.get('/',function (req,res) {
+    req.models.Per.find({id:1},function (err,ans) {
+        res.json(ans[0]);
+    })
+});
+/*
+    用浏览器访问根地址返回的数据为
+    {"id":1,"name":"小王","age":null,"continent":null,"photo":null}
+    可以用axios接收数据进行处理
+*/
+//修改数据
+app.get('/',function (req,res) {
+    req.models.Per.find({id:1},function (err,ans) {
+        ans[0].name = "小李";
+        ans[0].save();
+        res.json(ans[0]);
+    })
+});
+/*
+    用浏览器访问根地址返回的数据为
+    {"id":1,"name":"小李","age":null,"continent":null,"photo":null}
+    即数据已经修改
+*/
+//删除数据
+app.get('/',function (req,res) {
+    req.models.Per.find({id:1},function (err,ans) {
+        ans[0].remove();
+    })
+});
+/*
+    用浏览器访问根地址
+    查看数据库，数据已经被删除
+*/
+```
+
+
 ## 后台API规范
 
 ### GET 为后台为前台发送数据（数据获取）
