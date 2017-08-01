@@ -53,3 +53,75 @@
 ## 学习资源
 
 - git-recipes：[https://github.com/geeeeeeeeek/git-recipes/wiki](https://github.com/geeeeeeeeek/git-recipes/wiki)
+
+# 代码设计
+
+## 后台API规范
+
+### GET 为后台为前台发送数据
+
+#### 代码示例
+
+```
+app.get('/somewhere',function(req,res)){
+    res.send('Hello');
+}
+
+```
+
+### GET 为后台为前台发送数据（数据获取）
+
+#### 代码示例
+
+```
+app.get('/somewhere',function(req,res)){
+     //dosomething...
+    res.send('Hello');
+}
+
+```
+
+### POST 为后台接收前台发送数据并发送结果（数据添加）
+
+#### 代码示例
+
+```
+app.post('/somewhere',function(req,res)){
+     //dosomething...
+    res.send('Hello');
+}
+
+```
+
+### PUT 为前台给后台发送数据（数据修改）
+
+#### 代码示例
+
+```
+app.put('/somewhere',function(req,res)){
+     //dosomething...
+    res.send('Hello');
+}
+
+```
+
+### DELETE 为前台给后台发送数据（删除）
+
+#### 代码示例
+
+```
+app.delete('/somewhere',function(req,res)){
+    //dosomething...
+    res.send('Hello');
+}
+
+```
+
+## 前台访问后台数据规范
+
+### 我们采用目前流行的前端HTTP请求工具axios 
+
+(访问地址)[https://www.npmjs.com/package/axios]
+
+
+
