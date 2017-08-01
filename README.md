@@ -1,17 +1,23 @@
 # 代码设计
 
+## 数据库相关
+
+### 这里使用了orm.js来管理SQLite数据库
+
+#### 数据连接
+
+```
+//引入orm包
+let orm = require('orm');
+//设置orm连接
+let db =  orm.connect('sqlite:testDB.db', function(err, db) {
+    if (err) return console.error('Connection error: ' + err);
+    return db;
+});
+```
+
+
 ## 后台API规范
-
-### GET 为后台为前台发送数据
-
-#### 代码示例
-
-```
-app.get('/somewhere',function(req,res)){
-    res.send('Hello');
-}
-
-```
 
 ### GET 为后台为前台发送数据（数据获取）
 
@@ -22,7 +28,6 @@ app.get('/somewhere',function(req,res)){
      //dosomething...
     res.send('Hello');
 }
-
 ```
 
 ### POST 为后台接收前台发送数据并发送结果（数据添加）
@@ -34,7 +39,6 @@ app.post('/somewhere',function(req,res)){
      //dosomething...
     res.send('Hello');
 }
-
 ```
 
 ### PUT 为前台给后台发送数据（数据修改）
@@ -46,7 +50,6 @@ app.put('/somewhere',function(req,res)){
      //dosomething...
     res.send('Hello');
 }
-
 ```
 
 ### DELETE 为前台给后台发送数据（删除）
@@ -58,7 +61,6 @@ app.delete('/somewhere',function(req,res)){
     //dosomething...
     res.send('Hello');
 }
-
 ```
 
 ## 前台访问后台数据规范
@@ -68,6 +70,8 @@ app.delete('/somewhere',function(req,res)){
 (访问地址)[https://www.npmjs.com/package/axios]
 
 ### 例子
+
+### 其中的post换成get或者put或者delete
 
 ```
 axios.post('/user', {
