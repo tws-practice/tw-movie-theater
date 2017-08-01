@@ -34,7 +34,7 @@ Per.find({id:1},function (err,ans) {
 //1
 //小王
 ```
-[orm中文文档地址](https://www.npmjs.com/package/axios)
+[orm中文文档地址](https://wizardforcel.gitbooks.io/orm2-doc-zh-cn/content/index.html)
 
 ## 后台API规范
 
