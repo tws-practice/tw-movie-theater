@@ -18,6 +18,7 @@
   "homepage": "https://github.com/carons-cr/tw-movie-theater#readme",
   "dependencies": {
     "axios": "^0.16.2",
+    "body-parser": "^1.17.2",
     "express": "^4.15.3",
     "orm": "^3.2.4",
     "sqlite3": "^3.1.8"
