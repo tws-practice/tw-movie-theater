@@ -38,7 +38,7 @@ Per.create({
     添加的数据
     id = 1
     name = 老王
-    注意！这里添加的数据必须与数据库里面的数据对应
+    注意！这里添加的数据的Key必须与数据库里面的字段对应
 */
 //查询数据
 Per.find({id:1},function (err,ans) {
@@ -52,7 +52,20 @@ Per.find({id:1},function (err,ans) {
     注意！这里取出的数据ans是一个数组对象
 */
 //修改数据
-
+Per.find({id:1},function (err,ans) {
+    console.log(ans[0].name);
+    ans[0].name = '小李';
+    ans[0].save(function (err) {
+        if(err){
+            console.log(err);
+        }
+    })
+});
+/*
+    输出的数据
+    小王
+    注意！执行save函数后如果未抛出异常即数据库person表内id为1的这条数据中的name值有小王更改为小李
+*/
 ```
 [orm中文文档地址](https://wizardforcel.gitbooks.io/orm2-doc-zh-cn/content/index.html)
 
