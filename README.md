@@ -36,6 +36,7 @@
 - 产品原型：见代码库根目录的`prototype.svg`文件
 - 用户故事：见代码库根目录的`user-stories.md`文件
 - 技术选型（仅供参考，不作限制）：见代码库根目录的`technology.md`文件
+- 电影数据（仅供参考，不作限制）：见代码库根目录的`movies.csv`文件
 
 ### 输出结果
 
@@ -48,7 +49,7 @@
 
 ## 如何开始：
 
-1. 由每个团队的技术负责人[Fork](https://github.com/geeeeeeeeek/git-recipes/wiki/3.3-%E5%88%9B%E5%BB%BA-Pull-Request#mary-fork%E4%BA%86%E5%AE%98%E6%96%B9%E9%A1%B9%E7%9B%AE)一份项目[启动代码库](https://github.com/tws-practice/tw-movie-theater)，所有成员共同使用这一代码库协作开发
+1. 由每个团队的技术负责人[Fork](https://github.com/geeeeeeeeek/git-recipes/wiki/3.3-%E5%88%9B%E5%BB%BA-Pull-Request#mary-fork%E4%BA%86%E5%AE%98%E6%96%B9%E9%A1%B9%E7%9B%AE)一份项目[启动代码库](https://github.com/tws-practice/tw-movie-theater)，将所有成员加为fork后代码库的[collaborators](https://github.com/waylau/github-help/blob/master/Adding%20collaborators%20to%20a%20personal%20repository%20%E6%B7%BB%E5%8A%A0%E5%90%88%E4%BD%9C%E8%80%85%E5%88%B0%E4%B8%AA%E4%BA%BA%E7%9A%84%E5%BA%93.md)，共同使用这一代码库协作开发
 
 ## 学习资源
 
