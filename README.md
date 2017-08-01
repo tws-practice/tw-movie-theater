@@ -66,6 +66,18 @@ Per.find({id:1},function (err,ans) {
     小王
     注意！执行save函数后如果未抛出异常即数据库person表内id为1的这条数据中的name值有小王更改为小李
 */
+//删除数据
+Per.find({id:1},function (err,ans) {
+    console.log(ans[0].name);
+    ans[0].remove(function (err) {
+        if(err){
+            console.log(err);
+        }
+    })
+});
+/*
+    注意！执行remove函数后如果未抛出异常即数据库person表内id为1的这条数据从数据库中移除
+*/
 ```
 [orm中文文档地址](https://wizardforcel.gitbooks.io/orm2-doc-zh-cn/content/index.html)
 
