@@ -1,0 +1,36 @@
+body{
+    position: relative;
+}
+.nav-position{
+    position: absolute;
+    top: 20px;
+    left: 5%;
+    width: 90%;
+    z-index: 100;
+    opacity: 0.9;
+}
+.item-container{
+    position: relative;
+}
+.image-text{
+    z-index: 100;
+    width: 80%;
+    position: absolute;
+    top: 200px;
+    left: 140px;
+    background-color: inherit;
+    color: wheat;
+}
+.row-box-container{
+    padding-top: 30px;
+    padding-left: 50px;
+}
+.row-box{
+    text-align: center;
+    width: 300px;
+    float: left;
+    margin-right: 5px;
+}
+.row-box-body{
+    width: auto;
+}
