@@ -144,14 +144,14 @@ axios.post('/user', {
 
 ID|名字|时长|评分|详细信息|分类ID|上映时间|电影图片
 
-ID = id
-名字 = name
-时长 = time
-评分 = score
-详细信息 = detail
-分类ID = comment
-上映时间 = Release
-电影图片 = movieimg
+#### ID = id
+#### 名字 = name
+#### 时长 = time
+#### 评分 = score
+#### 详细信息 = detail
+#### 分类ID = comment
+#### 上映时间 = Release
+#### 电影图片 = movieimg
 
 ### 评论表 T_comment
 
