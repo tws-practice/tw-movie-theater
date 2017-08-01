@@ -138,3 +138,26 @@ axios.post('/user', {
   });
 ```
 
+## 数据库表格的设计
+
+### 电影表 T_movie
+ 
+ ID|名字|时长|评分|详细信息|分类ID|上映时间
+
+### 评论表 T_comment
+
+ID|电影ID|内容|用户ID
+
+### 分类表 T_category
+
+ID|内容
+
+### 用户表 T_category
+
+ID|名字|密码|详细信息
+
+
+
+
+
+
