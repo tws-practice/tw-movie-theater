@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./bootstrap-3.3.7-dist/css/bootstrap.css" />
+    <script src="./jquery-3.2.1.js"></script>
+    <script src="./bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <script>
+        const BASE_URL = "http://localhost:8081";
+
+        function UrlSearch()
+        {
+            var name, value;
+            var str = location.href; //取得整个地址栏
+            var num = str.indexOf("?");
+            str = str.substr(num + 1); //取得所有参数   stringvar.substr(start [, length ]
+
+            var arr = str.split("&"); //各个参数放到数组里
+            for (var i = 0; i < arr.length; i++) {
+                num = arr[i].indexOf("=");
+                if (num > 0) {
+                    name = arr[i].substring(0, num);
+                    value = arr[i].substr(num + 1);
+                    this[name] = value;
+                }
+            }
+        }
+
+        $(document).ready(function () {
+            var Request=new UrlSearch(); //实例化
+
+            $.ajax({
+                url: BASE_URL + '/movies' + '?id=' + Request.id,
+                type: 'get',
+                success: function (data) {
+                    $('#movieTitle').text(data.name);
+                    $('#movieImg').attr('src', data.img);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <h3 id="movieTitle"></h3>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-xs-4, col-sm-2 col-md-2"><img src="" id="movieImg"></div>
+            <div class="col-md-3" id="movieInfo"></div>
+        </div>
+        <div class="row">
+
+        </div>
+    </div>
+</body>
+</html>
