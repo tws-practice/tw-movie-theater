@@ -25,14 +25,34 @@ let Per = db.define("person", {
     id: {type: 'number'},
     name: {type: 'text'}
 });
-//获取数据
+//增加数据
+Per.create({
+    id : 2,
+    name : '老王'
+},function (err) {
+    if(err){
+        console.log(err);
+    }
+});
+/*
+    添加的数据
+    id = 1
+    name = 老王
+    注意！这里添加的数据必须与数据库里面的数据对应
+*/
+//查询数据
 Per.find({id:1},function (err,ans) {
     console.log(ans.length);
     console.log(ans[0].name);
 });
-//输出的数据
-//1
-//小王
+/*
+    输出的数据
+    1
+    小王
+    注意！这里取出的数据ans是一个数组对象
+*/
+//修改数据
+
 ```
 [orm中文文档地址](https://wizardforcel.gitbooks.io/orm2-doc-zh-cn/content/index.html)
 
