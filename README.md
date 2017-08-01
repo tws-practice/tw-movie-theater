@@ -157,13 +157,26 @@ ID|名字|时长|评分|详细信息|分类ID|上映时间|电影图片
 
 ID|电影ID|内容|用户ID
 
+#### ID = id
+#### 电影ID = movieid
+#### 内容 = content
+#### 用户ID = userid
+
 ### 分类表 T_category
 
 ID|内容
 
+#### ID = id
+#### 分类内容 = commentcontent
+
 ### 用户表 T_category
 
 ID|名字|密码|详细信息
+
+#### ID = id
+#### 名字 = name
+#### 密码 = pasword
+#### 详细信息 = content
 
 
 
