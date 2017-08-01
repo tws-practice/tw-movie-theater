@@ -10,12 +10,31 @@
 //引入orm包
 let orm = require('orm');
 //设置orm连接
-let db =  orm.connect('sqlite:testDB.db', function(err, db) {
-    if (err) return console.error('Connection error: ' + err);
-    return db;
+let db = orm.connect('sqlite:movie.db', function(err, db) {
+    if (err) {
+        return console.error('Connection error: ' + err);
+    }else {
+        return db;
+    }
 });
+/*
+    假设数据库movie.db里面已经有一张表person而且在这张表里面有id和name这两个字段(还可能有多个字段但是不影响取数据)
+*/
+//定义数据
+let Per = db.define("person", {
+    id: {type: 'number'},
+    name: {type: 'text'}
+});
+//获取数据
+Per.find({id:1},function (err,ans) {
+    console.log(ans.length);
+    console.log(ans[0].name);
+});
+//输出的数据
+//1
+//小王
 ```
-
+[orm中文文档地址](https://www.npmjs.com/package/axios)
 
 ## 后台API规范
 
@@ -67,7 +86,7 @@ app.delete('/somewhere',function(req,res)){
 
 ### 我们采用目前流行的前端HTTP请求工具axios 
 
-(访问地址)[https://www.npmjs.com/package/axios]
+[文档地址](https://www.npmjs.com/package/axios)
 
 ### 例子
 
