@@ -177,7 +177,7 @@ ID|内容
 #### ID = id
 #### 分类内容 = commentcontent
 
-## 用户表 T_category
+## 用户表 T_user
 
 ### 内容
 
