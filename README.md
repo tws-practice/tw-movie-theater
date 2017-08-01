@@ -123,5 +123,18 @@ app.delete('/somewhere',function(req,res)){
 
 (访问地址)[https://www.npmjs.com/package/axios]
 
+### 例子
 
+```
+axios.post('/user', {
+    firstName: 'Fred',
+    lastName: 'Flintstone'
+  })
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+```
 
