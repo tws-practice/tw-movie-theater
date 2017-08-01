@@ -1,0 +1,9 @@
+{
+  "name": "tw-movie-theater",
+  "version": "0.0.1",
+  "description": "##task4",
+  "dependencies": {
+    "express.js": "^1.0.0",
+    "redis": "^2.7.1"
+  }
+}
