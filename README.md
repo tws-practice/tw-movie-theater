@@ -140,6 +140,8 @@ axios.post('/user', {
 
 ## 数据库表格的设计
 
+### 数据库名称 movie.db
+
 ## 电影表 T_movie
 
 ### 内容
@@ -153,7 +155,7 @@ ID|名字|时长|评分|详细信息|分类ID|上映时间|电影图片
 #### 详细信息 = detail
 #### 分类ID = comment
 #### 上映时间 = Release
-#### 电影图片 = movieimg
+#### 电影图片地址 = movieimg
 
 ## 评论表 T_comment
 
