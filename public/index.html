@@ -8,17 +8,22 @@
     <script src="lib/jquery-3.1.1.min/jquery-3.1.1.min.js"></script>
     <script src="lib/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
     <script src="lib/layer/layer.js"></script>
-
+    <script src="lib/template/template.js"></script>
+    <script data-main="./js/master.js"  src="lib/require/require.js"></script>
 
     <!--自定义css文件与js文件-->
     <!--base文件为基本样式库,勿动-->
     <link rel="stylesheet" href="css/base.css">
+
 </head>
 <body>
     <div class="container">
         <div class="row">
             <nav style="width: 100%;height: 100px;display:block;background: black">
-
+                <div class="btn-group" role="group" aria-label="...">
+                    <button type="button" class="btnLeft btn btn-default">Left</button>
+                    <button type="button" class="btnRight btn btn-default">Right</button>
+                </div>
             </nav>
 
             <div style="background: red;height: 700px" class="col-md-10 col-md-offset-1 content">
@@ -27,4 +32,13 @@
         </div>
     </div>
 </body>
+
+<script type="text/html" id="tplMain">
+<h1>{{title}}</h1>
+</script>
+
+<script type="text/html" id="tplDetail">
+<h2>{{title}}</h2>
+</script>
+
 </html>
