@@ -1690,7 +1690,7 @@ output {
 }
 .form-control {
   display: block;
-  width: 100%;
+  width: 200px;
   height: 34px;
   padding: 6px 12px;
   font-size: 14px;
@@ -3307,7 +3307,7 @@ input[type="button"].btn-block {
   position: relative;
   z-index: 2;
   float: left;
-  width: 100%;
+  width: 200px;
   margin-bottom: 0;
 }
 .input-group-lg > .form-control,
