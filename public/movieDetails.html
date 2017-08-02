@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./bootstrap-3.3.7-dist/css/bootstrap.css" />
+    <style>
+        img {
+            width: 90%;
+            height: 90%;
+        }
+        #movieInfo p {
+            font-size : 15px;
+            font-weight: 700;
+        }
+        #movieInfo span {
+            color : #9d9d9d;
+            width : 60px;
+            text-align: left;
+            display:inline-block;
+        }
+        #movieIntroduction p {
+            text-indent: 2em;
+        }
+    </style>
+    <script src="./jquery-3.2.1.js"></script>
+    <script src="./bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <script>
+        const BASE_URL = "http://localhost:8081";
+
+        function UrlSearch()
+        {
+            var name, value;
+            var str = location.href; //取得整个地址栏
+            var num = str.indexOf("?");
+            str = str.substr(num + 1); //取得所有参数   stringvar.substr(start [, length ]
+
+            var arr = str.split("&"); //各个参数放到数组里
+            for (var i = 0; i < arr.length; i++) {
+                num = arr[i].indexOf("=");
+                if (num > 0) {
+                    name = arr[i].substring(0, num);
+                    value = arr[i].substr(num + 1);
+                    this[name] = value;
+                }
+            }
+        }
+
+        $(document).ready(function () {
+            var Request=new UrlSearch(); //实例化
+
+            let data = {
+                id : '1291546',
+                year : '1993',
+                title : '霸王别姬',
+                rating : '9.5',
+                original_title : '霸王别姬',
+                directors : '陈凯歌',
+                casts : '张国荣,张丰毅,巩俐',
+                genres : '剧情,爱情,同性',
+                image : 'https://img3.doubanio.com/view/movie_poster_cover/spst/public/p1910813120.jpg'
+            };
+            $(document).attr('title', `${data.title}（${data.original_title}）-思沃影院`);
+            $('#movieTitle').text(`${data.title}/${data.original_title}`);
+            $('#movieImg').attr('src', data.image);
+            $('#movieInfoTitle').html('<span class="name">名称：</span>' + data.title);
+            $('#movieInfoOriginTitle').html('<span class="name">别名：</span>' + data.original_title);
+            $('#movieInfoYear').html('<span class="name">时间：</span>' + data.year);
+            $('#movieInfoRating').html('<span class="name">评分：</span>' + data.rating);
+            $('#movieInfoDirectors').html('<span class="name">导演：</span>' + data.directors);
+            $('#movieInfoCasts').html('<span class="name">主演：</span>' + data.casts);
+            $('#movieInfoGenres').html('<span class="name">分类：</span>' + data.genres);
+
+            let data1 = {
+                id : '111',
+                content : '<p>段小楼（张丰毅）与程蝶衣（张国荣）是一对打小一起长大的师兄弟，两人一个演生，一个饰旦，一向配合天衣无缝，尤其一出《霸王别姬》，更是誉满京城，为此，两人约定合演一辈子《霸王别姬》。但两人对戏剧与人生关系的理解有本质不同，段小楼深知戏非人生，程蝶衣则是人戏不分。 </p>' +
+                '<p>段小楼在认为该成家立业之时迎娶了名妓菊仙（巩俐），致使程蝶衣认定菊仙是可耻的第三者，使段小楼做了叛徒，自此，三人围绕一出《霸王别姬》生出的爱恨情仇战开始随着时代风云的变迁不断升级，终酿成悲剧。</p>'
+            }
+
+            $('#movieIntroduction').html(data1.content);
+
+            $.ajax({
+                url: BASE_URL + '/movies' + '?id=' + Request.id,
+                type: 'get',
+                success: function (data) {
+                    $(document).attr('title', `${data.title}（${data.original_title}）-思沃影院`);
+                    $('#movieTitle').text(`${data.title}/${data.original_title}`);
+                    $('#movieImg').attr('src', data.image);
+                    $('#movieInfoTitle').html('<span class="name">名称：</span>' + data.title);
+                    $('#movieInfoOriginTitle').html('<span class="name">别名：</span>' + data.original_title);
+                    $('#movieInfoYear').html('<span class="name">时间：</span>' + data.year);
+                    $('#movieInfoRating').html('<span class="name">评分：</span>' + data.rating);
+                    $('#movieInfoDirectors').html('<span class="name">导演：</span>' + data.directors);
+                    $('#movieInfoCasts').html('<span class="name">主演：</span>' + data.casts);
+                    $('#movieInfoGenres').html('<span class="name">分类：</span>' + data.genres);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <h3 id="movieTitle"></h3>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-xs-3, col-sm-2 col-md-2"><img src="" id="movieImg"></div>
+            <div class="col-xs-9 col-sm-3 col-md-3" id="movieInfo">
+                <p id="movieInfoTitle"></p>
+                <p id="movieInfoOriginTitle"></p>
+                <p id="movieInfoYear"></p>
+                <p id="movieInfoRating"></p>
+                <p id="movieInfoDirectors"></p>
+                <p id="movieInfoCasts"></p>
+                <p id="movieInfoGenres"></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <h4>剧情简介：</h4>
+            </div>
+            <div class="col-xs-12 col-sm-8 col-md-6">
+                <p id="movieIntroduction"></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
