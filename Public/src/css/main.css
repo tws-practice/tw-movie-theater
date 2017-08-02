@@ -15,7 +15,7 @@
 童天相
 */
 .ttx-right{
-    background-color: black;
+    padding-top: 25px;
     min-height: 800px;
 }
 #myfooter{
@@ -23,6 +23,21 @@
     height: 40px;
 }
 .ttx-movie{
-    background-color: yellow;
-    min-height: 60px;
+    margin-bottom: 15px;
+}
+.ttx-movie-photo{
+    max-width: 200px;
+}
+.ttx-movie-text{
+    text-align: center;
+    margin: 5px 0 0;
+    line-height: 40px;
+    font-size: 16px;
+}
+.ttx-movie-text a{
+    text-decoration: none;
+    margin-right: 10px;
+}
+.ttx-movie-text strong{
+    color: #e09015
 }
