@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script type="text/javascript" src="search.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+<link type="text/css" rel="stylesheet" href="main.css">
+<body>
+    <input type="text" placeholder="电影名称" id="movie_name">
+    <button onclick="movie_search()">搜索</button>
+<div id="movie_search_result">
+</div>
+</body>
+<script>
+    function movie_search() {
+        var movie_name={};
+        movie_name=document.getElementById('movie_name').value;
+        //alert(movie_name);
+        user_search_movie(movie_name);
+    }
+</script>
+</html>
