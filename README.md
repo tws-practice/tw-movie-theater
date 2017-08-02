@@ -197,11 +197,13 @@ app.delete('/somewhere',function(req,res)){
 }
 ```
 
-## 前台访问后台数据规范
+## 前台访问后台数据API规范
 
 ### 我们采用目前流行的前端HTTP请求工具axios 
 
-[文档地址](https://www.npmjs.com/package/axios)
+[原文档地址](https://www.npmjs.com/package/axios)
+
+[中文文档地址](https://www.kancloud.cn/yunye/axios/234845)
 
 ### 例子
 
@@ -228,7 +230,7 @@ axios.post('/user', {
 
 ### 内容
 
-ID | 名字 | 时长 | 评分 | 详细信息 | 分类ID | 上映时间 | 电影图片
+ID | 名字 | 时长 | 评分 | 详细信息 | 分类ID | 上映时间 | 电影图片 | 演员 | 导演
 
 #### ID = id
 #### 名字 = name
@@ -238,6 +240,8 @@ ID | 名字 | 时长 | 评分 | 详细信息 | 分类ID | 上映时间 | 电影�
 #### 分类ID = comment
 #### 上映时间 = Release
 #### 电影图片地址 = movieimg
+#### 演员 = casts
+#### 导演 = directors
 
 ## 评论表 T_comment
 
