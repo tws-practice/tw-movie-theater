@@ -203,7 +203,7 @@ app.delete('/somewhere',function(req,res)){
 
 [原文档地址](https://www.npmjs.com/package/axios)
 
-[中文档地址](https://www.kancloud.cn/yunye/axios/234845)
+[中文文档地址](https://www.kancloud.cn/yunye/axios/234845)
 
 ### 例子
 
