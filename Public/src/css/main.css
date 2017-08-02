@@ -1,0 +1,24 @@
+/*
+曹容
+*/
+.cr-header{
+    min-height: 60px;
+}
+/*
+杨涵轩
+*/
+.yhx-left{
+    background-color: yellow;
+    min-height: 800px;
+}
+/*
+童天相
+*/
+.ttx-right{
+    background-color: black;
+    min-height: 800px;
+}
+#myfooter{
+    background-color: #8c8c8c;
+    height: 40px;
+}
