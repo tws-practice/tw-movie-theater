@@ -27,7 +27,7 @@ function user_search_movie(movie_name) {
         movie_search.setAttribute('class','movie');
         let detail=document.createElement('a');
         movie_search.appendChild(detail);
-        detail.setAttribute('href','https://movie.douban.com/subject_search?search_text=%E6%88%98%E7%8B%BC&cat=1002');
+        detail.setAttribute('href',`movieDetails.html?id=${movie.id}`);
         let img=document.createElement('img');
         detail.appendChild(img);
         img.setAttribute('src',image);
