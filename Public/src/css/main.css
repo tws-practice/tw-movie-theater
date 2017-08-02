@@ -18,12 +18,16 @@
     padding-top: 25px;
     min-height: 800px;
 }
+.ttx-movie-container{
+    overflow: hidden;
+}
 #myfooter{
     background-color: #8c8c8c;
     height: 40px;
 }
 .ttx-movie{
-    margin-bottom: 15px;
+    margin-bottom: -5000px;
+    padding-bottom: 5000px;
 }
 .ttx-movie-photo{
     max-width: 200px;
@@ -33,6 +37,8 @@
     margin: 5px 0 0;
     line-height: 40px;
     font-size: 16px;
+    position: relative;
+    bottom: 0;
 }
 .ttx-movie-text a{
     text-decoration: none;

@@ -25,37 +25,22 @@
                             <img class="center-block ttx-movie-photo" src="https://img1.doubanio.com/view/movie_poster_cover/lpst/public/p2462245619.jpg" width="65%" alt="">
                             <p class="ttx-movie-text"><a href="">权力的游戏 第七季</a><strong>9.7</strong></p>
                         </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 ttx-movie">
-                            <img class="center-block ttx-movie-photo" src="https://img1.doubanio.com/view/movie_poster_cover/lpst/public/p2462245619.jpg" width="65%" alt="">
-                            <p class="ttx-movie-text"><a href="">权力的游戏 第七季</a><strong>9.7</strong></p>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 ttx-movie">
-                            <img class="center-block ttx-movie-photo" src="https://img1.doubanio.com/view/movie_poster_cover/lpst/public/p2462245619.jpg" width="65%" alt="">
-                            <p class="ttx-movie-text"><a href="">权力的游戏 第七季</a><strong>9.7</strong></p>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 ttx-movie">
-                            <img class="center-block ttx-movie-photo" src="https://img1.doubanio.com/view/movie_poster_cover/lpst/public/p2462245619.jpg" width="65%" alt="">
-                            <p class="ttx-movie-text"><a href="">权力的游戏 第七季</a><strong>9.7</strong></p>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 ttx-movie">
-                            <img class="center-block ttx-movie-photo" src="https://img1.doubanio.com/view/movie_poster_cover/lpst/public/p2462245619.jpg" width="65%" alt="">
-                            <p class="ttx-movie-text"><a href="">权力的游戏 第七季</a><strong>9.7</strong></p>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 ttx-movie">
-                            <img class="center-block ttx-movie-photo" src="https://img1.doubanio.com/view/movie_poster_cover/lpst/public/p2462245619.jpg" width="65%" alt="">
-                            <p class="ttx-movie-text"><a href="">权力的游戏 第七季</a><strong>9.7</strong></p>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 ttx-movie">
-                            <img class="center-block ttx-movie-photo" src="https://img1.doubanio.com/view/movie_poster_cover/lpst/public/p2462245619.jpg" width="65%" alt="">
-                            <p class="ttx-movie-text"><a href="">权力的游戏 第七季</a><strong>9.7</strong></p>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 ttx-movie">
-                            <img class="center-block ttx-movie-photo" src="https://img1.doubanio.com/view/movie_poster_cover/lpst/public/p2462245619.jpg" width="65%" alt="">
-                            <p class="ttx-movie-text"><a href="">权力的游戏 第七季</a><strong>9.7</strong></p>
-                        </div>
+
                     </div>
                 </div>
             </div>
+            <script>
+                axios.get('/all').then(function (ans) {
+                    let str = '';
+                    for(let i = 0;i<ans.data.length;i++){
+                        str += '<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 ttx-movie">';
+                        str +=`<img class="center-block ttx-movie-photo" src="${ans.data[i].movieimg}" width="65%" height="100%" alt="">`;
+                        str += `<p class="ttx-movie-text"><a href="/">${ans.data[i].name}</a><strong>${ans.data[i].score}</strong></p>`;
+                        str += `</div>`;
+                    }
+                    $(".ttx-movie-container").append(str);
+                });
+            </script>
         </div>
     </section>
     <footer id="myfooter">
