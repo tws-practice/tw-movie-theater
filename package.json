@@ -1,0 +1,24 @@
+{
+  "name": "tw-movie-theater",
+  "version": "1.0.0",
+  "description": "## 练习目标",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muzrea/tw-movie-theater.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/muzrea/tw-movie-theater/issues"
+  },
+  "homepage": "https://github.com/muzrea/tw-movie-theater#readme",
+  "dependencies": {
+    "express": "^4.15.3",
+    "orm": "^3.2.4",
+    "sqlite3": "^3.1.8"
+  }
+}
