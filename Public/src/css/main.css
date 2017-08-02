@@ -25,9 +25,7 @@
     padding-top: 25px;
     min-height: 800px;
 }
-.ttx-movie-container{
-    overflow: hidden;
-}
+
 #myfooter{
     height: 40px;
 }
@@ -35,9 +33,28 @@
     text-align: center;
 }
 .ttx-movie{
-    margin-bottom: -5000px;
-    padding-bottom: 5000px;
+    margin-bottom: 20px;
 }
+
+@media(min-width:768px){
+    .ttx-movie img{
+        width: 200px;
+        height: 296px;
+    }
+}
+@media(min-width:992px){
+    .ttx-movie img{
+        width: 194px;
+        height: 243px;
+    }
+}
+@media(min-width:1200px){
+    .ttx-movie img{
+        width: 140px;
+        height: 207px;
+    }
+}
+
 .ttx-movie-photo{
     max-width: 200px;
 }

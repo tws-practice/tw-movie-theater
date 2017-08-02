@@ -1,4 +1,4 @@
-axios.get('/all').then(function (ans) {
+axios.post('/classMovies').then(function (ans) {
     let str = '';
     for (let i = 0; i < ans.data.length; i++) {
         str += '<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 ttx-movie">';
@@ -8,3 +8,12 @@ axios.get('/all').then(function (ans) {
     }
     $(".ttx-movie-container").append(str);
 });
+
+$('.myallcategory > li').on('click',function(){
+    $(this).siblings().removeClass();
+    $(this)[0].className = 'active';
+});
+
+$(document).ready({
+
+})
