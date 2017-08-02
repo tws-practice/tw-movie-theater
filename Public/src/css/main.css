@@ -73,3 +73,17 @@
 .ttx-movie-text strong{
     color: #e09015
 }
+/*
+管云凤
+*/
+.gyf-panel-title h2{
+    margin: 2px;
+}
+.gyf-panel-title h2 > small{
+    margin-left: 15px;
+}
+@media (max-width: 768px) {
+    .gyf-movie-photo img{
+        width: 350px;
+    }
+}
