@@ -1,0 +1,20 @@
+#movie_search_result{
+    width: 60%;
+    height: auto;
+    margin: auto;
+    padding: 50px;
+}
+#movie_search_result .movie{
+    width: 100%;
+    height:auto;
+    clear: both;
+    margin: 30px;
+}
+#movie_search_result .movie img{
+    float: left;
+    margin: 0px 30px;
+}
+#movie_search_result .movie span{
+    display: block;
+    color: dimgray;
+}
