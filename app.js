@@ -4,12 +4,20 @@ const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
-//数据库驱动
-const orm = require('orm');
+
 
 const index = require('./routes/index');
 
 let app = express();
+//数据库驱动
+const orm = require('orm');
+
+orm.connect("sqlite:///home/lifeng/下载/db",function (err, db) {
+  if(err) throw err;
+
+  var movie = db.define("")
+});
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
