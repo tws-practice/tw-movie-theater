@@ -24,7 +24,7 @@
 
 - 每个用户故事的开发必须以TDD的方式完成（先写测试后实现功能）
 - 为每个用户故事创建一个[Git分支](https://github.com/geeeeeeeeek/git-recipes/wiki/3.4-%E4%BD%BF%E7%94%A8%E5%88%86%E6%94%AF)（基于最新的master分支），完成后[提交Pull Request](https://github.com/geeeeeeeeek/git-recipes/wiki/3.3-%E5%88%9B%E5%BB%BA-Pull-Request)（申请将完成的代码合并到master分支）
-- 技术带头人负责处理团队成员提交的[Pull Request](https://github.com/geeeeeeeeek/git-recipes/wiki/3.3-%E5%88%9B%E5%BB%BA-Pull-Request#john-%E6%8E%A5%E5%8F%97%E4%BA%86-pull-request)，必须确保Pull Request中的代码测试通过并且功能可用，方才能接收。
+- 技术带头人负责处理团队成员提交的[Pull Request](https://github.com/geeeeeeeeek/git-recipes/wiki/3.3-%E5%88%9B%E5%BB%BA-Pull-Request#john-%E6%8E%A5%E5%8F%97%E4%BA%86-pull-request)，必须确保Pull Request中的代码测试通过（每个Javascript函数至少有一个测试覆盖）并且功能可用，方才能接收。
 
 #### 流程规范
 
