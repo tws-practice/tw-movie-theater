@@ -68,8 +68,8 @@ app.post("/movieDetails",urlencodedParser, function (req, res) {
 /*得到这个电影名称的搜索结果*/
 app.post("/searchResult",urlencodedParser, function (req, res) {
     let moviename=req.body.moviename;
-    let type=req.body.type;
-    req.models.T_movie.find({name:moviename,type:type}, function (err, movies) {
+    let comment=req.body.type;
+    req.models.T_movie.find({name:moviename,comment:type}, function (err, movies) {
         if (err) throw err;
         res.send(movies);
     });
@@ -78,7 +78,7 @@ app.post("/searchResult",urlencodedParser, function (req, res) {
 /*得到此类别的所有电影*/
 app.post("/classMovies",urlencodedParser, function (req, res) {
     let classes=req.body.classes;
-    req.models.T_movie.find({type:classes}, function (err, movies) {
+    req.models.T_movie.find({comment:classes}, function (err, movies) {
         if (err) throw err;
         res.send(movies);
     });
@@ -105,7 +105,7 @@ app.get("/init",urlencodedParser, function (req, res) {
             if (err) throw err;
             let result='';
             for(let i=1;i<movies.length;i++){
-                let bb=movies[i].type.split(',');
+                let bb=movies[i].comment.split(',');
                 console.log(bb);
                 for(let j=0;j<bb.length;j++){
                     if(result.indexOf(bb[j])===-1){
