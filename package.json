@@ -1,21 +1,14 @@
 {
-  "name": "tw-movie-theater",
+  "name": "tw-movie-theater-master",
   "version": "1.0.0",
-  "description": "## 练习目标",
-  "main": "index.js",
+  "description": "## 数据库相关",
+  "main": "createtable.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/carons-cr/tw-movie-theater.git"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/carons-cr/tw-movie-theater/issues"
-  },
-  "homepage": "https://github.com/carons-cr/tw-movie-theater#readme",
   "dependencies": {
     "axios": "^0.16.2",
     "body-parser": "^1.17.2",

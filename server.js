@@ -4,6 +4,8 @@ let bodyParser=require('body-parser');
 let urlencodedParser = bodyParser.urlencoded({ extended: false });
 let app = express();
 
+app.use(express.static('Public'));
+
 app.use(orm.express("sqlite:movie.db", {
     /*评论的数据库*/
     define: function (db, models, next) {
