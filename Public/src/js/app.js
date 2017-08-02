@@ -1,4 +1,4 @@
-axios.post('/classMovies').then(function (ans) {
+axios.post('/allMovies').then(function (ans) {
     let str = '';
     for (let i = 0; i < ans.data.length; i++) {
         str += '<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 ttx-movie">';
@@ -8,12 +8,19 @@ axios.post('/classMovies').then(function (ans) {
     }
     $(".ttx-movie-container").append(str);
 });
-
-$('.myallcategory > li').on('click',function(){
-    $(this).siblings().removeClass();
-    $(this)[0].className = 'active';
+axios.get('/allClassify').then(function (ans) {
+    let str = '';
+    for(let i = 0; i<ans.data.length;i++){
+        str+= `<li role="presentation"><a href="#">${ans.data[i].commentcontent}</a></li>`
+    }
+    $('#ttx-comment-first').after(str);
 });
 
-$(document).ready({
 
+
+$(document).ready(function () {
+    $("body").on("click", '.myallcategory>li', function(){
+        $(this)[0].className = 'active';
+        $(this).siblings().removeClass();
+    });
 });

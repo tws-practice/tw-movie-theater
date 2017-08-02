@@ -28,7 +28,9 @@ app.use(orm.express("sqlite:movie.db", {
             comment:{type: 'text'},    //类型
             release:{type: 'text'},   //上映时间
             detail:{type: 'text'},   //详细信息
-            movieimg:{type: 'text'}   //电影图片的地址
+            origin_title:{type: 'text'},//电影的英文名称
+            movieimg:{type: 'text'},   //电影图片的地址
+            all:{type: 'text'}//保留字段
         });
         /*用户的models*/
         models.T_users = db.define("T_users", {
@@ -92,7 +94,13 @@ app.post("/classMovies",urlencodedParser, function (req, res) {
         res.send(movies);
     });
 });
-
+//获取所有电影
+app.post('/allMovies',function (req,res) {
+    req.models.T_movie.find({}, function (err, movies) {
+        if (err) throw err;
+        res.send(movies);
+    });
+});
 /*得到所有的影评*/
 app.post("/getComment",urlencodedParser, function (req, res) {
     let id=parseInt(req.body.id);

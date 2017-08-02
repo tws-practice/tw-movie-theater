@@ -8,4 +8,5 @@ axios.get('/getMovie/'+myurl[1]).then(function (ans) {
     $('.gyf-comment').html(`所属类别：`+ans.data[0].comment);
     $('.gyf-casts').html(`主演：`+ans.data[0].casts);
     $('.gyf-detail').html(`  `+ans.data[0].detail);
+    $('.gyf-origin_title').html(`英文名称：`+ans.data[0].origin_title);
 });
