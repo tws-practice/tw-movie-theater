@@ -201,7 +201,9 @@ app.delete('/somewhere',function(req,res)){
 
 ### 我们采用目前流行的前端HTTP请求工具axios 
 
-[文档地址](https://www.npmjs.com/package/axios)
+[原文档地址](https://www.npmjs.com/package/axios)
+
+[中文档地址](https://www.kancloud.cn/yunye/axios/234845)
 
 ### 例子
 
