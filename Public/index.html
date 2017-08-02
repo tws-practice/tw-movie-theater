@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,20 +10,71 @@
     <script src="src/js/bootstrap.min.js"></script>
     <script src="src/js/axios.min.js"></script>
     <link rel="stylesheet" href="src/css/main.css">
-    <title>123</title>
+    <title>主页</title>
 </head>
+
 <body>
-    <header class="cr-header" style="background-color: red">
-        曹容
+    <header class="cr-header">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                        aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+                    <a class="navbar-brand" href="#">无组的小影屋</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#">登录</a></li>
+                        <li><a href="#">注册</a></li>
+                    </ul>
+                    <div class="navbar-form navbar-right">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="搜索电影">
+                        </div>
+                        <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+                    </div>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
     </header>
     <section>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 yhx-left">杨涵轩</div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 yhx-left">
+                    <div class="yhx-left-header">
+                        <p><i class="glyphicon glyphicon-th"></i>电影分类</p>
+                        <hr/>
+                    </div>
+                    <div class="yhx-left-tag">
+                        <ul class="nav nav-pills nav-stacked">
+                            <li role="presentation" class="active"><a href="#">全部影片</a></li>
+                            <li role="presentation"><a href="#">Profile</a></li>
+                            <li role="presentation"><a href="#">Messages</a></li>
+                        </ul>
+                    </div>
+                </div>
                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 ttx-right">
+                    <ol class="breadcrumb">
+                        <li class="active">全部影片</li>
+                    </ol>
                     <div class="row ttx-movie-container">
                         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 ttx-movie">
-                            <img class="center-block ttx-movie-photo" src="https://img1.doubanio.com/view/movie_poster_cover/lpst/public/p2462245619.jpg" width="65%" alt="">
+                            <img class="center-block ttx-movie-photo" src="https://img1.doubanio.com/view/movie_poster_cover/lpst/public/p2462245619.jpg"
+                                width="65%" alt="">
                             <p class="ttx-movie-text"><a href="">权力的游戏 第七季</a><strong>9.7</strong></p>
                         </div>
 
@@ -30,21 +82,15 @@
                 </div>
             </div>
             <script>
-                axios.get('/all').then(function (ans) {
-                    let str = '';
-                    for(let i = 0;i<ans.data.length;i++){
-                        str += '<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 ttx-movie">';
-                        str +=`<img class="center-block ttx-movie-photo" src="${ans.data[i].movieimg}" width="65%" height="100%" alt="">`;
-                        str += `<p class="ttx-movie-text"><a href="/">${ans.data[i].name}</a><strong>${ans.data[i].score}</strong></p>`;
-                        str += `</div>`;
-                    }
-                    $(".ttx-movie-container").append(str);
-                });
+
             </script>
         </div>
     </section>
     <footer id="myfooter">
-    footer
+        <hr/>
+        <p class="text-info">© 2017 &nbsp;|&nbsp; 无组 &nbsp;&nbsp;all rights reserved&nbsp; | &nbsp;bulid&nbsp; in&nbsp; ThoughtWorks &nbsp;bootcamp</p>
     </footer>
+    <script src="./src/js/app.js"></script>
 </body>
+
 </html>
