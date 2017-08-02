@@ -11,7 +11,7 @@ function goTop() {
 
 function Totop() {
     $("#gotop").on('click', function(e) {
-        $('body,html').animate({ scrollTop: 0 }, 1000);
+        $('body,html').animate({ scrollTop: 0 }, 100);
     });
     goTop(); //实现回到顶部的样式
 }
@@ -25,7 +25,7 @@ $(function() {
     });
     $("#gotop").click(function(e) {
         //以1秒的间隔返回顶部
-        $('body,html').animate({ scrollTop: 0 }, 1000);
+        $('body,html').animate({ scrollTop: 0 }, 100);
 
     });
     goTop(); //实现回到顶部元素的渐显与渐隐
