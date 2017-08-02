@@ -74,7 +74,16 @@ app.post("/searchResult",urlencodedParser, function (req, res) {
         res.send(movies);
     });
 });
-
+//获取电影详情
+app.get('/getMovie/:id',function (req,res) {
+    req.models.T_movie.find({id:req.params.id},function (err,ans) {
+       if(err){
+           console.log(err);
+       } else {
+        res.send(ans);
+       }
+    });
+});
 /*得到此类别的所有电影*/
 app.post("/classMovies",urlencodedParser, function (req, res) {
     let classes=req.body.classes;
@@ -126,8 +135,8 @@ app.get("/init",urlencodedParser, function (req, res) {
     });
 });
 
-var server = app.listen(8081, function () {
-    var host = server.address().address
-    var port = server.address().port
-    console.log("应用实例，访问地址为 http://%s:%s", host, port)
-})
+let server = app.listen(8081, function () {
+    let host = server.address().address;
+    let port = server.address().port;
+    console.log("应用实例，访问地址为 http://%s:%s", host, port);
+});
