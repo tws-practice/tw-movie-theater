@@ -2,37 +2,33 @@
 define(function (require, exports, module) {
     let masterPage = {
         html:{
-            btnLeft:$('.btnLeft'),
-            btnRight:$('.btnRight'),
             content:$('.content')
         },
         render:{
-            init:function(){
-                let data = {};
-                data.title = 'Main';
-                let html = template('tplMain',data);
+            listContent:function(data){
+                let tplData = data || {};
+                let html = template('tplMain',tplData);
+                masterPage.html.content.html(html);
+            },
+            detailContent:function (data) {
+                let tplData = data || {};
+                let html = template('tplDetail',tplData);
                 masterPage.html.content.html(html);
             }
+
         },
         control:{
             init:function () {
-                masterPage.html.btnLeft.on('click',function () {
+                $(document).on('click','.movieItem',function (e) {
+                    let elem = $(e.target);
                     let data = {};
-                    data.title = 'Main';
-                    let html = template('tplMain',data);
-                    masterPage.html.content.html(html);
-                });
-
-                masterPage.html.btnRight.on('click',function () {
-                    let data = {};
-                    data.title = 'Right';
-                    let html = template('tplDetail',data);
-                    masterPage.html.content.html(html);
-                });
+                    data.title = 'detail';
+                     masterPage.render.detailContent(data);
+                })
             }
         },
         init:function(){
-            masterPage.render.init();
+            masterPage.render.listContent();
             masterPage.control.init();
         }
     };

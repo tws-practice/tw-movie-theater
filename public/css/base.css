@@ -1,9 +1,19 @@
+*{padding: 0;margin: 0}
 body, html {
     margin: 0;
     height: 100%;
     /*overflow: hidden;*/
     background-color: #EAEDEF;
 }
+body {
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #00B7FF;
+}
+
 .container {
     width: 100%;
     height: 100%;
@@ -12,3 +22,4 @@ body, html {
     margin-top: 0;
     height: 100%;
 }
+

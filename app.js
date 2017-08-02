@@ -4,12 +4,42 @@ const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
-//数据库驱动
-const orm = require('orm');
+
 
 const index = require('./routes/index');
 
 let app = express();
+
+//数据库驱动
+const orm = require('orm');
+app.use(orm.express("sqlite:///home/llr/db/movies.db", {
+    define: function (db, models, next) {
+        models.Movies = db.define('movie', {
+            id : Number,
+            alt : String,
+            year : Number,
+            title : String,
+            rating : String,
+            original_title : String,
+            directors : String,
+            casts : String,
+            image : String
+        });
+
+        models.Genre = db.define('genre',{
+            id : Number,
+            name : String
+        });
+
+        models.Movie_Genre = db.define('genre',{
+            id : Number,
+            movie_id : Number,
+            genre_id : Number,
+        });
+
+        next();
+    }
+}));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
