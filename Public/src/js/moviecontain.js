@@ -10,3 +10,57 @@ axios.get('/getMovie/'+myurl[1]).then(function (ans) {
     $('.gyf-detail').html(`  `+ans.data[0].detail);
     $('.gyf-origin_title').html(`原著名称：`+ans.data[0].origin_title);
 });
+function comment() {
+    axios.post('/getComment',{id:myurl[1]})
+        .then(function (response) {
+            console.log(response);
+            response=JSON.parse(response);
+            response.forEach(function (value) {
+                all[i]=`<div class='comment_item' id=${i.toString()}>
+                       <div class="comment_user" id=${i.toString()}+'user'>
+                       value.name
+                       </div>
+                       <div class="comment_date" id=${i.toString()}+'date'>
+                       value.date
+                       </div>
+                       <div class="coment_content" id=${i.toString()}+'content'>
+                       value.content
+                       </div>
+                </div>`;
+                i++;
+            });
+            $('#gyf_third').append(all);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+}
+function onfourth() {
+    $.get('/movieDetails',{movieType:$(`movieType`)},function(data){
+        let suggestMovie=JSON.parse(data);
+        for (let i=0;i<4;i++) {
+            $('#Cui-movie').append(`<div class="col-md-3"><div class="container"><a href="#" class="thumbnail"><img src="suggestMovie[i].movieimg" alt="suggestMovie[i].name" class="Cui-image"/><p>suggestMovie[i].name</p></a></div>
+</div>`)
+        }
+    });
+}
+$('#commentBottom').on('click',function () {
+    let datas={};
+    datas.userid=$('#username').text();
+    datas.content=$('#text').value();
+    datas.moviename=$('.panel-heading-title').text();
+    $.axios({
+        type:'POST',
+        url:'/commentstorage',
+        dataType:'json',
+        data:datas,
+        success:function (resp) {
+            alert('提交成功');
+        }
+    });
+});
+
+function play(){
+
+}
+

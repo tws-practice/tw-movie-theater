@@ -89,12 +89,32 @@
 .gyf-my{
     padding: 0 20px;
 }
+.comment_item{
+    margin: 2px;
+    border-bottom: solid;
+    border-width: thin;
+    padding-bottom: 2px;
+}
+.comment_date{
+    float:right;
+}
+.comment_content{
+    clear: both;
+    margin-top: 2px;
+}
+#Cui-image a {
+    text-align: center;
+}
+
+#Cui-image image{
+    margin: 0 auto;
+    display:block;
+}
 @media (max-width: 768px) {
     .gyf-movie-photo img{
         width: 350px;
     }
 }
-
 @media(min-width:992px){
     .gyf-movie-photo img{
         width: 200px;
@@ -103,5 +123,10 @@
 @media(min-width:1200px){
     .gyf-movie-photo img{
         width: 200px;
+    }
+}
+@media(min-width: 1920px){
+    .gyf-movie-photo img{
+        width: 400px;
     }
 }

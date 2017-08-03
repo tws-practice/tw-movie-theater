@@ -63,11 +63,31 @@
                     </div>
                     <br/>
                     <div class="row">
-                            <div class="alert alert-info" role="alert">
-                                <h3>影片简介</h3>
-                                <p class="gyf-detail"></p>
-                            </div>
+                        <div class="alert alert-info" role="alert">
+                            <h3>影片简介</h3>
+                            <p class="gyf-detail"></p>
+                        </div>
                     </div>
+                    <div class="row">
+                        <div class="alert alert-info" role="alert" onload="comment()" id="gyf_third">
+
+                        </div>
+                    </div>
+                    <div class="row" >
+                        <div class="alert alert-info" role="alert" onload="onfourth()" id="Cui-movie">
+
+                        </div>
+                    </div>
+                    <form id="form">
+                        <div class="form-group">
+                            <textarea class="form-control" rows="3" id="text" placeholder=""></textarea>
+                        </div>
+                        <div class="form-group">
+                            <div>
+                                <button type="submit" class="btn btn-default" id="commentBottom">提交</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
