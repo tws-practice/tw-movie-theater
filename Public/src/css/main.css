@@ -1,0 +1,140 @@
+/*
+曹容
+*/
+.cr-header .navbar{
+    border-radius: 0;
+}
+.cr-search-select{
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+/*
+杨涵轩
+*/
+.yhx-left-header{
+    padding:   25px 25px 0 25px;
+    font-size: 28px;
+}
+.yhx-left-header i{
+    margin-top: 2px;
+    margin-right: 12px;
+}
+.yhx-left-tag{
+    padding:  0 25px 25px 25px;
+}
+/*
+童天相
+*/
+.ttx-right{
+    padding-top: 25px;
+    min-height: 800px;
+}
+
+#myfooter{
+    height: 40px;
+}
+#myfooter p{
+    text-align: center;
+}
+.ttx-movie{
+    margin-bottom: 20px;
+}
+
+@media(min-width:768px){
+    .ttx-movie img{
+        width: 200px;
+        height: 296px;
+    }
+}
+@media(min-width:992px){
+    .ttx-movie img{
+        width: 194px;
+        height: 243px;
+    }
+}
+@media(min-width:1200px){
+    .ttx-movie img{
+        width: 140px;
+        height: 207px;
+    }
+}
+
+.ttx-movie-photo{
+    max-width: 200px;
+}
+.ttx-movie-text{
+    text-align: center;
+    margin: 5px 0 0;
+    line-height: 40px;
+    font-size: 16px;
+    position: relative;
+    bottom: 0;
+}
+.ttx-movie-text a{
+    text-decoration: none;
+    margin-right: 10px;
+}
+.ttx-movie-text strong{
+    color: #e09015
+}
+/*
+管云凤
+*/
+.gyf-panel-title h2{
+    margin: 2px;
+}
+.gyf-panel-title h2 > small{
+    margin-left: 15px;
+}
+.gyf-casts{
+    line-height: 50px;
+    font-size: 16px;
+}
+.gyf-my{
+    padding: 0 20px;
+}
+.comment_item{
+    margin: 2px;
+    border-bottom: solid;
+    border-width: thin;
+    padding-bottom: 2px;
+}
+.comment_date{
+    float:right;
+}
+.comment_content{
+    clear: both;
+    margin-top: 2px;
+}
+#Cui-image a {
+    text-align: center;
+}
+
+#Cui-image image{
+    margin: 0 auto;
+    display:block;
+}
+@media (max-width: 768px) {
+    .gyf-movie-photo img{
+        width: 350px;
+    }
+}
+@media(min-width:992px){
+    .gyf-movie-photo img{
+        width: 200px;
+    }
+}
+@media(min-width:1200px){
+    .gyf-movie-photo img{
+        width: 200px;
+    }
+}
+@media(min-width: 1920px){
+    .gyf-movie-photo img{
+        width: 400px;
+    }
+}
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0a062edbe9af930cd0ddcca58ad8320a7ca368ba
