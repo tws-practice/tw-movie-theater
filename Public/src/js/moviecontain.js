@@ -10,3 +10,14 @@ axios.get('/getMovie/'+myurl[1]).then(function (ans) {
     $('.gyf-detail').html(`  `+ans.data[0].detail);
     $('.gyf-origin_title').html(`原著名称：`+ans.data[0].origin_title);
 });
+axios.get('/allClassify').then(function (ans) {
+    let str2='';
+    for(let i = 0; i<ans.data.length;i++){
+        str2+= `<option role="presentation"><a href="#">${ans.data[i].commentcontent}</a></option>`
+    }
+    $('.cr-search-select').append(str2);
+});
+function searchMovie() {
+    let moviename=$('#moviename');
+    let comment=$('#comment');
+}
