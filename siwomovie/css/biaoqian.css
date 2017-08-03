@@ -1,0 +1,36 @@
+.flter-list {
+    float: left;
+}
+
+.filter-item {
+    display: inline-block;
+    width: 230px;
+    height: 80px;
+    margin-right: 50px;
+}
+
+.g-clear dt {
+    display: block;
+    margin-top:
+}
+
+.g-clear dt:hover {
+    cursor: pointer;
+}
+
+.moviefilter {
+    margin-left: 10%;
+}
+
+.g-clear a:hover {
+    text-decoration: none;
+    cursor: pointer;
+    color: rgb(46, 204, 113);
+}
+
+.choose {
+    display: inline-block;
+    background: rgb(46, 204, 113);
+    color: white;
+    border-radius: 20%;
+}

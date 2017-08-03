@@ -1,0 +1,124 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>siwomovie</title>
+    <link rel="shortcut icon" href="./images/1/title.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Movie_store Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- start plugins -->
+    <link href='http://fonts.useso.com/cs3s?family=Roboto+Condensed:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
+    <script src="js/responsiveslides.min.js"></script>
+
+    <script src="js/gotoTop.js"></script>
+    <script src="js/ajax.js"></script>
+</head>
+
+<body>
+    <div class="container con1">
+        <div class="container_wrap">
+            <div class="header_top">
+                <div class="col-sm-3 logo">
+                    <a href="index.html"><img src="./images/1/logo1.png" alt="" style="width:100px; height:30px"></a>
+                </div>
+                <div class="col-sm-6 nav">
+                    <ul>
+                        <!--提示小内容的data-tooltip-->
+                        <li></li>
+                        <li id="allmovies"><span class="simptip-position-bottom simptip-movable" data-tooltip="电影"><a> </a> </span></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3 header_right">
+                    <div class="search input-group">
+                        <input class="form-control" id="input" type="text" value="Search..." onFocus="this.value='';" onBlur="if (this.value == '') {this.value ='';}">
+                        <span class="input-group-btn">
+                                   <button class="btn btn-default" type="submit" onclick="getsearchmovie();">Go!</button>
+                                </span>
+                    </div>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="slider">
+                <div class="callbacks_container">
+                    <ul class="rslides" id="slider">
+                        <li><img src="images/banner.jpg" class="img-responsive" alt="" />
+                            <div class="button">
+                                <a href="./single.html" class="hvr-shutter-out-horizontal">详细</a>
+                            </div>
+                        </li>
+                        <li><img src="images/banner1.jpg" class="img-responsive" alt="" />
+                            <div class="button">
+                                <a href="./single.html" class="hvr-shutter-out-horizontal">详细</a>
+                            </div>
+                        </li>
+                        <li><img src="images/banner2.jpg" class="img-responsive" alt="" />
+                            <div class="button">
+                                <a href="./single.html" class="hvr-shutter-out-horizontal">详细</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="banner_desc">
+                    <div class="col-md-9">
+                        <ul class="list_1">
+                            <li>发布时间&nbsp;&nbsp;<span class="m_1">2015 4 25</span></li>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <footer id="footer">
+            <div id="footer-widgets" class="gp-footer-larger-first-col">
+                <div class="gp-container">
+                    <div class="footer-widget footer-1">
+                        <div class="wpb_wrapper">
+                            <strong>是我影院</strong>
+                        </div>
+                        <br>
+                        <p>思沃思沃思沃思沃思沃思沃思沃思沃思沃思沃思沃思沃思沃思沃思沃思沃思沃思沃思沃思沃思沃思沃</p>
+                        <p class="text">思沃思沃思沃思沃思沃思沃思沃思沃思沃思沃思沃思沃思沃思沃思沃思沃思沃思沃思沃思沃</p>
+                    </div>
+                    <div class="footer_box">
+                        <div class="col_1_of_3 span_1_of_3">
+                            <h3>联系我们</h3>
+                            <ul class="first">
+                                <li><a href="#">微信</a></li>
+                                <li><a href="#">QQ</a></li>
+                                <li><a href="#">微博</a></li>
+                            </ul>
+                        </div>
+                        <div class="col_1_of_3 span_1_of_3">
+                            <h3>联系我们</h3>
+                            <ul class="first">
+                                <li><a href="#">微信</a></li>
+                                <li><a href="#">QQ</a></li>
+                                <li><a href="#">微博</a></li>
+                            </ul>
+                        </div>
+                        <div class="col_1_of_3 span_1_of_3">
+                            <h3>联系我们</h3>
+                            <ul class="first">
+                                <li><a href="#">微信</a></li>
+                                <li><a href="#">QQ</a></li>
+                                <li><a href="#">微博</a></li>
+                            </ul>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <div id="gotop" onclick="Totop()">
+        <img src="./images/1/2a.jpg" alt="">
+    </div>
+</body>
+
+</html>

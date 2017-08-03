@@ -1,0 +1,141 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Details</title>
+    <link rel="shortcut icon" href="./images/1/title.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Movie_store Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="application/x-javascript">
+        addEventListener("load", function() {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+        $(document).ready(function() {
+            //首先获得url中的id，然后进行渲染函数
+            let id = window.location.href.split('?')[1].split('=')[1]; ///得到id内容
+            let mp = $('#abstract').children();
+            /*
+            for (let i = 0; i < 7; i++) {
+                console.log(f[i].childNodes[1].innerHTML)
+            }*/
+            mp[0].childNodes[1].innerHTML = '爸爸去哪儿';
+            mp[1].childNodes[1].innerHTML = '湖南卫视';
+            mp[2].childNodes[1].innerHTML = '小屁孩';
+            mp[3].childNodes[1].innerHTML = '2015';
+            mp[4].childNodes[1].innerHTML = '汉语';
+            mp[5].childNodes[1].innerHTML = '大陆';
+            mp[6].childNodes[1].innerHTML = '亲子';
+            ///接收到id之后，调用函数，  ajax.js
+            //getMovieDetail(id);
+
+            console.log(id);
+        })
+    </script>
+    <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/my.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- start plugins -->
+
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/my.js"></script>
+    <script type="text/javascript" src="js/changeWeb.js"></script>
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <script src="bootstrap-3.3.7-dist/js/jquery-3.2.1.js"></script>
+    <link href='http://fonts.useso.com/css?family=Roboto+Condensed:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+    <div class="container con1">
+        <div class="container_wrap">
+            <div class="header_top">
+                <div class="col-sm-3 logo">
+                    <a href="index.html"><img src="./images/1/logo1.png" alt="" style="width:100px; height:30px"></a>
+                </div>
+                <div class="nav header_right" style="float:right;">
+                    <ul>
+                        <li><span class="simptip-position-bottom simptip-movable" data-tooltip="返回"><a href="movie.html"> </a> </span></li>
+                    </ul>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="content">
+                <div class="movie_top">
+                    <div class="col-md-9 movie_box" id="summary">
+                        <div class="grid images_3_of_2">
+                            <div class="movie_image" id="movie_image">
+                                <span class="movie_rating">7.5</span>
+                                <img src="https://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2485983612.webp" height="390" width="290" class="img-responsive" alt="" />
+                            </div>
+
+                        </div>
+                        <div class="desc1 span_3_of_2 infobox" id="abstract">
+                            <p class="movie_option"><strong style="color:black;">片名: </strong><b>战狼</b></p>
+                            <p class="movie_option"><strong style="color:black;">导演: </strong><b>2014</b></p>
+                            <p class="movie_option"><strong style="color:black;">演员: </strong><b>吴京</b></p>
+                            <p class="movie_option"><strong style="color:black;">年份: </strong><b>2017</b></p>
+                            <p class="movie_option"><strong style="color:black;">语言: </strong><b>汉语普通话 / 英语</b></p>
+                            <p class="movie_option"><strong style="color:black;">地区: </strong><b>中国大陆</b></p>
+                            <p class="movie_option"><strong style="color:black;">类型: </strong><b>动作</b></p>
+                        </div>
+                        <div class="clearfix"> </div>
+                        <p class="m_4" id="storyAbstract"> 故事发生在非洲附近的大海上，主人公冷锋（吴京 饰）遭遇人生滑铁卢，被“开除军籍”，本想漂泊一生的他，正当他打算这么做的时候，一场突如其来的意外打破了他的计划，突然被卷入了一场非洲国家叛乱，本可以安全撤离，却因无法忘记曾经为军人的使命，孤身犯险冲回沦陷区，带领身陷屠杀中的同胞和难民，展开生死逃亡。随着斗争的持续，体内的狼性逐渐复苏，最终孤身闯入战乱区域，为同胞而战斗。</p>
+                        <form method="post" action="contact-post.html">
+
+                            <div class="text">
+                                <textarea id="mycomment" value="Comments:" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Comments';}">Comments:</textarea>
+                            </div>
+                            <div class="form-submit1">
+                                <input name="submit" type="submit" id="submit" value="Submit Your Comments"><br>
+                            </div>
+                            <div class="clearfix"></div>
+                        </form>
+                        <div id="commentlist" class="single">
+                            <h1><br>
+                                <script>
+                                    document.write(comments.length)
+                                </script> Comments</h1>
+                            <h2></h2>
+                            <script>
+                                document.write(GetComments())
+                            </script>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="movie_img">
+                            <div class="grid_2" onclick="fresh();" id="pic1">
+                                <img src="images/pic6.jpg" class="img-responsive" alt="">
+                                <div class="caption1">
+                                    <p class="m_3">美国队长3</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid_2 col_1">
+                            <img src="images/pic2.jpg" class="img-responsive" alt="">
+                            <div class="caption1">
+                                <p class="m_3">Guardians of the Galaxy</p>
+                            </div>
+                        </div>
+                        <div class="grid_2 col_1">
+                            <img src="images/pic9.jpg" class="img-responsive" alt="">
+                            <div class="caption1">
+                                <p class="m_3">Guardians of the Galaxy</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+
+</html>

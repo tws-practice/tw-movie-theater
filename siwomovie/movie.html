@@ -1,0 +1,188 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>电影</title>
+    <link rel="shortcut icon" href="./images/1/title.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Movie_store Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+    Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="css/biaoqian.css" />
+    <link rel="stylesheet" type="text/css" href="css/pubuliu.css">
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- start plugins -->
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/jquery.wookmark.js"></script>
+    <script type="text/javascript" src="js/jquery.imagesloaded.js"></script>
+    <link href='http://fonts.useso.com/css?family=Roboto+Condensed:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
+
+    <script type="text/javascript" src="js/bupuliu.js"></script>
+    <script type="text/javascript" src="js/gotoTop.js"></script>
+    <script type="text/javascript" src="js/ajax.js"></script>
+    <script type="text/javascript" src='js/biaoqian.js'></script>
+
+
+
+</head>
+
+<body>
+    <div class="container con1">
+        <div class="container_wrap">
+            <div class="header_top">
+                <div class="col-sm-3 logo">
+                    <a href="index.html"><img src="./images/1/logo1.png" alt="" style="width:100px; height:30px"></a>
+                </div>
+                <div class="col-sm-6 nav">
+                    <ul>
+                        <!--提示小内容的data-tooltip-->
+                        <li></li>
+                        <li><span class="simptip-position-bottom simptip-movable" data-tooltip="电影"><a href="movie.html"> </a> </span></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3 header_right">
+                    <div class="search input-group">
+                        <input class="form-control" id="input" type="text" value="Search..." onFocus="this.value='';" onBlur="if (this.value == '') {this.value ='';}">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="submit" onclick="getsearchmovie();">Go!</button>
+                        </span>
+                    </div>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="content">
+                <div data-block="tj-moviefilter1" monitor-desc="顶部筛选">
+                    <div class="moviefilter">
+                        <div class="g-clear">
+                            <div class="title">
+                                <div class="txt">影片筛选</div>
+                            </div>
+
+                            <div class="filter-list">
+                                <div class="filter-item">
+                                    <dl class="g-clear type">
+                                        <dt>类型</dt>
+                                        <a>喜剧</a>
+                                        <a>爱情</a>
+                                        <a>动作</a>
+                                        <a>恐怖</a>
+                                        <a>科幻</a>
+                                        <a>剧情</a>
+                                        <a>犯罪</a>
+                                        <a>奇幻</a>
+                                        <a>战争</a>
+                                        <a>悬疑</a>
+                                        <a>动画</a>
+                                        <a>伦理</a>
+                                    </dl>
+                                </div>
+
+                                <div class="filter-item">
+                                    <dl class="g-clear area">
+                                        <dt>地区</dt>
+                                        <a>美国</a>
+                                        <a>大陆</a>
+                                        <a>香港</a>
+                                        <a>韩国</a>
+                                        <a>法国</a>
+                                        <a>英国</a>
+                                        <a>泰国</a>
+                                        <a>台湾</a>
+                                        <a>日本</a>
+                                    </dl>
+                                </div>
+
+                                <div class="filter-item">
+                                    <dl class="g-clear time">
+                                        <dt>年代</dt>
+                                        <a>2017</a>
+                                        <a>2016</a>
+                                        <a>2015</a>
+                                        <a>2014</a>
+                                        <a>2013</a>
+                                        <a>2012</a>
+                                        <a>2011</a>
+                                        <a>2010</a>
+                                        <a>更早</a>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- 需要自己添加瀑布流-->
+                <div id="pubu">
+
+                    <div class="get1">
+                        <a target="_blank" href="./single.html?id=2">
+                            <!--添加click属性 bupuliu.js -->
+                            <img src="images/1.jpg">
+                            <p>hello</p>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    </div>
+    <div class="container">
+        <footer id="footer">
+            <div id="footer-widgets" class="gp-footer-larger-first-col">
+                <div class="gp-container">
+                    <div class="footer-widget footer-1">
+                        <div class="wpb_wrapper">
+                            <strong>是我影院</strong>
+                        </div>
+                        <br>
+                        <p>思沃思沃思沃思沃思沃思沃思沃思沃思沃思沃思沃思沃思沃思沃思沃思沃思沃思沃思沃思沃思沃思沃</p>
+                        <p class="text">思沃思沃思沃思沃思沃思沃思沃思沃思沃思沃思沃思沃思沃思沃思沃思沃思沃思沃思沃思沃</p>
+                    </div>
+                    <div class="footer_box">
+                        <div class="col_1_of_3 span_1_of_3">
+                            <h3>联系我们</h3>
+                            <ul class="first">
+                                <li><a href="#">微信</a></li>
+                                <li><a href="#">QQ</a></li>
+                                <li><a href="#">微博</a></li>
+                            </ul>
+                        </div>
+                        <div class="col_1_of_3 span_1_of_3">
+                            <h3>联系我们</h3>
+                            <ul class="first">
+                                <li><a href="#">微信</a></li>
+                                <li><a href="#">QQ</a></li>
+                                <li><a href="#">微博</a></li>
+                            </ul>
+                        </div>
+                        <div class="col_1_of_3 span_1_of_3">
+                            <h3>联系我们</h3>
+                            <ul class="first">
+                                <li><a href="#">微信</a></li>
+                                <li><a href="#">QQ</a></li>
+                                <li><a href="#">微博</a></li>
+                            </ul>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <div id="gotop" onclick="Totop()">
+        <img src="./images/1/2a.jpg" alt="">
+    </div>
+    <!--id=1-->
+    <div style="position:absolute; left:30%; top:10%;"><button onclick="getimages('./single.html?id=2')">提交</button></div>
+
+    <!-- 清除页面内容    bupuliu.js -->
+    <div style="position:absolute; left:40%; top:10%;"><button onclick="clearMovie()">清除页面内容</button></div>
+</body>
+
+</html>
