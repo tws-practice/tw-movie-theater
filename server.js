@@ -24,7 +24,8 @@ app.use(orm.express("sqlite:/home/xxx/Documents/tw-movie-theater/testDB.db", {
             language:String,
             runningTime:Number,
             review:String,
-            actor:String
+            actor:String,
+            director:String
         });
         models.types=db.define("GENRE",{
             id:Number,
