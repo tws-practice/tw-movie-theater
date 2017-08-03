@@ -1,7 +1,7 @@
 let express = require('express');
 let orm = require('orm');
 let bodyParser=require('body-parser');
-let urlencodedParser = bodyParser.urlencoded({ extended: false });
+let urlencodedParser = bodyParser.urlencoded({ extended: true });
 let app = express();
 app.use(express.static('Public'));
 app.use(orm.express("sqlite:movie.db", {
@@ -56,7 +56,7 @@ app.get("/getw",urlencodedParser, function (req, res) {
         pasword:"111",
         content:"中国人"},function (err) {
         if(err) throw err;
-    })
+    });
     req.models.T_user.find({}, function (err, people) {
         if (err) throw err;
         res.send(people);
@@ -69,7 +69,7 @@ app.get("/get",urlencodedParser, function (req, res) {
         date     : 20221256, //评论日期
         movieid  : 10},function (err) {
         if(err) throw err;
-    })
+    });
     req.models.T_comment.find({}, function (err, comments) {
         if (err) throw err;
         res.send(comments);
@@ -105,6 +105,7 @@ app.get('/getMovie/:id',function (req,res) {
 /*得到此类别的所有电影  OK*/
 app.post("/classMovies",urlencodedParser, function (req, res) {
     let comment=req.body.comment;
+    console.log(comment);
     req.models.T_movie.find({comment:orm.like("%"+comment+"%")}, function (err, movies) {
         if (err) throw err;
         res.send(movies);

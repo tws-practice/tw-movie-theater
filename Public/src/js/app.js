@@ -78,9 +78,20 @@ $('.yhx-signin').on('click',function () {
     });
 });
 $(document).ready(function () {
-    $("body").on("click", '.myallcategory>li', function(){
-        $(this)[0].className = 'active';
-        $(this).siblings().removeClass();
+    $("body").on("click", '.yhx-left-tag-contain>span', function(){
+        $(this)[0].className = 'label label-primary ysj-lable-active';
+        $(this).siblings().removeClass().addClass('label');
+        let myselect = $('.ysj-lable-active>a').html();
+        $.post('/classMovies',{comment:myselect},function (ans) {
+            let str = '';
+            for (let i = 0; i < ans.length; i++) {
+                str += '<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 ttx-movie">';
+                str += `<a href="/moviecontain.html?id=${ans[i].id}"><img class="center-block ttx-movie-photo" src="${ans[i].movieimg}" width="65%" height="100%" alt=""></a>`;
+                str += `<p class="ttx-movie-text"><a href="/moviecontain.html?id=${ans[i].id}">${ans[i].name}</a><strong>${ans[i].score}</strong></p>`;
+                str += `</div>`;
+            }
+            $(".ttx-movie-container").empty().append(str);
+        })
     });
 });
 function searchMovie() {

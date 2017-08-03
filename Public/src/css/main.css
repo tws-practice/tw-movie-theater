@@ -22,6 +22,15 @@
 .yhx-left-tag{
     padding:  0 25px 25px 25px;
 }
+.yhx-left-tag-contain a{
+    text-decoration: none;
+    line-height: 20px;
+    font-size: 12px;
+    margin: 2px;
+}
+.ysj-lable-active a{
+    color: white;
+}
 /*
 童天相
 */
