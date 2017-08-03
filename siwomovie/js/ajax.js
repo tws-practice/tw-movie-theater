@@ -24,7 +24,7 @@ function getallmovies() { ///获取所有电影列表
 
             for (let i = 0; i < data.length; i++) {
                 //增加电影到页面上面
-                let id = './single.html/movie/?id=' + data[i].id; ///将id改变
+                let id = './single.html/?id=' + data[i].id; ///将id改变
                 console.log(id);
                 getimages(id); //bupuliu.js
             }
@@ -59,6 +59,7 @@ function gethomemovies() { //获取首页三个电影
 
 
 function getsearchmovie() {
+    clearMovie(); //显示页面之前也让内容为空
     let name = $('.search #input')[0].value; //返回一个数组
     console.log(name);
     setTimeout("location.href = 'movie.html'", 1000);
@@ -68,6 +69,14 @@ function getsearchmovie() {
         type: "GET",
         success: function(data) {
             console.log('get data'); ///获得查找的内容
+            if (data = '') { //如果查找内容为空
+                alert(`电影${name}未找到`)
+            } else {
+                for (let i = 0; i < data.length; i++) {
+                    let id = data[i].id;
+                    getimages(id); ///bululiu.js
+                }
+            }
         },
         complete: function() {
             console.log('complete');
@@ -90,7 +99,16 @@ function getfiltermovie(filterArr) { //通过标签进行选择电影
             'year': filterArr[2]
         },
         success: function(data) {
-
+            if (data = '') { //如果查找内容为空
+                alert(`电影${name}未找到`);
+            } else {
+                for (let i = 0; i < data.length; i++) {
+                    let id = data[i].id; //电影id
+                    let pic = data[i].pic; //电影图片
+                    let name = data[i].name; //电影名称
+                    getimages(id, pic, name); ///bululiu.js
+                }
+            }
         },
         complete: function() {
             console.log('complete');

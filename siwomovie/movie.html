@@ -117,7 +117,7 @@
                 <div id="pubu">
 
                     <div class="get1">
-                        <a href="./single.html">
+                        <a target="_blank" href="./single.html?id=2">
                             <!--添加click属性 bupuliu.js -->
                             <img src="images/1.jpg">
                             <p>hello</p>
@@ -177,8 +177,11 @@
     <div id="gotop" onclick="Totop()">
         <img src="./images/1/2a.jpg" alt="">
     </div>
+    <!--id=1-->
+    <div style="position:absolute; left:30%; top:10%;"><button onclick="getimages('./single.html?id=2')">提交</button></div>
 
-    <div style="position:absolute; left:30%; top:10%;"><button onclick="getimages('./single.html/movie/?id=')">提交</button></div>
+    <!-- 清除页面内容    bupuliu.js -->
+    <div style="position:absolute; left:40%; top:10%;"><button onclick="clearMovie()">清除页面内容</button></div>
 </body>
 
 </html>

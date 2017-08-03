@@ -14,6 +14,10 @@
     margin-top:
 }
 
+.g-clear dt:hover {
+    cursor: pointer;
+}
+
 .moviefilter {
     margin-left: 10%;
 }
