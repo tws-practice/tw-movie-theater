@@ -1,0 +1,19 @@
+# General stuff
+*.patch
+*.err
+*.log
+*.orig
+*.vi
+*.zip
+.DS_Store
+*~
+._*
+CNAME
+
+# sass stuff
+scss-lint-report.xml
+.sass-cache
+
+# folders
+node_modules
+demo.*

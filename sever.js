@@ -8,7 +8,7 @@ var app = express();
 app.use(bodyparser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
-app.use(orm.express("sqlite:/home/chj/WebstormProjects/tw-movie-theater/testDB.db", {
+app.use(orm.express("sqlite:/home/xxx/Documents/tw-movie-theater/testDB.db", {
     define: function (db, models, next) {
         models.movies = db.define("movieInformation", {
             id:Number,
@@ -21,7 +21,7 @@ app.use(orm.express("sqlite:/home/chj/WebstormProjects/tw-movie-theater/testDB.d
             runningTime:Number,
             director:String,
             review:String,
-            actor:String
+            actor:String,
         });
         models.types=db.define("GENRE",{
             id:Number,
@@ -36,8 +36,7 @@ app.use(orm.express("sqlite:/home/chj/WebstormProjects/tw-movie-theater/testDB.d
 
 }));
 app.get('/', function (req, res) {
-
-    //res.sendFile( __dirname+"");
+    // res.sendFile( __dirname+"/public/html/home.html");
     req.models.movies.find(null,3,function (err, movies) {
         console.log(movies);
        res.send(movies);
@@ -71,7 +70,6 @@ app.get('/types/:id', function (req, res) {
                 res.send(movies);
             })
     });
-
 });
 var server = app.listen(8081, function () {
     var host = server.address().address;
