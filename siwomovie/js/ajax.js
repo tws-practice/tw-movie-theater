@@ -68,6 +68,7 @@ function getsearchmovie() {
         url: url,
         type: "GET",
         success: function(data) {
+            clearMovie(); ///删除原来的页面
             console.log('get data'); ///获得查找的内容
             if (data = '') { //如果查找内容为空
                 alert(`电影${name}未找到`)
@@ -99,6 +100,7 @@ function getfiltermovie(filterArr) { //通过标签进行选择电影
             'year': filterArr[2]
         },
         success: function(data) {
+            clearMovie();
             if (data = '') { //如果查找内容为空
                 alert(`电影${name}未找到`);
             } else {
@@ -120,17 +122,13 @@ function getfiltermovie(filterArr) { //通过标签进行选择电影
 }
 
 function getMovieDetail(id) { ///得到的数据是通过传输获得的电影的id,
-    let url = '/movie/detail/id=' + id;
+    let url = '/movie/id=' + id;
     $.ajax({
         url: url,
         type: "GET",
-        data: {
-            'type': filterArr[0],
-            'area': filterArr[1],
-            'year': filterArr[2]
-        },
-        success: function(data) {
-
+        success: function(data) { ///得到一个电影对象
+            //do something
+            renderDetail(data); ///render.js
         },
         complete: function() {
             console.log('complete');
