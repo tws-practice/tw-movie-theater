@@ -33,13 +33,15 @@
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a class="yhx-login" href="#">登录</a></li>
-                        <li><a class="yhx-signin" href="#">注册</a></li>
+                        <li><a class="yh/x-signin" href="#">注册</a></li>
                     </ul>
                     <div class="navbar-form navbar-right">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="搜索电影">
+                            <select class="form-control cr-search-select " id="comment">
+                            </select>
+                            <input type="text" class="form-control" placeholder="搜索电影" id="moviename">
                         </div>
-                        <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+                        <button type="submit" class="btn btn-default" onclick="searchMovie()"><span class="glyphicon glyphicon-search"></span></button>
                     </div>
                 </div>
             </div>

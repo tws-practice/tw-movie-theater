@@ -4,6 +4,10 @@
 .cr-header .navbar{
     border-radius: 0px;
 }
+.cr-search-select{
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
 /*
 杨涵轩
 */
@@ -105,3 +109,4 @@
         width: 200px;
     }
 }
+
