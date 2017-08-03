@@ -133,6 +133,7 @@ $(document).ready(function () {
                     str += `<p class="ttx-movie-text"><a href="/moviecontain.html?id=${ans.data[i].id}">${ans.data[i].name}</a><strong>${ans.data[i].score}</strong></p>`;
                     str += `</div>`;
                 }
+                $('.ttx-bread').html(`<li class="active">全部影片</li>`);
                 $(".ttx-movie-container").empty().append(str);
             });
         }else {
@@ -144,6 +145,7 @@ $(document).ready(function () {
                     str += `<p class="ttx-movie-text"><a href="/moviecontain.html?id=${ans[i].id}">${ans[i].name}</a><strong>${ans[i].score}</strong></p>`;
                     str += `</div>`;
                 }
+                $('.ttx-bread').html(` <li>全部影片</li><li class="active">${myselect}</li>`);
                 $(".ttx-movie-container").empty().append(str);
             })
         }
