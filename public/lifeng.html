@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>斯沃影院</title>
+    <!--引用库的文件-->
+    <link rel="stylesheet" href="lib/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <script src="lib/jquery-3.1.1.min/jquery-3.1.1.min.js"></script>
+    <script src="lib/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="lib/layer/layer.js"></script>
+
+
+    <!--自定义css文件与js文件-->
+    <!--base文件为基本样式库,勿动-->
+    <link rel="stylesheet" href="css/base.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <nav style="width: 100%;height: 100px;display:block;background: black">
+
+            </nav>
+
+            <div style="height: 700px" class="col-md-10 col-md-offset-1 content">
+
+                <!--以下为修改内容-->
+
+                <!--电影名称-->
+                <h2 style="text-align: center">战狼2</h2>
+
+                <!--电影精彩图片轮播-->
+                <div id="carousel-example-generic" class="carousel slide col-md-offset-2 col-md-8" data-ride="carousel" style="margin-top: 20px">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                    </ol>
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active text-center">
+                            <img src="src/zhanlang1.jpg" alt="picture is not found" style="width: 800px; height: 400px; margin: auto">
+                            <div class="carousel-caption">
+                                <h>picture</h>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img src="src/zhanlang2.jpg" alt="picture is not found" style="width: 800px; height: 400px; margin: auto">
+                        </div>
+                        <div class="item">
+                            <img src="src/zhanlang3.jpg" alt="picture is not found" style="width: 800px; height: 400px; margin: auto">
+                        </div>
+                    </div>
+
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+
+                <!--电影简介-->
+                <div class="col-md-offset-2 col-md-8" style="margin-top: 50px">
+                    <div style="color: #5cb85c;font-size: 2em;">
+                        <span class="glyphicon glyphicon-tags" style="padding-right: 5px"></span>
+                        <label style="margin: auto">电影介绍</label>
+                    </div>
+                    <div class="col-md-12" style="margin-top: 20px">
+                        <div class="col-md-6" >
+                            <p><strong>电影名称：</strong>战狼2</p>
+                            <p><strong>上映时间：</strong>2017-7-27（中国大陆）</p>
+                            <p><strong>类型：</strong>剧情 动作</p>
+                            <p><strong>片长：</strong><span>123</span>分钟</p>
+                            <p><strong>导演：</strong>吴京</p>
+                            <p><strong>领衔主演：</strong>吴京，吴刚，张翰，弗兰克·格里罗，卢靖姗</p>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <div style="margin: auto;text-align: center;width: 150px;height: 150px;background-color: #F6F6F6">
+                                <h4 style="display: block;padding-top: 20px;">思沃评分</h4>
+                                <span style="display: block;color: gold;font-size: 30px">7.5</span>
+                                <small><span>100809</span>人评论</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-10">
+                            <p><strong>简介：</strong>故事发生在非洲附近的大海上，主人公冷锋（吴京 饰）遭遇人生滑铁卢，被“开除军籍”，本想漂泊一生的他，正当他打算这么做的时候，一场突如其来的意外打破了他的计划，突然被卷入了一场非洲国家叛乱，本可以安全撤离，却因无法忘记曾经为军人的使命，孤身犯险冲回沦陷区，带领身陷屠杀中的同胞和难民，展开生死逃亡。随着斗争的持续，体内的狼性逐渐复苏，最终孤身闯入战乱区域，为同胞而战斗。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!--影评-->
+                <div class="col-md-offset-2 col-md-8" style="margin-top: 25px">
+                    <div style="color: #5cb85c;font-size: 2em;">
+                        <span class="glyphicon glyphicon-edit" style="padding-right: 5px"></span>
+                        <label style="margin: auto">影评</label>
+                    </div>
+                    <div class="col-md-12" style="margin-top: 5px">
+                        <div class="col-md-10">
+                            <form>
+                                <div class="form-group">
+                                    <label for="writeComment"></label>
+                                    <textarea class="form-control" id="writeComment" style="height:100px" placeholder="写点儿什么吧..."></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label style="padding-right: 10px">评分</label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 1分
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 2分
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> 3分
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option3"> 4分
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="inlineRadioOptions" id="inlineRadio5" value="option3"> 5分
+                                    </label>
+                                    <button type="reset" class="btn btn-info" style="margin-left: 300px">重置</button>
+                                    <button type="submit" class="btn btn-success btn" style="margin-left: 10px">发表</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!--影评展示列表-->
+                    <div class="col-md-12" style="margin-top: 20px">
+                        <div class="col-md-10">
+                            <p><strong>其他人的影评</strong></p>
+                            <ul class="list-group" style="padding-top: 10px">
+                                <li class="list-group-item">
+                                    <p>
+                                        <span style="padding-right: 20px"><strong>作者：</strong>听风的歌</span>
+                                        <span style="padding-right: 20px"><strong>评分：</strong>5分</span>
+                                        <small>2017-07-28 00:45:18</small>
+                                        <span class="glyphicon glyphicon-heart" style="position: absolute;right: 40px;top:10px;"></span>
+                                    </p>
+                                    <p>电影的原型是2015年的也门撤侨事件 2015年也门危机，中国海军直接派出2艘054A护卫舰，开进也门亚丁港 由于当时港口外枪炮轰鸣，中国海军入港全部自主完成 中国驻当地使馆和全副武装的武警特勤在岸边保护中国侨民 而054A护卫舰直接靠港，舰上的海军特种兵和水兵持枪下舰，拉出了...</p>
+                                </li>
+                                <li class="list-group-item">
+                                    <p>
+                                        <span style="padding-right: 20px"><strong>作者：</strong>句号先生</span>
+                                        <span style="padding-right: 20px"><strong>评分：</strong>4分</span>
+                                        <small>2017-07-28 20:26:44</small>
+                                        <span class="glyphicon glyphicon-heart" style="position: absolute;right: 40px;top:10px;"></span>
+                                    </p>
+                                    <p>那些说《战狼2》假的人，shame on you！（套用影片女主的一句话，为你们感到耻辱） 客观的评价一下战狼，也许没有美国大片的劲爆场面，但是我感觉真的很棒！有人把它和好莱</p>
+                                </li>
+                                <li class="list-group-item">
+                                    <p>
+                                        <span style="padding-right: 20px"><strong>作者：</strong>不散</span>
+                                        <span style="padding-right: 20px"><strong>评分：</strong>5分</span>
+                                        <small>2017-07-28 23:25:20</small>
+                                        <span class="glyphicon glyphicon-heart" style="position: absolute;right: 40px;top:10px;"></span>
+                                    </p>
+                                    <p>本文原创首发于不散微信公众号（ID:busan-movie），未经不散和作者授权禁止转载 作者 |谢谢你们的鱼 2015年，一部《战狼》在4月淡季席卷了超过5亿的票房成绩。就是这么一部辗转了好几个发行方、被很多明星拒演、大量投资人望而却步，而且大部分业内人士不怎么看好的动作类型片... </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!--类似电影推荐-->
+                <div class="col-md-offset-2 col-md-8" style="margin-top: 25px">
+                    <div style="color: #5cb85c;font-size: 2em;">
+                        <span class="glyphicon glyphicon-send" style="padding-right: 5px"></span>
+                        <label style="margin: auto">类似电影推荐</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

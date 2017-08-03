@@ -1,0 +1,47 @@
+/*lbo Header*/
+#top-nav ul{
+    margin-right: 10%;
+}
+#headline{
+    position: relative;z-index: 0
+}
+#headline .social-links{
+    padding-right: 10%;
+}
+
+/*lmj*/
+.moviesBox .row{
+    margin: 10px auto;
+}
+
+.moviesBox a.movieItem{
+    display: block;
+    text-align: center;
+}
+.moviesBox a.movieItem p{
+    font-size:18px;
+    color:gray;
+    margin-top:10px;
+    margin-left:-10px
+}
+.moviesBox a.movieItem p span{
+    color:orange
+}
+
+.moviesBox a.movieItem img{
+    width:200px
+}
+
+.pageNation{
+    text-align: center;
+}
+
+/*轮播*/
+.carousel-inner div{
+    height: 300px;
+}
+.carousel-inner div img{
+    width: 80%;
+    height: 300px!important;
+    margin: auto
+}

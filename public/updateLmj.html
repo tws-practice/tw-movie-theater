@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>斯沃影院</title>
+    <!--引用库的文件-->
+    <link rel="stylesheet" href="lib/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <script src="lib/jquery-3.1.1.min/jquery-3.1.1.min.js"></script>
+    <script src="lib/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="lib/layer/layer.js"></script>
+    <script src="lib/template/template.js"></script>
+    <script data-main="./js/master.js"  src="lib/require/require.js"></script>
+
+    <!--自定义css文件与js文件-->
+    <!--base文件为基本样式库,勿动-->
+    <link rel="stylesheet" href="css/base.css">
+
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <nav style="width: 100%;height: 100px;display:block;background: black">
+            <div class="btn-group" role="group" aria-label="...">
+                <button type="button" class="btnLeft btn btn-default">Left</button>
+                <button type="button" class="btnRight btn btn-default">Right</button>
+            </div>
+        </nav>
+
+        <div style="background: red;height: 700px" class="col-md-10 col-md-offset-1 content">
+
+        </div>
+    </div>
+</div>
+</body>
+
+<script type="text/html" id="tplMain">
+    <div class="box">
+        <div id="myCarousel" class="carousel slide">
+            <!-- 轮播（Carousel）指标 -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+            <!-- 轮播（Carousel）项目 -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="http://ww2.sinaimg.cn/large/006HJ39wgy1fhkv0fjvjhj31hc0augsx.jpg" alt="" style="height:250px; width:1500px">
+                </div>
+                <div class="item">
+                    <img src="http://ww1.sinaimg.cn/large/006HJ39wgy1fhg0cn43uoj315o06zwk1.jpg" alt="" style="height:250px; width:1500px">
+                </div>
+                <div class="item">
+                    <img src="http://ww4.sinaimg.cn/large/0060lm7Tgy1fe54vssoeuj31hc06842w.jpg" alt="" style="height:250px; width:1500px">
+                </div>
+            </div>
+            <!-- 轮播（Carousel）导航 -->
+            <a class="carousel-control left" href="#myCarousel"
+               data-slide="prev">&lsaquo;
+            </a>
+            <a class="carousel-control right" href="#myCarousel"
+               data-slide="next">&rsaquo;
+            </a>
+        </div>
+    </div>
+    <div style="background:white; width: 100%;">
+
+        <div class="row" style="margin-bottom:80px">
+            <div class="box" style="margin-top:50px;">
+                <div style="text-align: center" class="col-md-3 col-sm-6">
+                    <img src="https://img1.doubanio.com/view/movie_poster_cover/lpst/public/p2494279388.webp" alt="" style="width:200px">
+                    <p style="font-size:18px; color:gray;  margin-top:10px; margin-left:-10px">［剧情］三生三世十里桃花 <span style="color:orange">6.6分</span></p>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <img src="https://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2494275431.webp" alt="" style="width:200px">
+                    <p style="font-size:18px; color:gray;  margin-top:10px; margin-left:-10px">［青春／校园］闪光少女 <span style="color:orange">6.6分</span></p>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <img src="https://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2482761924.webp" alt="" style="width:200px">
+                    <p style="font-size:18px; color:gray;  margin-top:10px; margin-left:-10px">［喜剧／动画］阿唐奇遇 <span style="color:orange">6.6分</span></p>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <a href="javascript:void(0)">
+                        <img src="https://img1.doubanio.com/view/movie_poster_cover/lpst/public/p2492665487.webp" alt="" style="width:200px">
+                        <p style="font-size:18px; color:gray;  margin-top:10px; margin-left:-10px">［剧情］绣春刀 <span style="color:orange">6.6分</span></p>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row" style="margin-bottom:40px ">
+            <div class="box" style="margin:0 auto">
+                <ul class="pagination  pagination-lg">
+                    <li><a href="#">&laquo;</a></li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">&raquo;</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/html" id="tplDetail">
+    <h2>{{title}}</h2>
+</script>
+
+</html>
