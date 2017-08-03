@@ -1,16 +1,16 @@
 /**
  * Created by xxx on 17-8-2.
  */
-'use strict'
+'use strict';
 ///home/chj/WebstormProjects/tw-movie-theater/testDB.db
 //MOVIEID NAME DESCRIPTION RELEASEDATE IMAGE NATION LANGUAGE RUNNINGTIME DIRECTOR REVIEW
 var express = require('express');
-//var bodyparser = require('body-parser');
+var bodyparser = require('body-parser');
 var orm = require('orm');
 var app = express();
 
-//app.use(bodyparser.urlencoded({ extended: true }));
-//app.use(express.static('public'));
+app.use(bodyparser.urlencoded({ extended: true }));
+app.use(express.static('public'));
 
 app.use(orm.express("sqlite:/home/xxx/Documents/tw-movie-theater/testDB.db", {
     define: function (db, models, next) {
@@ -34,8 +34,6 @@ app.use(orm.express("sqlite:/home/xxx/Documents/tw-movie-theater/testDB.db", {
             genreId:Number,
             movieId:Number
         });
-
-
         next();
     }
 
