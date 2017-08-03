@@ -15,6 +15,68 @@ axios.get('/allClassify').then(function (ans) {
     }
     $('#ttx-comment-first').after(str);
 });
+$('.yhx-login').on('click',function () {
+    let str = `<div class="form-group">
+    <label for="exampleInputName1">账号</label>
+    <input type="text" class="form-control" id="exampleInputName1" placeholder="账号">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">密码</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="密码">
+  </div>`;
+    bootbox.confirm({
+        title: "用户登录",
+        message: str,
+        buttons: {
+            cancel: {
+                label: '<i class="fa fa-times"></i> 取消'
+            },
+            confirm: {
+                label: '<i class="fa fa-check"></i> 确认'
+            }
+        },
+        callback: function (result) {
+            console.log('This was logged in the callback: ' + result);
+        }
+    });
+});
+$('.yhx-signin').on('click',function () {
+    let str = `<div class="form-group">
+    <label for="exampleInputName2">账号</label>
+    <input type="text" class="form-control" id="exampleInputName2" placeholder="账号">
+    </div>
+    <div class="form-group">
+    <!--<label for="exampleInputNa">姓名</label>
+    <input type="text" class="form-control" id="exampleInputNa" placeholder="姓名">
+    </div>-->
+    <div class="form-group">
+    <label for="exampleInputPassword2">密码</label>
+    <input type="password" class="form-control" id="exampleInputPassword2" placeholder="密码">
+    </div>
+    <!--<div class="form-group">
+    <label for="exampleInputCePassword2">确认密码</label>
+    <input type="password" class="form-control" id="exampleInputCePassword2" placeholder="确认密码">
+    </div>
+    <div class="form-group">
+    <label for="exampleInputPassword2">详细信息</label>
+    <input type="text" class="form-control" id="exampleInputDetails" placeholder="详细介绍">
+    </div>-->`;
+    bootbox.confirm({
+        title: "注册账号",
+        message: str,
+        buttons: {
+            cancel: {
+                label: '<i class="fa fa-times"></i> 取消注册'
+            },
+            confirm: {
+                label: '<i class="fa fa-check"></i> 确认注册'
+            }
+        },
+        callback: function (result) {
+            console.log('This was logged in the callback: ' + result);
+        }
+    });
+});
 $(document).ready(function () {
     $("body").on("click", '.myallcategory>li', function(){
         $(this)[0].className = 'active';
