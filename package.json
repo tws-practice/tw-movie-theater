@@ -1,5 +1,5 @@
 {
-  "name": "tw-movie-theater",
+  "name": "chj",
   "version": "1.0.0",
   "description": "## 练习目标",
   "main": "index.js",
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/muzrea/tw-movie-theater.git"
   },
-  "author": "",
+  "author": "chj",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/muzrea/tw-movie-theater/issues"
