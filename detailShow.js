@@ -5,7 +5,7 @@ $(document).read(function () {
     let movieID;
    $.get(`/movies/${movieID}`,function (movie) {
        $("#movieName").value=movie.name;
-       $("#idInfo").value=movie.image;
+       $("#idInfo").src=movie.image;
        $("#director").value=movie.director;
        $("#mainActor").value=movie.actor;
        $("#maker").value=movie.nation;
