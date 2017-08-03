@@ -93,6 +93,9 @@ $(document).ready(function () {
             $(".ttx-movie-container").empty().append(str);
         })
     });
+    $('body').on('click','.ttx-my-number>li>a',function () {
+        alert($(this).html());
+    })
 });
 function searchMovie() {
     let moviename=$('#moviename');

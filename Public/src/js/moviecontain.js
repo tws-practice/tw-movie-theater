@@ -60,7 +60,7 @@ $('#commentBottom').on('click',function () {
     datas.userid=$('#username').text();
     datas.content=$('#text').value();
     datas.moviename=$('.panel-heading-title').text();
-    $.axios({
+    $.post({
         type:'POST',
         url:'/commentstorage',
         dataType:'json',

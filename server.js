@@ -105,7 +105,6 @@ app.get('/getMovie/:id',function (req,res) {
 /*得到此类别的所有电影  OK*/
 app.post("/classMovies",urlencodedParser, function (req, res) {
     let comment=req.body.comment;
-    console.log(comment);
     req.models.T_movie.find({comment:orm.like("%"+comment+"%")}, function (err, movies) {
         if (err) throw err;
         res.send(movies);
