@@ -19,6 +19,7 @@ app.use(orm.express("sqlite:/home/chj/WebstormProjects/tw-movie-theater/testDB.d
             nation:String,
             language:String,
             runningTime:Number,
+            director:String,
             review:String,
             actor:String
         });
