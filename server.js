@@ -147,6 +147,23 @@ app.get("/init",urlencodedParser, function (req, res) {
         });
     });
 });
+
+app.get('/login', function (req, res) {
+    let username = req.query.username;
+    let password = req.query.password;
+    req.models.T_users.find({name: username, pasword: password}, function (err, reply) {
+        if (err) {
+            console.log('error!');
+            throw err;
+        }
+        if (reply[0]) {
+            console.log('true');
+        }else{
+            console.log('false');
+        }
+    });
+
+});
 let server = app.listen(8081, function () {
     let host = server.address().address;
     let port = server.address().port;
