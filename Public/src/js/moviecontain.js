@@ -144,5 +144,42 @@ $('.yhx-signin').on('click',function () {
     });
 });
 
+$('.cr-mysubmit').on('click',function () {
+    let myselect = $('.cr-search-select').find("option:selected").html();
+    let myinput  = $('.cr-myinput').val();
+    if(myinput){
+        if(myselect === '全部电影'){
+            $.post('/oneSearchResult',{moviename:myinput},function (ans) {
+                if(ans){
+                    let str = '';
+                    for (let i = 0; i < ans.length; i++) {
+                        str += '<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 ttx-movie">';
+                        str += `<a href="/moviecontain.html?id=${ans[i].id}"><img class="center-block ttx-movie-photo" src="${ans[i].movieimg}" width="65%" height="100%" alt=""></a>`;
+                        str += `<p class="ttx-movie-text"><a href="/moviecontain.html?id=${ans[i].id}">${ans[i].name}</a><strong>${ans[i].score}</strong></p>`;
+                        str += `</div>`;
+                    }
+                    $('.panel-heading-title').html("<span class='glyphicon glyphicon-search' style='font-size: 25px;'></span>&nbsp;&nbsp;搜索结果");
+                    $(".ttx-search-contain").empty().append(str);
+                }
+            });
+        }else {
+            $.post('/searchResult',{comment:myselect,moviename:myinput},function (ans) {
+                if(ans){
+                    let str = '';
+                    for (let i = 0; i < ans.length; i++) {
+                        str += '<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 ttx-movie">';
+                        str += `<a href="/moviecontain.html?id=${ans[i].id}"><img class="center-block ttx-movie-photo" src="${ans[i].movieimg}" width="65%" height="100%" alt=""></a>`;
+                        str += `<p class="ttx-movie-text"><a href="/moviecontain.html?id=${ans[i].id}">${ans[i].name}</a><strong>${ans[i].score}</strong></p>`;
+                        str += `</div>`;
+                    }
+                    $('.panel-heading-title').html("<span class='glyphicon glyphicon-search' style='font-size: 25px;'></span>&nbsp;&nbsp;搜索结果");
+                    $(".ttx-search-contain").empty().append(str);
+                }
+            });
+        }
+    }else {
+        return bootbox.alert("请填写电影名称!");
+    }
 
+});
 

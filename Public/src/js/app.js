@@ -78,20 +78,75 @@ $('.yhx-signin').on('click',function () {
     });
 });
 $(document).ready(function () {
+    $('.cr-mysubmit').on('click',function () {
+       let myselect = $('.cr-search-select').find("option:selected").html();
+       let myinput  = $('.cr-myinput').val();
+       if(myinput){
+           if(myselect === '全部电影'){
+               $.post('/oneSearchResult',{moviename:myinput},function (ans) {
+                   if(ans){
+                       let str = '';
+                       for (let i = 0; i < ans.length; i++) {
+                           str += '<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 ttx-movie">';
+                           str += `<a href="/moviecontain.html?id=${ans[i].id}"><img class="center-block ttx-movie-photo" src="${ans[i].movieimg}" width="65%" height="100%" alt=""></a>`;
+                           str += `<p class="ttx-movie-text"><a href="/moviecontain.html?id=${ans[i].id}">${ans[i].name}</a><strong>${ans[i].score}</strong></p>`;
+                           str += `</div>`;
+                       }
+                       $(".ttx-movie-container").empty().append(str);
+                   }
+               });
+           }else {
+               $.post('/searchResult',{comment:myselect,moviename:myinput},function (ans) {
+                   if(ans){
+                       let str = '';
+                       for (let i = 0; i < ans.length; i++) {
+                           str += '<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 ttx-movie">';
+                           str += `<a href="/moviecontain.html?id=${ans[i].id}"><img class="center-block ttx-movie-photo" src="${ans[i].movieimg}" width="65%" height="100%" alt=""></a>`;
+                           str += `<p class="ttx-movie-text"><a href="/moviecontain.html?id=${ans[i].id}">${ans[i].name}</a><strong>${ans[i].score}</strong></p>`;
+                           str += `</div>`;
+                       }
+                       $(".ttx-movie-container").empty().append(str);
+                   }
+               });
+           }
+       }else {
+           return bootbox.alert("请填写电影名称!");
+       }
+
+    });
     $("body").on("click", '.yhx-left-tag-contain>span', function(){
         $(this)[0].className = 'label label-primary ysj-lable-active';
         $(this).siblings().removeClass().addClass('label');
         let myselect = $('.ysj-lable-active>a').html();
-        $.post('/classMovies',{comment:myselect},function (ans) {
-            let str = '';
-            for (let i = 0; i < ans.length; i++) {
-                str += '<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 ttx-movie">';
-                str += `<a href="/moviecontain.html?id=${ans[i].id}"><img class="center-block ttx-movie-photo" src="${ans[i].movieimg}" width="65%" height="100%" alt=""></a>`;
-                str += `<p class="ttx-movie-text"><a href="/moviecontain.html?id=${ans[i].id}">${ans[i].name}</a><strong>${ans[i].score}</strong></p>`;
-                str += `</div>`;
-            }
-            $(".ttx-movie-container").empty().append(str);
-        })
+        if(myselect === '全部影片'){
+            axios.post('/allMovies').then(function (ans) {
+                let str = '';
+                let mynum = parseInt((ans.data.length/16)+1);
+                let myourstr = '';
+                for(let j = 1;j<=mynum;j++){
+                    myourstr += `<li><a href="#">${j}</a></li>`;
+                }
+                $('.ttx-my-number').append(myourstr);
+                for (let i = 0; i < ans.data.length; i++) {
+                    str += '<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 ttx-movie">';
+                    str += `<a href="/moviecontain.html?id=${ans.data[i].id}"><img class="center-block ttx-movie-photo" src="${ans.data[i].movieimg}" width="65%" height="100%" alt=""></a>`;
+                    str += `<p class="ttx-movie-text"><a href="/moviecontain.html?id=${ans.data[i].id}">${ans.data[i].name}</a><strong>${ans.data[i].score}</strong></p>`;
+                    str += `</div>`;
+                }
+                $(".ttx-movie-container").empty().append(str);
+            });
+        }else {
+            $.post('/classMovies',{comment:myselect},function (ans) {
+                let str = '';
+                for (let i = 0; i < ans.length; i++) {
+                    str += '<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 ttx-movie">';
+                    str += `<a href="/moviecontain.html?id=${ans[i].id}"><img class="center-block ttx-movie-photo" src="${ans[i].movieimg}" width="65%" height="100%" alt=""></a>`;
+                    str += `<p class="ttx-movie-text"><a href="/moviecontain.html?id=${ans[i].id}">${ans[i].name}</a><strong>${ans[i].score}</strong></p>`;
+                    str += `</div>`;
+                }
+                $(".ttx-movie-container").empty().append(str);
+            })
+        }
     });
     $('body').on('click','.ttx-my-number>li>a',function () {
         alert($(this).html());

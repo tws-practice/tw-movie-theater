@@ -83,6 +83,14 @@ app.get('/allClassify', function (req, res)  {
         res.send(classes);
     });
 });
+//获得一个电影的搜索结果
+app.post("/oneSearchResult",urlencodedParser, function (req, res) {
+    let moviename=req.body.moviename;
+    req.models.T_movie.find({name:orm.like("%"+moviename+"%")}, function (err, movies) {
+        if (err) throw err;
+        res.send(movies);
+    });
+});
 /*得到这个电影名称的搜索结果 OK*/
 app.post("/searchResult",urlencodedParser, function (req, res) {
     let moviename=req.body.moviename;
