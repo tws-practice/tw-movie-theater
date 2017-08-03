@@ -20,9 +20,9 @@
     <link href='http://fonts.useso.com/css?family=Roboto+Condensed:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
 
     <script type="text/javascript" src="js/bupuliu.js"></script>
-    <script src="js/gotoTop.js"></script>
-    <script src="js/ajax.js"></script>
-
+    <script type="text/javascript" src="js/gotoTop.js"></script>
+    <script type="text/javascript" src="js/ajax.js"></script>
+    <script type="text/javascript" src='js/biaoqian.js'></script>
 
 
 
@@ -43,9 +43,11 @@
                     </ul>
                 </div>
                 <div class="col-sm-3 header_right">
-                    <div class="search">
-                        <input id="input" type="text" value="Search..." onFocus="this.value='';" onBlur="if (this.value == '') {this.value ='';}">
-                        <button type="submit" onclick="getsearchmovie();">get</button>
+                    <div class="search input-group">
+                        <input class="form-control" id="input" type="text" value="Search..." onFocus="this.value='';" onBlur="if (this.value == '') {this.value ='';}">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="submit" onclick="getsearchmovie();">Go!</button>
+                        </span>
                     </div>
                 </div>
                 <div class="clearfix"> </div>
@@ -59,8 +61,8 @@
                             </div>
 
                             <div class="filter-list">
-                                <div class="filter-item type">
-                                    <dl class="g-clear">
+                                <div class="filter-item">
+                                    <dl class="g-clear type">
                                         <dt>类型</dt>
                                         <a>喜剧</a>
                                         <a>爱情</a>
@@ -77,8 +79,8 @@
                                     </dl>
                                 </div>
 
-                                <div class="filter-item area">
-                                    <dl class="g-clear">
+                                <div class="filter-item">
+                                    <dl class="g-clear area">
                                         <dt>地区</dt>
                                         <a>美国</a>
                                         <a>大陆</a>
@@ -92,8 +94,8 @@
                                     </dl>
                                 </div>
 
-                                <div class="filter-item time">
-                                    <dl class="g-clear">
+                                <div class="filter-item">
+                                    <dl class="g-clear time">
                                         <dt>年代</dt>
                                         <a>2017</a>
                                         <a>2016</a>
@@ -104,7 +106,6 @@
                                         <a>2011</a>
                                         <a>2010</a>
                                         <a>更早</a>
-                                        <a>全部</a>
                                     </dl>
                                 </div>
                             </div>
@@ -114,25 +115,14 @@
                 </div>
                 <!-- 需要自己添加瀑布流-->
                 <div id="pubu">
-                    <div class="get1">
-                        <a href="./single.html">
-                            <img src="images/1.jpg">
-                            <p>this is a jpg</p>
-                        </a>
-                    </div>
-                    <div class="get1">
-                        <a href="./single.html">
-                            <img src="images/1.jpg">
-                            <p>this is a jpg</p>
-                        </a>
-                    </div>
-                    <div class="get1">
-                        <a href="./single.html">
-                            <img src="images/1.jpg">
-                            <p>this is a jpg</p>
-                        </a>
-                    </div>
 
+                    <div class="get1">
+                        <a href="./single.html">
+                            <!--添加click属性 bupuliu.js -->
+                            <img src="images/1.jpg">
+                            <p>hello</p>
+                        </a>
+                    </div>
                 </div>
 
             </div>
@@ -188,7 +178,7 @@
         <img src="./images/1/2a.jpg" alt="">
     </div>
 
-
+    <div style="position:absolute; left:30%; top:10%;"><button onclick="getimages('./single.html/movie/?id=')">提交</button></div>
 </body>
 
 </html>

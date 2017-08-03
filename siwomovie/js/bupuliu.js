@@ -1,11 +1,15 @@
-$(window).load(function() {
+$(document).ready(function() {
+    getallmovies(); ///ajax.js
     goTop();
-    getimages();
+    addColor();
+    getfilter();
 });
 
-function getimages() {
+//ajax
+function getimages(id) { ///增加数据到页面上面
     let html = '';
-    html += "<div class='get1'><a href='./single.html'>";
+    console.log(id);
+    html += "<div class='get1'><a target=\"_blank\" href=" + `${id}` + '>';
     // Image tag (preview in Wookmark are 200px wide, so we calculate the height based on that).
     html += '<img src="images/1.jpg">';
     // Image title.
