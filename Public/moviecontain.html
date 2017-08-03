@@ -35,7 +35,7 @@
                 </ul>
                 <div class="navbar-form navbar-right">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="搜索电影">
+                        <input type="text" class="form-control" placeholder="搜索电影" name="textarea">
                     </div>
                     <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
                 </div>
@@ -58,8 +58,10 @@
                             <h2 class="gyf-directors text-info"></h2>
                             <h2 class="gyf-score text-danger"></h2>
                             <h2 class="gyf-comment text-muted"></h2>
-                            <span class="gyf-casts text-muted"></span>
+                            <div class="gyf-casts text-muted"></div>
+                            <button type="button" class="btn btn-primary">点击观看(Play)</button>
                         </div>
+
                     </div>
                     <br/>
                     <div class="row">
@@ -78,7 +80,18 @@
 
                         </div>
                     </div>
+                    <form id="form">
+                        <div class="form-group">
+                            <textarea class="form-control" rows="3" id="text"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-10 col-sm-10">
+                                <button type="submit" class="btn btn-default" id="commentBottom">提交</button>
+                            </div>
+                        </div>
+                    </form>
             </div>
+
         </div>
     </div>
 </section>

@@ -43,4 +43,19 @@ function onfourth() {
         }
     });
 }
+$('#commentBottom').on('click',function () {
+    let datas={};
+    datas.userid=$('#username').text();
+    datas.content=$('#text').value();
+    datas.moviename=$('.panel-heading-title').text();
+    $.axios({
+        type:'POST',
+        url:'/commentstorage',
+        dataType:'json',
+        data:datas,
+        success:function (resp) {
+            alert('提交成功');
+        }
+    });
+});
 
