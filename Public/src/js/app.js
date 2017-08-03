@@ -21,6 +21,11 @@ axios.get('/allClassify').then(function (ans) {
         // str+= `<li role="presentation"><a href="#">${ans.data[i].commentcontent}</a></li>`
     }
     $('#ttx-comment-first').after(str);
+    let str2='';
+    for(let i = 0; i<ans.data.length;i++){
+        str2+= `<option role="presentation"><a href="#">${ans.data[i].commentcontent}</a></option>`
+    }
+    $('.cr-search-select').append(str2);
 });
 $('.yhx-login').on('click',function () {
     let str = `<div class="form-group">
@@ -90,3 +95,7 @@ $(document).ready(function () {
         $(this).siblings().removeClass();
     });
 });
+function searchMovie() {
+    let moviename=$('#moviename');
+    let comment=$('#comment');
+}
