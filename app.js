@@ -12,7 +12,7 @@ let app = express();
 
 //数据库驱动
 const orm = require('orm');
-app.use(orm.express("sqlite:///home/llr/db/movies.db", {
+app.use(orm.express("sqlite:///home/lifeng/db/movies.db", {
     define: function (db, models, next) {
         models.Movies = db.define('movie', {
             id : Number,
