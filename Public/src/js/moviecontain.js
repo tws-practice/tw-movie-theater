@@ -22,12 +22,11 @@ function searchMovie() {
     let comment=$('#comment');
 }
 function comment() {
-    axios.post('/getComment',{id:myurl[1]})
-        .then(function (response) {
-            console.log(response);
-            response=JSON.parse(response);
-            response.forEach(function (value) {
-                all[i]=`<div class='comment_item' id=${i.toString()}>
+    $.post('/getComment',{id:myurl[1]},function (response) {
+        console.log(response);
+        response=JSON.parse(response);
+        response.forEach(function (value) {
+            all[i]=`<div class='comment_item' id=${i.toString()}>
                        <div class="comment_user" id=${i.toString()}+'user'>
                        value.name
                        </div>
@@ -38,13 +37,33 @@ function comment() {
                        value.content
                        </div>
                 </div>`;
-                i++;
-            });
-            $('#gyf_third').append(all);
-        })
-        .catch(function (error) {
-            console.log(error);
+            i++;
         });
+        $('#gyf_third').append(all);
+    });
+    // axios.post('/getComment',{id:myurl[1]})
+    //     .then(function (response) {
+    //         console.log(response);
+    //         response=JSON.parse(response);
+    //         response.forEach(function (value) {
+    //             all[i]=`<div class='comment_item' id=${i.toString()}>
+    //                    <div class="comment_user" id=${i.toString()}+'user'>
+    //                    value.name
+    //                    </div>
+    //                    <div class="comment_date" id=${i.toString()}+'date'>
+    //                    value.date
+    //                    </div>
+    //                    <div class="coment_content" id=${i.toString()}+'content'>
+    //                    value.content
+    //                    </div>
+    //             </div>`;
+    //             i++;
+    //         });
+    //         $('#gyf_third').append(all);
+    //     })
+    //     .catch(function (error) {
+    //         console.log(error);
+    //     });
 }
 function onfourth() {
     $.get('/movieDetails',{movieType:$(`movieType`)},function(data){
@@ -60,15 +79,18 @@ $('#commentBottom').on('click',function () {
     datas.userid=$('#username').text();
     datas.content=$('#text').value();
     datas.moviename=$('.panel-heading-title').text();
-    $.post({
-        type:'POST',
-        url:'/commentstorage',
-        dataType:'json',
-        data:datas,
-        success:function (resp) {
-            alert('提交成功');
-        }
+    $.post('/commentstorage',datas,function (ans) {
+        alert('提交成功');
     });
+    // $.axios({
+    //     type:'POST',
+    //     url:'/commentstorage',
+    //     dataType:'json',
+    //     data:datas,
+    //     success:function (resp) {
+    //
+    //     }
+    // });
 });
 $('.yhx-login').on('click',function () {
     let str = `<div class="form-group">
