@@ -1,11 +1,34 @@
 "use strict";
 define(function (require, exports, module) {
+    let service = require('./service');
     let masterPage = {
         html:{
             content:$('.content')
         },
+        ajax:{
+            getAllGenreData : function () {
+                let allGenreData = [];
+                $.ajaxSetup({async: false});
+                $.get(service.Genre.getAllGenre(),function (data,status) {
+                    if(data.success&&status===200){
+                        allGenreData = data.data;
+                    }
+                });
+                $.ajaxSetup({async: true});
+                return allGenreData;
+            },
+
+        },
         render:{
-            listContent:function(data){
+            init:function () {
+                masterPage.render.navContent();
+                masterPage.render.listContent();
+            },
+            navContent : function () {
+                let allGenreData = masterPage.ajax.getAllGenreData();
+                console.log(allGenreData);
+            },
+            listContent : function(data){
                 let tplData = data || {};
                 let html = template('tplMain',tplData);
                 masterPage.html.content.html(html);
@@ -27,8 +50,11 @@ define(function (require, exports, module) {
                 })
             }
         },
+        fun:{
+
+        },
         init:function(){
-            masterPage.render.listContent();
+            masterPage.render.init();
             masterPage.control.init();
         }
     };

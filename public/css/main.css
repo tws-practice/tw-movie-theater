@@ -35,3 +35,13 @@
 .pageNation{
     text-align: center;
 }
+
+/*轮播*/
+.carousel-inner div{
+    height: 300px;
+}
+.carousel-inner div img{
+    width: 80%;
+    height: 300px!important;
+    margin: auto
+}
