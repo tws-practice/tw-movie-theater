@@ -2,7 +2,11 @@
 曹容
 */
 .cr-header .navbar{
-    border-radius: 0px;
+    border-radius: 0;
+}
+.cr-search-select{
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 /*
 杨涵轩
@@ -130,3 +134,7 @@
         width: 400px;
     }
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0a062edbe9af930cd0ddcca58ad8320a7ca368ba

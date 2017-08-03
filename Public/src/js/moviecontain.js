@@ -10,6 +10,20 @@ axios.get('/getMovie/'+myurl[1]).then(function (ans) {
     $('.gyf-detail').html(`  `+ans.data[0].detail);
     $('.gyf-origin_title').html(`原著名称：`+ans.data[0].origin_title);
 });
+<<<<<<< HEAD
+=======
+axios.get('/allClassify').then(function (ans) {
+    let str2='';
+    for(let i = 0; i<ans.data.length;i++){
+        str2+= `<option role="presentation"><a href="#">${ans.data[i].commentcontent}</a></option>`
+    }
+    $('.cr-search-select').append(str2);
+});
+function searchMovie() {
+    let moviename=$('#moviename');
+    let comment=$('#comment');
+}
+>>>>>>> 0a062edbe9af930cd0ddcca58ad8320a7ca368ba
 function comment() {
     axios.post('/getComment',{id:myurl[1]})
         .then(function (response) {
@@ -60,7 +74,11 @@ $('#commentBottom').on('click',function () {
     });
 });
 
+<<<<<<< HEAD
 function play(){
     
 }
+=======
+
+>>>>>>> 0a062edbe9af930cd0ddcca58ad8320a7ca368ba
 
