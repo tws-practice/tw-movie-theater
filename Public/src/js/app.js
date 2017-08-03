@@ -15,9 +15,6 @@ axios.get('/allClassify').then(function (ans) {
     }
     $('#ttx-comment-first').after(str);
 });
-
-
-
 $(document).ready(function () {
     $("body").on("click", '.myallcategory>li', function(){
         $(this)[0].className = 'active';
