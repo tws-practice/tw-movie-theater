@@ -13,7 +13,8 @@ function Totop() {
     $("#gotop").on('click', function(e) {
         $('body,html').animate({ scrollTop: 0 }, 100);
     });
-    goTop(); //实现回到顶部的样式
+    goTop();
+    //实现回到顶部的样式
 }
 $(function() {
     $("#slider").responsiveSlides({
