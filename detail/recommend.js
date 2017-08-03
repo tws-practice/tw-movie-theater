@@ -108,6 +108,20 @@ const movies=[
         "genre_id": 27
     },
     {
+        "id": 1044,
+        "alt": "https://movie.douban.com/subject/1306249/",
+        "year": 1993,
+        "title": "唐伯虎点秋香",
+        "rating": "8.4",
+        "original_title": "唐伯虎點秋香",
+        "directors": "李力持",
+        "casts": "周星驰,巩俐,陈百祥",
+        "image": "https://img3.doubanio.com/view/movie_poster_cover/spst/public/p1946455272.jpg",
+        "name": "运动",
+        "movie_id": 1306249,
+        "genre_id": 27
+    },
+    {
         "id": 1126,
         "alt": "https://movie.douban.com/subject/1303394/",
         "year": 1993,
