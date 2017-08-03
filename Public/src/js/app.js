@@ -18,7 +18,6 @@ axios.get('/allClassify').then(function (ans) {
     let str = '';
     for(let i = 0; i<ans.data.length;i++){
             str+=`<span class="label" role="presentation" style="display: inline-block"><a href="#">${ans.data[i].commentcontent}</a></span>`
-        // str+= `<li role="presentation"><a href="#">${ans.data[i].commentcontent}</a></li>`
     }
     $('#ttx-comment-first').after(str);
     let str2='';
@@ -58,21 +57,10 @@ $('.yhx-signin').on('click',function () {
     <input type="text" class="form-control" id="exampleInputName2" placeholder="账号">
     </div>
     <div class="form-group">
-    <!--<label for="exampleInputNa">姓名</label>
-    <input type="text" class="form-control" id="exampleInputNa" placeholder="姓名">
-    </div>-->
     <div class="form-group">
     <label for="exampleInputPassword2">密码</label>
     <input type="password" class="form-control" id="exampleInputPassword2" placeholder="密码">
-    </div>
-    <!--<div class="form-group">
-    <label for="exampleInputCePassword2">确认密码</label>
-    <input type="password" class="form-control" id="exampleInputCePassword2" placeholder="确认密码">
-    </div>
-    <div class="form-group">
-    <label for="exampleInputPassword2">详细信息</label>
-    <input type="text" class="form-control" id="exampleInputDetails" placeholder="详细介绍">
-    </div>-->`;
+    </div>`;
     bootbox.confirm({
         title: "注册账号",
         message: str,

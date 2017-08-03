@@ -70,6 +70,57 @@ $('#commentBottom').on('click',function () {
         }
     });
 });
+$('.yhx-login').on('click',function () {
+    let str = `<div class="form-group">
+    <label for="exampleInputName1">账号</label>
+    <input type="text" class="form-control" id="exampleInputName1" placeholder="账号">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">密码</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="密码">
+  </div>`;
+    bootbox.confirm({
+        title: "用户登录",
+        message: str,
+        buttons: {
+            cancel: {
+                label: '<i class="fa fa-times"></i> 取消'
+            },
+            confirm: {
+                label: '<i class="fa fa-check"></i> 确认'
+            }
+        },
+        callback: function (result) {
+            console.log('This was logged in the callback: ' + result);
+        }
+    });
+});
+$('.yhx-signin').on('click',function () {
+    let str = `<div class="form-group">
+    <label for="exampleInputName2">账号</label>
+    <input type="text" class="form-control" id="exampleInputName2" placeholder="账号">
+    </div>
+    <div class="form-group">
+    <div class="form-group">
+    <label for="exampleInputPassword2">密码</label>
+    <input type="password" class="form-control" id="exampleInputPassword2" placeholder="密码">
+    </div>`;
+    bootbox.confirm({
+        title: "注册账号",
+        message: str,
+        buttons: {
+            cancel: {
+                label: '<i class="fa fa-times"></i> 取消注册'
+            },
+            confirm: {
+                label: '<i class="fa fa-check"></i> 确认注册'
+            }
+        },
+        callback: function (result) {
+            console.log('This was logged in the callback: ' + result);
+        }
+    });
+});
 
 
 

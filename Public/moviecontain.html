@@ -10,6 +10,7 @@
     <script src="./src/js/bootstrap.min.js"></script>
     <script src="./src/js/axios.min.js"></script>
     <link rel="stylesheet" href="src/css/main.css">
+    <script src="./src/js/bootbox.min.js"></script>
     <title>电影详情</title>
 </head>
 <body>
@@ -30,12 +31,13 @@
                 <ul class="nav navbar-nav">
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">登录</a></li>
-                    <li><a href="#">注册</a></li>
+                    <li><a class="yhx-login" href="#">登录</a></li>
+                    <li><a class="yhx-signin" href="#">注册</a></li>
                 </ul>
                 <div class="navbar-form navbar-right">
                     <div class="form-group">
-                        <select class="form-control cr-search-select " id="comment">
+                        <select class="form-control cr-search-select " id="comment" >
+                            <option role="presentation"><a href="#">全部电影</a></option>
                         </select>
                         <input type="text" class="form-control" placeholder="搜索电影" id="moviename">
                     </div>
