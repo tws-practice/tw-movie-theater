@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="src/css/bootstrap.min.css">
+    <script src="./src/js/jquery-3.2.1.min.js"></script>
+    <script src="./src/js/bootstrap.min.js"></script>
+    <script src="./src/js/axios.min.js"></script>
+    <link rel="stylesheet" href="src/css/main.css">
+    <title>电影详情</title>
+</head>
+<body>
+<header class="cr-header">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                        aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">无组的小影屋</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">登录</a></li>
+                    <li><a href="#">注册</a></li>
+                </ul>
+                <div class="navbar-form navbar-right">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="搜索电影">
+                    </div>
+                    <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<section>
+    <div class="container">
+        <div class="panel panel-danger">
+            <div class="panel-heading gyf-panel-title"><h2 class="panel-heading-title"></h2></div>
+            <div class="panel-body">
+                <div class="gyf-my">
+                    <div class="row">
+                        <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1  col-sm-3  col-xs-12 gyf-movie-photo">
+                            <img class="movie-img img-thumbnail center-block" width="auto" height="auto" src="#" >
+                        </div>
+                        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                            <h2 class="gyf-origin_title text-info"></h2>
+                            <h2 class="gyf-directors text-info"></h2>
+                            <h2 class="gyf-score text-danger"></h2>
+                            <h2 class="gyf-comment text-muted"></h2>
+                            <span class="gyf-casts text-muted"></span>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="row">
+                            <div class="alert alert-info" role="alert">
+                                <h3>影片简介</h3>
+                                <p class="gyf-detail"></p>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+<script src="src/js/moviecontain.js"></script>
+</html>
