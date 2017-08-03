@@ -11,8 +11,9 @@ axios.get('/getMovie/'+myurl[1]).then(function (ans) {
     $('.gyf-origin_title').html(`原著名称：`+ans.data[0].origin_title);
 });
 function comment() {
-    $axios.post('/getComment')
+    axios.post('/getComment',{id:myurl[1]})
         .then(function (response) {
+            console.log(response);
             response=JSON.parse(response);
             response.forEach(function (value) {
                 all[i]=`<div class='comment_item' id=${i.toString()}>
@@ -58,4 +59,8 @@ $('#commentBottom').on('click',function () {
         }
     });
 });
+
+function play(){
+    
+}
 

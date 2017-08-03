@@ -120,12 +120,21 @@ app.post('/allMovies',function (req,res) {
 /*得到这个电影所有的影评  Ok*/
 app.post("/getComment",urlencodedParser, function (req, res) {
     //查找评论的电影的ID,T_movie 中id的类型是String
+<<<<<<< HEAD
     let movieid=req.body.movieid;
     req.models.T_comment.find({movieid:parseInt(movieid)}, function (err, comments) {
         if (err) throw err;
         /*已经找到所有的评论，存在comments里*/
         for (let i=0;i<comments.length;i++){
             req.models.T_user.find({id:parseInt(comments[i].userid)},function (err,people) {
+=======
+    let movieid=req.body.id;
+    req.models.T_comment.find({movieid:movieid}, function (err, comments) {
+        if (err) throw err;
+        /*已经找到所有的评论，存在comments里*/
+        for (let i=0;i<comments.length;i++){
+            req.models.T_user.find({id:comments[i].userid},function (err,people) {
+>>>>>>> add
                 /*在评论里加一个用户名属性*/
                 /*因为comments[i]是一个可操作的对象*/
                 /*但是数据库中没有存username*/
@@ -135,6 +144,7 @@ app.post("/getComment",urlencodedParser, function (req, res) {
                     res.send(comments);
                 }
             });
+<<<<<<< HEAD
         }
     });
 });
@@ -201,6 +211,15 @@ let server = app.listen(8081, function () {
 
 });
 
+=======
+
+        }
+
+
+    });
+});
+
+>>>>>>> add
 /*将信息初始化*/
 app.get("/init",urlencodedParser, function (req, res) {
 
