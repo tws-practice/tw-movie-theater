@@ -11,7 +11,8 @@ axios.post('/allMovies').then(function (ans) {
 axios.get('/allClassify').then(function (ans) {
     let str = '';
     for(let i = 0; i<ans.data.length;i++){
-        str+= `<li role="presentation"><a href="#">${ans.data[i].commentcontent}</a></li>`
+            str+=`<span class="label" role="presentation" style="display: inline-block"><a href="#">${ans.data[i].commentcontent}</a></span>`
+        // str+= `<li role="presentation"><a href="#">${ans.data[i].commentcontent}</a></li>`
     }
     $('#ttx-comment-first').after(str);
 });
