@@ -47,6 +47,9 @@
 /*
 童天相
 */
+.ttx-movie a{
+    cursor:pointer;
+}
 .myttx{
     padding: 0 20px;
 }
