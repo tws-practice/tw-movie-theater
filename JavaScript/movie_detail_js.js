@@ -28,9 +28,11 @@ $("#search_btn").click(function () {
         time.innerHTML=movieInfo[0].Time;
         let words=document.getElementById("introduction-words");
         words.innerHTML=movieInfo[0].Introduction;
+        let score=document.getElementById("score");
+        score.innerHTML=`<h4>豆瓣评分:</h4>
+        <div id="scores"></div>`;
         let scores=document.getElementById("scores");
         scores.innerHTML=movieInfo[0].MovieGrade;
-        let score=document.getElementById("score");
         let star=parseInt(movieInfo[0].MovieGrade/2);
         for(let i=0;i<star;i++){
             let span=document.createElement("span");

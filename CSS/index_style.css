@@ -40,6 +40,11 @@ table td img{
     height: 210px;
     margin: 10px 0;
 }
+.max_img{
+    width: 170px;
+    height: 230px;
+    margin: 10px 0;
+}
 .name{
     font-size: 16px;
     font-weight: 500;
