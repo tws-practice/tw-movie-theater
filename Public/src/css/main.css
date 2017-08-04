@@ -21,15 +21,17 @@
 }
 .yhx-left-tag{
     padding:  0 25px 25px 25px;
+    background-color: white;
 }
 .yhx-left-tag-contain{
-
 }
 .yhx-left-tag-contain a{
     text-decoration: none;
     line-height: 20px;
-    font-size: 12px;
+    font-size: 14px;
     margin: 2px;
+    color:#6e6568;
+    font-weight: 300;
 }
 .ysj-lable-active a{
     color: white;

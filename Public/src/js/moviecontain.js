@@ -17,10 +17,6 @@ axios.get('/allClassify').then(function (ans) {
     }
     $('.cr-search-select').append(str2);
 });
-function searchMovie() {
-    let moviename=$('#moviename');
-    let comment=$('#comment');
-}
 function comment() {
     $.post('/getComment',{id:myurl[1]},function (response) {
         console.log(response);
