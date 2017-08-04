@@ -13,7 +13,7 @@
     <script src="./src/js/bootbox.min.js"></script>
     <title>电影详情</title>
 </head>
-<body>
+<body onload="comment()">
 <header class="cr-header">
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
@@ -69,17 +69,14 @@
                         <br/>
                         <div class="row myttx">
                             <div class="alert alert-info" role="alert">
-                                <h3>影片简介</h3>
+                                <h3>影片简介<button class="btn btn-primary yhx-movie-btn">在线播放 <span class="glyphicon glyphicon-hd-video"></span></button>
+                                </h3>
+
                                 <p class="gyf-detail"></p>
                             </div>
                         </div>
                         <div class="row myttx">
-                            <div class="alert alert-info" role="alert" onload="comment()" id="gyf_third">
-
-                            </div>
-                        </div>
-                        <div class="row myttx" >
-                            <div class="alert alert-info" role="alert" onload="onfourth()" id="Cui-movie">
+                            <div class="alert alert-info" role="alert"  id="gyf_third">
 
                             </div>
                         </div>
@@ -93,6 +90,8 @@
                                 </div>
                             </div>
                         </form>
+                            <div class="alert alert-info row" role="alert" onload="onfourth()" id="Cui-movie">
+                                </div>
                     </div>
                 </div>
 

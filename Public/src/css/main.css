@@ -22,8 +22,8 @@
 .yhx-left-tag{
     padding:  0 25px 25px 25px;
 }
-.yhx-left-tag-contain{
-
+.yhx-movie-btn{
+    margin: 0 20px;
 }
 .yhx-left-tag-contain a{
     text-decoration: none;
@@ -126,6 +126,10 @@
 .comment_content{
     clear: both;
     margin-top: 2px;
+}
+#gyf_third{
+    max-height: 214px;
+    overflow: scroll;
 }
 #Cui-image a {
     text-align: center;
