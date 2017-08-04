@@ -122,18 +122,31 @@
     margin: 2px;
     border-bottom: solid;
     border-width: thin;
-    padding-bottom: 2px;
+    padding-bottom: 5px;
+    padding-top:5px;
+}
+.comment_user{
+    margin-bottom: 5px;
+    font-size:18px;
+    font-family:楷体;
 }
 .comment_date{
     float:right;
 }
 .comment_content{
     clear: both;
-    margin-top: 2px;
+    margin-bottom: 3px;
+}
+#gyf_gundong{
+    overflow: hidden;
 }
 #gyf_third{
     max-height: 214px;
-    overflow: scroll;
+    overflow-x:hidden ;
+    overflow-y: scroll;
+}
+#gyf_third::-webkit-scrollbar{
+    display: none;
 }
 #Cui-image a {
     text-align: center;
