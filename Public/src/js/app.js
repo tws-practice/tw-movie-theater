@@ -213,7 +213,3 @@ $(document).ready(function () {
         alert($(this).html());
     })
 });
-function searchMovie() {
-    let moviename=$('#moviename');
-    let comment=$('#comment');
-}

@@ -18,11 +18,6 @@ axios.get('/allClassify').then(function (ans) {
     $('.cr-search-select').append(str2);
 });
 
-function searchMovie() {
-    let moviename = $('#moviename');
-    let comment = $('#comment');
-}
-
 function comment() {
     let all = [], i = 0;
     $.post('/getComment', { movieid: myurl[1] }, function (response) {
