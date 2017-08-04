@@ -69,10 +69,6 @@ function displayInfo(movies, num) {
             span.innerHTML="豆瓣评分:"+movies[i*4+count].MovieGrade+"   ";
             a.appendChild(img);
             a.style.cursor="pointer";
-            img.onmouseover=()=>{
-                this.style.width="170px";
-                this.style.height="230px";
-            };
             td.appendChild(a);
             td.appendChild(div);
             td.appendChild(span);
@@ -93,4 +89,14 @@ function displayInfo(movies, num) {
         table.appendChild(tr);
     }
 }
+
+window.onload= function() {
+    let imgs=document.getElementsByTagName("img");
+    for(let i=0;i<imgs.length;i++){
+        imgs[i].onmouseover=function () {
+            // this.setAttribute("class", "max_img");
+            this.style.display="none";
+        };
+    }
+};
 
