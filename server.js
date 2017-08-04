@@ -187,15 +187,17 @@ app.post("/commentstorage",urlencodedParser,function (req,res) {
 app.get('/login', function (req, res) {
     let username = req.query.username;
     let password = req.query.password;
-    req.models.T_users.find({name: username, pasword: password}, function (err, reply) {
+    req.models.T_users.exists({name: username, pasword: password}, function (err, exists) {
         if (err) {
             console.log('error!');
             throw err;
         }
-        if (reply[0]) {
+        if (exists) {
             console.log('true');
+            res.send('correct');
         }else{
             console.log('false');
+            res.send('incorrect');
         }
     });
 });
