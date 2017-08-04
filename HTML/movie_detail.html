@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="referrer" content="no-referrer" />
+    <meta name="referrer" content="unsafe-url" />
+    <meta name="referrer" content="origin" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <meta name="referrer" content="origin-when-cross-origin" />
+
+    <title>电影详情页面</title>
+    <link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../CSS/movie_detail_style.css">
+</head>
+<body data-spy="scroll" data-target="#navbar">
+
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" id="navbar">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <span title="返回首页"><a class="navbar-brand" href="http://localhost:3000/index">Group Six</a></span>
+            </div>
+
+                <ul class="nav navbar-nav">
+                    <li><a href="#time">剧情简介</a></li>
+                    <li><a href="#introduction-words">短评</a></li>
+                    <li><a href="#like">相似推荐</a></li>
+                </ul>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div class="navbar-form navbar-right">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="search_input" placeholder="搜索电影名">
+                    </div>
+                    <input type="submit" class="btn btn-default" value="搜索" id="search_btn">
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">可能用上</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">可能用上<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+    <article>
+        <section id="header">
+            <h2 class="movie_name"></h2>
+            <div id="cover">
+                <img id="movie_img">
+            </div>
+            <div id="detail">
+                <h4><strong>导演: </strong><span id="director"></span></h4>
+                <h4><strong>编剧: </strong><span id="writers"></span></h4>
+                <h4><strong>主演: </strong><span id="stars"></span></h4>
+                <h4><strong>类型: </strong><span id="type"></span></h4>
+                <h4><strong>制片国家/地区: </strong><span id="areas"></span></h4>
+                <h4><strong>语言: </strong><span id="language"></span></h4>
+                <h4><strong>上映日期: </strong><span id="release_data"></span></h4>
+                <h4><strong>时长: </strong><span id="time"></span></h4>
+            </div>
+            <div id="score">
+                <h4>豆瓣评分:</h4>
+                <div id="scores"></div>
+            </div>
+        </section>
+        <hr>
+        <section id="introduction">
+            <h4 id="introduction-name" class="title"><span class="movie_name"></span>的剧情简介: </h4>
+            <div id="introduction-words" class="words">
+            </div>
+        </section>
+        <hr id>
+        <section id="comments">
+            <h4 id="comments-name" class="title"><span class="movie_name"></span>的短评:</h4>
+            <div id="comments-words">
+                <p>[用户名]</p>
+                <div class="words">
+                </div>
+            </div>
+        </section>
+        <hr>
+        <section id="like">
+            <h4 id="like-name" class="title">喜欢<span class="movie_name"></span>的人还喜欢:</h4>
+            <div>
+                <table id="similar-movies">
+                    <tbody>
+                    <tr id="similar-movies-info">
+
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </article>
+
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="../JavaScript/movie_detail_js.js"></script>
+</body>
+</html>

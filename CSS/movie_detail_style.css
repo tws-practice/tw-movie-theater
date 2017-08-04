@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+article{
+    width: calc(100% - 120px);
+    margin: 0 30px;
+    padding: 10px 30px;
+}
+nav{
+    padding: 0 0 0 25px;
+}
+section{
+    margin: 35px auto;
+    width: calc(100% - 40px);
+}
+#header{
+    margin-top: 65px;
+    height: 360px;
+}
+#header h2{
+    font-size: 26px;
+}
+
+.title{
+    font-size: 18px;
+    color: #000;
+}
+.words{
+    padding: 0 10px;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+#like{
+    height: 300px;
+}
+
+#cover{
+    margin: 10px 5% 0 0;
+    width: 20%;
+    float: left;
+    height: 300px;
+}
+#cover img{
+    width: 100%;
+    height: 100%;
+}
+#detail{
+    margin-top: 8px;
+    margin-right: 10%;
+    width: 40%;
+    float: left;
+    height: 300px;
+}
+#detail h4{
+    margin: 10px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+}
+#score{
+    margin-top: 10px;
+    width: 25%;
+    float: left;
+    height: 300px;
+}
+#similar-movies img{
+    width: 140px;
+    height: 200px;
+    margin: 10px 15px 0 15px;
+}
+#similar-movies td{
+    text-align: center;
+}
+.similar-movies-name{
+    font-size: 14px;
+    color: #3c3c3c;
+}
