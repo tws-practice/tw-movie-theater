@@ -1,6 +1,5 @@
 let myurl = window.location.href.split("?id=");
 axios.get('/getMovie/' + myurl[1]).then(function (ans) {
-    console.log(ans.data[0]);
     $('.panel-heading-title').html(ans.data[0].name + `<small>(${ans.data[0].release})</small>`);
     $('.movie-img').attr('src', ans.data[0].movieimg);
     $('.gyf-directors').html(`导演：` + ans.data[0].directors);
@@ -21,7 +20,6 @@ axios.get('/allClassify').then(function (ans) {
 function comment() {
     let all = [], i = 0;
     $.post('/getComment', { movieid: myurl[1] }, function (response) {
-        console.log(response);
         response = JSON.parse(response);
         response.forEach(function (value) {
             all[i] = `<div class='comment_item' id=${i.toString()}>
@@ -49,16 +47,14 @@ $(document).ready(function () {
         });
     });
     function onfourth() {
-        var movieType = $('.gyf-comment').html();
-        var movieSug = movieType.split('：')[1].split(',')[0];
-        console.log(movieSug)
-
+        let movieType = $('.gyf-comment').html();
+        let movieSug = movieType.split('：')[1].split(',')[0];
         $.post('/classMovies', { comment: movieSug }, function (ans) {
-            var add = '';
+            let add = '';
             for (let i = 0; i < 4; i++) {
                 add += `<div class="col-md-3">
-                                <a href="#" class="thumbnail">
-                                    <img src="${ans[i].movieimg}" alt="${ans[i].name}" class="Cui-image"/>
+                                <a href="moviecontain.html?id=${ans[i].id}">
+                                    <img src="${ans[i].movieimg}" alt="${ans[i].name}" class="center-block Cui-image"/>
                                     <p style="text-align: center">${ans[i].name}</p>
                                 </a>
                        </div>`
