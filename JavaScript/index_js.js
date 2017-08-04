@@ -94,8 +94,10 @@ window.onload= function() {
     let imgs=document.getElementsByTagName("img");
     for(let i=0;i<imgs.length;i++){
         imgs[i].onmouseover=function () {
-            // this.setAttribute("class", "max_img");
-            this.style.display="none";
+            this.s
+        };
+        imgs[i].onmouseout=function () {
+            this.setAttribute("class", "");
         };
     }
 };
