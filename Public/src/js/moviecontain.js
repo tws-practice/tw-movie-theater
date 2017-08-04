@@ -1,40 +1,43 @@
 let myurl = window.location.href.split("?id=");
-axios.get('/getMovie/'+myurl[1]).then(function (ans) {
+axios.get('/getMovie/' + myurl[1]).then(function (ans) {
     console.log(ans.data[0]);
-    $('.panel-heading-title').html(ans.data[0].name+`<small>(${ans.data[0].release})</small>`);
-    $('.movie-img').attr('src',ans.data[0].movieimg);
-    $('.gyf-directors').html(`导演：`+ans.data[0].directors);
-    $('.gyf-score').html(`评分：`+ans.data[0].score);
-    $('.gyf-comment').html(`所属类别：`+ans.data[0].comment);
-    $('.gyf-casts').html(`主演：`+ans.data[0].casts);
-    $('.gyf-detail').html(`  `+ans.data[0].detail);
-    $('.gyf-origin_title').html(`原著名称：`+ans.data[0].origin_title);
+    $('.panel-heading-title').html(ans.data[0].name + `<small>(${ans.data[0].release})</small>`);
+    $('.movie-img').attr('src', ans.data[0].movieimg);
+    $('.gyf-directors').html(`导演：` + ans.data[0].directors);
+    $('.gyf-score').html(`评分：` + ans.data[0].score);
+    $('.gyf-comment').html(`所属类别：` + ans.data[0].comment);
+    $('.gyf-casts').html(`主演：` + ans.data[0].casts);
+    $('.gyf-detail').html(`  ` + ans.data[0].detail);
+    $('.gyf-origin_title').html(`原著名称：` + ans.data[0].origin_title);
 });
 axios.get('/allClassify').then(function (ans) {
-    let str2='';
-    for(let i = 0; i<ans.data.length;i++){
-        str2+= `<option role="presentation"><a href="#">${ans.data[i].commentcontent}</a></option>`
+    let str2 = '';
+    for (let i = 0; i < ans.data.length; i++) {
+        str2 += `<option role="presentation"><a href="#">${ans.data[i].commentcontent}</a></option>`
     }
     $('.cr-search-select').append(str2);
 });
+
 function searchMovie() {
-    let moviename=$('#moviename');
-    let comment=$('#comment');
+    let moviename = $('#moviename');
+    let comment = $('#comment');
 }
+
 function comment() {
-    $.post('/getComment',{id:myurl[1]},function (response) {
+    let all = [], i = 0;
+    $.post('/getComment', {movieid: myurl[1]}, function (response) {
         console.log(response);
-        response=JSON.parse(response);
+        response = JSON.parse(response);
         response.forEach(function (value) {
-            all[i]=`<div class='comment_item' id=${i.toString()}>
+            all[i] = `<div class='comment_item' id=${i.toString()}>
                        <div class="comment_user" id=${i.toString()}+'user'>
-                       value.name
+                       ${value.username}
                        </div>
                        <div class="comment_date" id=${i.toString()}+'date'>
-                       value.date
+                       ${value.date}
                        </div>
                        <div class="coment_content" id=${i.toString()}+'content'>
-                       value.content
+                       ${value.content}
                        </div>
                 </div>`;
             i++;
@@ -85,13 +88,14 @@ $(document).ready(function(){
     }
     onfourth();
 })
-
-$('#commentBottom').on('click',function () {
-    let datas={};
-    datas.userid=$('#username').text();
-    datas.content=$('#text').value();
-    datas.moviename=$('.panel-heading-title').text();
-    $.post('/commentstorage',datas,function (ans) {
+$('#commentBottom').on('click', function (e) {
+    e.preventDefault();
+    let datas = {};
+    datas.username = $('#username').val();
+    datas.content = $('#text').val();
+    datas.movieid =myurl[1];
+    // datas=JSON.stringify(datas);
+    $.post('/commentstorage', datas, function () {
         alert('提交成功');
     });
     // $.axios({
@@ -104,7 +108,7 @@ $('#commentBottom').on('click',function () {
     //     }
     // });
 });
-$('.yhx-login').on('click',function () {
+$('.yhx-login').on('click', function () {
     let str = `<div class="form-group">
     <label for="exampleInputName1">账号</label>
     <input type="text" class="form-control" id="exampleInputName1" placeholder="账号">
@@ -129,7 +133,7 @@ $('.yhx-login').on('click',function () {
         }
     });
 });
-$('.yhx-signin').on('click',function () {
+$('.yhx-signin').on('click', function () {
     let str = `<div class="form-group">
     <label for="exampleInputName2">账号</label>
     <input type="text" class="form-control" id="exampleInputName2" placeholder="账号">
@@ -156,13 +160,13 @@ $('.yhx-signin').on('click',function () {
     });
 });
 
-$('.cr-mysubmit').on('click',function () {
+$('.cr-mysubmit').on('click', function () {
     let myselect = $('.cr-search-select').find("option:selected").html();
-    let myinput  = $('.cr-myinput').val();
-    if(myinput){
-        if(myselect === '全部电影'){
-            $.post('/oneSearchResult',{moviename:myinput},function (ans) {
-                if(ans){
+    let myinput = $('.cr-myinput').val();
+    if (myinput) {
+        if (myselect === '全部电影') {
+            $.post('/oneSearchResult', {moviename: myinput}, function (ans) {
+                if (ans) {
                     let str = '';
                     for (let i = 0; i < ans.length; i++) {
                         str += '<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 ttx-movie">';
@@ -174,9 +178,9 @@ $('.cr-mysubmit').on('click',function () {
                     $(".ttx-search-contain").empty().append(str);
                 }
             });
-        }else {
-            $.post('/searchResult',{comment:myselect,moviename:myinput},function (ans) {
-                if(ans){
+        } else {
+            $.post('/searchResult', {comment: myselect, moviename: myinput}, function (ans) {
+                if (ans) {
                     let str = '';
                     for (let i = 0; i < ans.length; i++) {
                         str += '<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 ttx-movie">';
@@ -189,8 +193,8 @@ $('.cr-mysubmit').on('click',function () {
                 }
             });
         }
-    }else {
+    } else {
         return bootbox.alert("请填写电影名称!");
     }
-
 });
+
