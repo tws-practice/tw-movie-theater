@@ -140,8 +140,8 @@ $(document).ready(function () {
                        let str = '';
                        for (let i = 0; i < ans.length; i++) {
                            str += '<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 ttx-movie">';
-                           str += `<a onclick="myonclickhrf(${ans.data[i].id})"><img class="center-block ttx-movie-photo" src="${ans.data[i].movieimg}" width="65%" height="100%" alt=""></a>`;
-                           str += `<p class="ttx-movie-text"><a onclick="myonclickhrf(${ans.data[i].id})" >${ans.data[i].name}</a><strong>${ans.data[i].score}</strong></p>`;
+                           str += `<a onclick="myonclickhrf(${ans[i].id})"><img class="center-block ttx-movie-photo" src="${ans[i].movieimg}" width="65%" height="100%" alt=""></a>`;
+                           str += `<p class="ttx-movie-text"><a onclick="myonclickhrf(${ans[i].id})" >${ans.name}</a><strong>${ans[i].score}</strong></p>`;
                            str += `</div>`;
                        }
                        $(".ttx-movie-container").empty().append(str);
@@ -151,10 +151,10 @@ $(document).ready(function () {
                $.post('/searchResult',{comment:myselect,moviename:myinput},function (ans) {
                    if(ans){
                        let str = '';
-                       for (let i = 0; i < ans.length; i++) {
+                      for (let i = 0; i < ans.length; i++) {
                            str += '<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 ttx-movie">';
-                           str += `<a onclick="myonclickhrf(${ans.data[i].id})"><img class="center-block ttx-movie-photo" src="${ans.data[i].movieimg}" width="65%" height="100%" alt=""></a>`;
-                           str += `<p class="ttx-movie-text"><a onclick="myonclickhrf(${ans.data[i].id})" >${ans.data[i].name}</a><strong>${ans.data[i].score}</strong></p>`;
+                           str += `<a onclick="myonclickhrf(${ans[i].id})"><img class="center-block ttx-movie-photo" src="${ans[i].movieimg}" width="65%" height="100%" alt=""></a>`;
+                           str += `<p class="ttx-movie-text"><a onclick="myonclickhrf(${ans[i].id})" >${ans.name}</a><strong>${ans[i].score}</strong></p>`;
                            str += `</div>`;
                        }
                        $(".ttx-movie-container").empty().append(str);
@@ -201,11 +201,11 @@ $(document).ready(function () {
             $.post('/classMovies',{comment:myselect},function (ans) {
                 let str = '';
                 for (let i = 0; i < ans.length; i++) {
-                    str += '<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 ttx-movie">';
-                    str += `<a onclick="myonclickhrf(${ans.data[i].id})"><img class="center-block ttx-movie-photo" src="${ans.data[i].movieimg}" width="65%" height="100%" alt=""></a>`;
-                    str += `<p class="ttx-movie-text"><a onclick="myonclickhrf(${ans.data[i].id})" >${ans.data[i].name}</a><strong>${ans.data[i].score}</strong></p>`;
-                    str += `</div>`;
-                }
+                           str += '<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 ttx-movie">';
+                           str += `<a onclick="myonclickhrf(${ans[i].id})"><img class="center-block ttx-movie-photo" src="${ans[i].movieimg}" width="65%" height="100%" alt=""></a>`;
+                           str += `<p class="ttx-movie-text"><a onclick="myonclickhrf(${ans[i].id})" >${ans.name}</a><strong>${ans[i].score}</strong></p>`;
+                           str += `</div>`;
+                       }
                 $('.ttx-bread').html(` <li>全部影片</li><li class="active">${myselect}</li>`);
                 $(".ttx-movie-container").empty().append(str);
             })
