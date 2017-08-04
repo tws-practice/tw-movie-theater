@@ -25,7 +25,7 @@ function searchMovie() {
 
 function comment() {
     let all = [], i = 0;
-    $.post('/getComment', {movieid: myurl[1]}, function (response) {
+    $.post('/getComment', { movieid: myurl[1] }, function (response) {
         console.log(response);
         response = JSON.parse(response);
         response.forEach(function (value) {
@@ -44,39 +44,23 @@ function comment() {
         });
         $('#gyf_third').append(all);
     });
-    // axios.post('/getComment',{id:myurl[1]})
-    //     .then(function (response) {
-    //         console.log(response);
-    //         response=JSON.parse(response);
-    //         response.forEach(function (value) {
-    //             all[i]=`<div class='comment_item' id=${i.toString()}>
-    //                    <div class="comment_user" id=${i.toString()}+'user'>
-    //                    value.name
-    //                    </div>
-    //                    <div class="comment_date" id=${i.toString()}+'date'>
-    //                    value.date
-    //                    </div>
-    //                    <div class="coment_content" id=${i.toString()}+'content'>
-    //                    value.content
-    //                    </div>
-    //             </div>`;
-    //             i++;
-    //         });
-    //         $('#gyf_third').append(all);
-    //     })
-    //     .catch(function (error) {
-    //         console.log(error);
-    //     });
 }
-$(document).ready(function(){
+$(document).ready(function () {
+    $(".yhx-movie-btn").on('click', function () {
+        let str = '<embed src="https://imgcache.qq.com/tencentvideo_v1/playerv3/TPout.swf?max_age=86400&v=20161117&vid=e0024d8adt2&auto=0" allowFullScreen="true" quality="high" width="568" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>';
+        bootbox.dialog({
+            title: "观看影片",
+            message: str
+        });
+    });
     function onfourth() {
-        var movieType=$('.gyf-comment').html();
-        var movieSug=movieType.split('：')[1].split(',')[0];
+        var movieType = $('.gyf-comment').html();
+        var movieSug = movieType.split('：')[1].split(',')[0];
         console.log(movieSug)
-        $.post('/classMovies',{comment:movieSug},function(ans){
-            var add='';
-            for (let i=0;i<4;i++) {
-                add+=`<div class="col-md-3">
+        $.post('/classMovies', { comment: movieSug }, function (ans) {
+            var add = '';
+            for (let i = 0; i < 4; i++) {
+                add += `<div class="col-md-3">
                                 <a href="#" class="thumbnail">
                                     <img src="${ans[i].movieimg}" alt="${ans[i].name}" class="Cui-image"/>
                                     <p style="text-align: center">${ans[i].name}</p>
@@ -87,26 +71,17 @@ $(document).ready(function(){
         });
     }
     onfourth();
-})
+});
 $('#commentBottom').on('click', function (e) {
     e.preventDefault();
     let datas = {};
     datas.username = $('#username').val();
     datas.content = $('#text').val();
-    datas.movieid =myurl[1];
+    datas.movieid = myurl[1];
     // datas=JSON.stringify(datas);
     $.post('/commentstorage', datas, function () {
         alert('提交成功');
     });
-    // $.axios({
-    //     type:'POST',
-    //     url:'/commentstorage',
-    //     dataType:'json',
-    //     data:datas,
-    //     success:function (resp) {
-    //
-    //     }
-    // });
 });
 $('.yhx-login').on('click', function () {
     let str = `<div class="form-group">
@@ -165,7 +140,7 @@ $('.cr-mysubmit').on('click', function () {
     let myinput = $('.cr-myinput').val();
     if (myinput) {
         if (myselect === '全部电影') {
-            $.post('/oneSearchResult', {moviename: myinput}, function (ans) {
+            $.post('/oneSearchResult', { moviename: myinput }, function (ans) {
                 if (ans) {
                     let str = '';
                     for (let i = 0; i < ans.length; i++) {
@@ -179,7 +154,7 @@ $('.cr-mysubmit').on('click', function () {
                 }
             });
         } else {
-            $.post('/searchResult', {comment: myselect, moviename: myinput}, function (ans) {
+            $.post('/searchResult', { comment: myselect, moviename: myinput }, function (ans) {
                 if (ans) {
                     let str = '';
                     for (let i = 0; i < ans.length; i++) {
