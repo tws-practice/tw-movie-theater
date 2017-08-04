@@ -77,8 +77,8 @@ $(document).ready(function(){
             var add='';
             for (let i=0;i<4;i++) {
                 add+=`<div class="col-md-3">
-                                <a href="#" class="thumbnail">
-                                    <img src="${ans[i].movieimg}" alt="${ans[i].name}" class="Cui-image"/>
+                                <a href="#" style="text-align: center">
+                                    <img src="${ans[i].movieimg}" alt="${ans[i].name}" class="center-block Cui-image" />
                                     <p style="text-align: center">${ans[i].name}</p>
                                 </a>
                        </div>`
