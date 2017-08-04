@@ -52,6 +52,7 @@ $(document).ready(function () {
         var movieType = $('.gyf-comment').html();
         var movieSug = movieType.split('：')[1].split(',')[0];
         console.log(movieSug)
+
         $.post('/classMovies', { comment: movieSug }, function (ans) {
             var add = '';
             for (let i = 0; i < 4; i++) {
