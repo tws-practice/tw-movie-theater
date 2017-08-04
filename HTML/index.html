@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>主页</title>
+    <link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../CSS/index_style.css">
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse" id="navbar">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <span title="刷新"><a class="navbar-brand" href="#">Group Six</a></span>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="navbar-form navbar-right">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="search_input" placeholder="搜索电影名">
+                </div>
+                <input type="submit" class="btn btn-default" value="搜索" id="search_btn">
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">可能用上</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">可能用上<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+<section id="sidebar">
+    <ul class="nav nav-pills nav-stacked" id="myTab">
+    <li role="presentation" class="active"><a href="#recommend" data-toggle="tab"><span class="glyphicon glyphicon-fire"></span>推荐<span class="glyphicon glyphicon-fire"></a></li>
+    <li role="presentation"><a id="s-juqing" href="#juqing" data-toggle="tab">剧情</a></li>
+    <li role="presentation" id="s-aiqing"><a href="#aiqing" data-toggle="tab">爱情</a></li>
+    <li role="presentation"><a id="s-xiju" href="#xiju" data-toggle="tab">喜剧</a></li>
+    <li role="presentation"><a id="s-kehuan" href="#kehuan" data-toggle="tab">科幻</a></li>
+    <li role="presentation"><a id="s-dongzuo" href="#dongzuo" data-toggle="tab">动作</a></li>
+    <li role="presentation"><a id="s-xuanyi" href="#xuanyi" data-toggle="tab">悬疑</a></li>
+    <li role="presentation"><a id="s-kongbu" href="#kongbu" data-toggle="tab">恐怖</a></li>
+    <li role="presentation"><a id="s-qingchun" href="#qingchun" data-toggle="tab">青春</a></li>
+    <li role="presentation"><a id="s-lizhi" href="#lizhi" data-toggle="tab">励志</a></li>
+    <li role="presentation"><a id="s-zhanzheng" href="#zhanzheng" data-toggle="tab">战争</a></li>
+    </ul>
+</section>
+
+<section id="display" class="tab-content">
+    <div class="tab-pane fade in active" id="recommend">
+        <table>
+            <tr>
+                <td>
+                    <img src="../img/1.webp">
+                    <div class="name">这是电影名</div>
+                    <span class="score">豆瓣评分:</span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                </td>
+                <td>
+                    <img src="../img/2.webp">
+                    <div class="name">这是电影名</div>
+                    <span class="score">豆瓣评分:</span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </td>
+                <td>
+                    <img src="../img/3.webp">
+                    <div class="name">这是电影名</div>
+                    <span class="score">豆瓣评分:</span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </td>
+                <td>
+                    <img src="../img/4.webp">
+                    <div class="name">这是电影名</div>
+                    <span class="score">豆瓣评分:</span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="../img/5.webp">
+                    <div class="name">这是电影名</div>
+                    <span class="score">豆瓣评分:</span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </td>
+                <td>
+                    <img src="../img/6.webp">
+                    <div class="name">这是电影名</div>
+                    <span class="score">豆瓣评分:</span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                </td>
+                <td>
+                    <img src="../img/7.webp">
+                    <div class="name">这是电影名</div>
+                    <span class="score">豆瓣评分:</span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </td>
+                <td>
+                    <img src="../img/8.webp">
+                    <div class="name">这是电影名</div>
+                    <span class="score">豆瓣评分:</span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="tab-pane fade" id="juqing"><table></table></div>
+    <div class="tab-pane fade" id="aiqing"><table></table></div>
+    <div class="tab-pane fade" id="xiju"><table></table></div>
+    <div class="tab-pane fade" id="kehuan"><table></table></div>
+    <div class="tab-pane fade" id="dongzuo"><table></table></div>
+    <div class="tab-pane fade" id="xuanyi"><table></table></div>
+    <div class="tab-pane fade" id="kongbu"><table></table></div>
+    <div class="tab-pane fade" id="qingchun"><table></table></div>
+    <div class="tab-pane fade" id="lizhi"><table></table></div>
+    <div class="tab-pane fade" id="zhanzheng"><table></table></div>
+</section>
+
+
+
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="../JavaScript/index_js.js"></script>
+</body>
+</html>
