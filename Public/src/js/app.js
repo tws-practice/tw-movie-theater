@@ -131,15 +131,31 @@ $(document).ready(function () {
         let myselect = $('.ysj-lable-active>a').html();
         if(myselect === '全部影片'){
             axios.post('/allMovies').then(function (ans) {
+                let mynum = parseInt((ans.data.length/16))+1;
                 let str = '';
-                for (let i = 0; i < ans.data.length; i++) {
-                    str += '<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 ttx-movie">';
-                    str += `<a href="/moviecontain.html?id=${ans.data[i].id}"><img class="center-block ttx-movie-photo" src="${ans.data[i].movieimg}" width="65%" height="100%" alt=""></a>`;
-                    str += `<p class="ttx-movie-text"><a href="/moviecontain.html?id=${ans.data[i].id}">${ans.data[i].name}</a><strong>${ans.data[i].score}</strong></p>`;
-                    str += `</div>`;
-                }
-                $('.ttx-bread').html(`<li class="active">全部影片</li>`);
-                $(".ttx-movie-container").empty().append(str);
+                $('.ttx-my-number').jqPaginator({
+                    totalPages: mynum,
+                    visiblePages: 20,
+                    currentPage: 1,
+                    onPageChange: function (num, type) {
+                        let str = '';
+                        let mycurrentnum = (num-1)*16;
+                        let myendnum = num*16 - 1;
+                        if(myendnum > ans.data.length - 1){
+                            myendnum = ans.data.length - 1;
+                        }
+                        console.log(mycurrentnum + '' + myendnum);
+                        for (let i = mycurrentnum; i <=myendnum; i++) {
+                            str += '<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 ttx-movie">';
+                            str += `<a href="/moviecontain.html?id=${ans.data[i].id}"><img class="center-block ttx-movie-photo" src="${ans.data[i].movieimg}" width="65%" height="100%" alt=""></a>`;
+                            str += `<p class="ttx-movie-text"><a href="/moviecontain.html?id=${ans.data[i].id}">${ans.data[i].name}</a><strong>${ans.data[i].score}</strong></p>`;
+                            str += `</div>`;
+                        }
+                        $('.ttx-bread').html(`<li class="active">全部影片</li>`);
+                        $(".ttx-movie-container").empty().append(str);
+                    }
+                });
+
             });
         }else {
             $.post('/classMovies',{comment:myselect},function (ans) {
