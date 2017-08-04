@@ -2,9 +2,11 @@ $('body').scrollspy({ target: '#navbar' });
 
 $("#search_btn").click(function () {
     let keywords=document.getElementById('search_input').value;
+
     $.get(`/search_movie?search_keywords=${keywords}`,(movieInfo) => {
 //            alert('数据：'+JSON.stringify(result));
 //            console.log('数据：'+JSON.stringify(result));
+//         window.location='/HTML/movie_detail.html';
         let movie_name=document.getElementsByClassName("movie_name");
         for(let i=0;i<movie_name.length;i++){
             movie_name[i].innerHTML=movieInfo[0].MovieName;
@@ -42,6 +44,12 @@ $("#search_btn").click(function () {
             span.setAttribute("class", "glyphicon glyphicon-star-empty");
             score.appendChild(span);
         }
+
+
+    })
+        .done(function() {
+        window.history.pushState(null, null, `/search/${document.getElementById('search_input').value}`);
     });
+
 });
 
