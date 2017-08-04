@@ -48,6 +48,7 @@ $('.yhx-login').on('click',function () {
         },
         callback: function (result) {
             console.log('This was logged in the callback: ' + result);
+
         }
     });
 });
