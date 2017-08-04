@@ -121,6 +121,10 @@
     clear: both;
     margin-top: 2px;
 }
+#gyf_third{
+    max-height: 214px;
+    overflow: scroll;
+}
 #Cui-image a {
     text-align: center;
 }
