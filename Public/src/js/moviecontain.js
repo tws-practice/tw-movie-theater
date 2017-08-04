@@ -68,17 +68,26 @@ function comment() {
     //         console.log(error);
     //     });
 }
-
-function onfourth() {
-    $.get('/movieDetails', {movieType: $(`movieType`)}, function (data) {
-        let suggestMovie = JSON.parse(data);
-        for (let i = 0; i < 4; i++) {
-            $('#Cui-movie').append(`<div class="col-md-3"><div class="container"><a href="#" class="thumbnail"><img src="suggestMovie[i].movieimg" alt="suggestMovie[i].name" class="Cui-image"/><p>suggestMovie[i].name</p></a></div>
-</div>`)
-        }
-    });
-}
-
+$(document).ready(function(){
+    function onfourth() {
+        var movieType=$('.gyf-comment').html();
+        var movieSug=movieType.split('：')[1].split(',')[0];
+        console.log(movieSug)
+        $.post('/classMovies',{comment:movieSug},function(ans){
+            var add='';
+            for (let i=0;i<4;i++) {
+                add+=`<div class="col-md-3">
+                                <a href="#" class="thumbnail">
+                                    <img src="${ans[i].movieimg}" alt="${ans[i].name}" class="Cui-image"/>
+                                    <p style="text-align: center">${ans[i].name}</p>
+                                </a>
+                       </div>`
+            }
+            $('#Cui-movie').append(add);
+        });
+    }
+    onfourth();
+})
 $('#commentBottom').on('click', function (e) {
     e.preventDefault();
     let datas = {};
@@ -187,5 +196,5 @@ $('.cr-mysubmit').on('click', function () {
     } else {
         return bootbox.alert("请填写电影名称!");
     }
-
 });
+
