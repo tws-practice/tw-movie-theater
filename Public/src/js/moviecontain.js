@@ -45,15 +45,8 @@ function comment() {
         $('#gyf_third').append(all);
     });
 }
-$(document).ready(function () {
-    $(".yhx-movie-btn").on('click', function () {
-        let str = '<embed src="https://imgcache.qq.com/tencentvideo_v1/playerv3/TPout.swf?max_age=86400&v=20161117&vid=e0024d8adt2&auto=0" allowFullScreen="true" quality="high" width="568" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>';
-        bootbox.dialog({
-            title: "观看影片",
-            message: str
-        });
-    });
-    function onfourth() {
+
+function onfourth() {
         let movieType = $('.gyf-comment').html();
         if(movieType){
             let movieSug = movieType.split('：')[1].split(',')[0];
@@ -72,7 +65,16 @@ $(document).ready(function () {
             });
         }
     }
+$(document).ready(function () {
     onfourth();
+    $(".yhx-movie-btn").on('click', function () {
+        let str = '<embed src="https://imgcache.qq.com/tencentvideo_v1/playerv3/TPout.swf?max_age=86400&v=20161117&vid=e0024d8adt2&auto=0" allowFullScreen="true" quality="high" width="568" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>';
+        bootbox.dialog({
+            title: "观看影片",
+            message: str
+        });
+    });
+    
 });
 $('#commentBottom').on('click', function (e) {
     e.preventDefault();
