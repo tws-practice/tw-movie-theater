@@ -38,10 +38,11 @@ $("#s-qingchun").click(()=>{
         displayInfo(movies, 8);
     });
 });
-$("#s-lizhi").click(()=>{
-    $.get(`/movie_class?class_name=励志`, (movies)=>{
+$("#s-lizhi").click(()=> {
+    $.get(`/movie_class?class_name=励志`, (movies) => {
         displayInfo(movies, 9);
     });
+});
 $("#s-zhanzheng").click(()=>{
     $.get(`/movie_class?class_name=战争`, (movies)=>{
         displayInfo(movies, 10);
@@ -88,12 +89,13 @@ function displayInfo(movies, num) {
     }
 }
 
-window.onload= function() {
+window.onload = function() {
     let imgs=document.getElementsByTagName("img");
     for(let i=0;i<imgs.length;i++){
         imgs[i].onmouseover=function () {
-            // this.setAttribute("class", "max_img");
-            this.style.display="none";
+        };
+        imgs[i].onmouseout=function () {
+            this.setAttribute("class", "");
         };
     }
 };
