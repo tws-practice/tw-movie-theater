@@ -1,5 +1,11 @@
 let myurl = window.location.href.split("?id=");
 myurl =  [myurl[1].split('&name=')[1],myurl[1].split('&name=')[0]];
+if(myurl[0]){
+    $('.ysjLogin').html("你好"+myurl[0]);
+}else {
+    bootbox.alert("您未登录，请去主页进行登录注册！");
+    $('.ysjLogin').html("你好,游客！");
+}
 axios.get('/getMovie/' + myurl[1]).then(function (ans) {
     $('.panel-heading-title').html(ans.data[0].name + `<small>(${ans.data[0].release})</small>`);
     $('.movie-img').attr('src', ans.data[0].movieimg);
@@ -49,19 +55,21 @@ $(document).ready(function () {
     });
     function onfourth() {
         let movieType = $('.gyf-comment').html();
-        let movieSug = movieType.split('：')[1].split(',')[0];
-        $.post('/classMovies', { comment: movieSug }, function (ans) {
-            let add = '';
-            for (let i = 0; i < 4; i++) {
-                add += `<div class="col-md-3">
-                                <a href="moviecontain.html?id=${ans[i].id}">
+        if(movieType){
+            let movieSug = movieType.split('：')[1].split(',')[0];
+            $.post('/classMovies', { comment: movieSug }, function (ans) {
+                let add = '';
+                for (let i = 1; i <= 4; i++) {
+                    add += `<div class="col-md-3">
+                                <a href="moviecontain.html?id=${ans[i].id}&name=${myurl[0]}">
                                     <img src="${ans[i].movieimg}" alt="${ans[i].name}" class="center-block Cui-image"/>
                                     <p style="text-align: center">${ans[i].name}</p>
                                 </a>
                        </div>`
-            }
-            $('#Cui-movie').append(add);
-        });
+                }
+                $('#Cui-movie').append(add);
+            });
+        }
     }
     onfourth();
 });
