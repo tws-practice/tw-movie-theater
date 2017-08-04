@@ -30,9 +30,11 @@ $("#search_btn").click(function () {
         time.innerHTML=movieInfo[0].Time;
         let words=document.getElementById("introduction-words");
         words.innerHTML=movieInfo[0].Introduction;
+        let score=document.getElementById("score");
+        score.innerHTML=`<h4>豆瓣评分:</h4>
+        <div id="scores"></div>`;
         let scores=document.getElementById("scores");
         scores.innerHTML=movieInfo[0].MovieGrade;
-        let score=document.getElementById("score");
         let star=parseInt(movieInfo[0].MovieGrade/2);
         for(let i=0;i<star;i++){
             let span=document.createElement("span");
@@ -50,6 +52,25 @@ $("#search_btn").click(function () {
         .done(function() {
         window.history.pushState(null, null, `/search/${document.getElementById('search_input').value}`);
     });
-
+    $.get(`/search_movie_class?search_keywords=${keywords}`, (movies)=>{
+        displayTypeInfo(movies);
+    });
 });
+
+function displayTypeInfo(movies) {
+    let len=movies.length;
+    let tr=document.getElementById('similar-movies-info');
+    tr.innerHTML='';
+    for(let i=1;i<len && len<7;i++){
+        let td = document.createElement("td"),
+            img = document.createElement("img"),
+            div = document.createElement("div");
+        img.setAttribute("src", movies[i].ImgUrl);
+        div.setAttribute("class", "name");
+        div.innerHTML = movies[i].MovieName;
+        td.appendChild(img);
+        td.appendChild(div);
+        tr.appendChild(td);
+    }
+}
 

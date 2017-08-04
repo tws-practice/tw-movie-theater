@@ -27,7 +27,7 @@ app.get('/index',function (req ,res) {
 
 app.get('/search_movie',function (req,res) {
     let movie_name =  req.query.search_keywords;
-    db.all("select MovieDetails.*,Movies.MovieGrade from MovieDetails,Movies WHERE Movies.MovieId=MovieDetails.MovieId and Movies.MovieName='"+movie_name+"'", function (err, result) {
+    db.all("select a.*,MovieComment.Content comment from (select MovieDetails.*,Movies.MovieGrade from MovieDetails,Movies WHERE Movies.MovieId=MovieDetails.MovieId and Movies.MovieName='"+movie_name+"') a ,MovieComment where MovieComment.MovieId = a.MovieId", function (err, result) {
         if (!err) {
             //console.log(result);
             res.send(result);
@@ -52,7 +52,7 @@ app.get('/movie_class',function (req,res) {
 
 app.get('/search_movie_class', function (req,res) {
     let movie_name =req.query.search_keywords;
-    db.all("select movies.*,moviedetails.imgurl from movies,moviedetails where moviedetails.movieid=movies.movieid and movieclass in (select movieclass from  movies where moviename='"+movie_name+"') order by movieid limit 6",function (err,result) {
+    db.all("select movies.*,moviedetails.imgurl from movies,moviedetails where moviedetails.movieid=movies.movieid and movieclass in (select movieclass from  movies where moviename='"+movie_name+"') order by movieid limit 7",function (err,result) {
         if(!err){
             res.send(result);
             console.log(result);
