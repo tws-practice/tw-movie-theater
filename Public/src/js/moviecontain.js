@@ -1,8 +1,8 @@
 let myurl = window.location.href.split("?id=");
-myurl =  [myurl[1].split('&name=')[1],myurl[1].split('&name=')[0]];
-if(myurl[0]){
-    $('.ysjLogin').html("你好"+myurl[0]);
-}else {
+myurl = [myurl[1].split('&name=')[1], myurl[1].split('&name=')[0]];
+if (myurl[0]) {
+    $('.ysjLogin').html("你好" + myurl[0]);
+} else {
     bootbox.alert("您未登录，请去主页进行登录注册！");
     $('.ysjLogin').html("你好,游客！");
 }
@@ -15,6 +15,23 @@ axios.get('/getMovie/' + myurl[1]).then(function (ans) {
     $('.gyf-casts').html(`主演：` + ans.data[0].casts);
     $('.gyf-detail').html(`  ` + ans.data[0].detail);
     $('.gyf-origin_title').html(`原著名称：` + ans.data[0].origin_title);
+    if (ans.data[0].comment) {
+        let movieSug = ans.data[0].comment.split(',')[0];
+        $.post('/classMovies', { comment: movieSug }, function (ans) {
+            let add = '';
+            for (let i = 1; i < 5; i++) {
+                add += `<div class="col-md-3">
+                                <a href="moviecontain.html?id=${ans[i].id}&name=${myurl[0]}">
+                                    <img src="${ans[i].movieimg}" alt="${ans[i].name}" class="center-block Cui-image"/>
+                                    <p style="text-align: center">${ans[i].name}</p>
+                                </a>
+                       </div>`
+                if (i === 4) {
+                    $('#Cui-movie').append(add);
+                }
+            }
+        });
+    }
 });
 axios.get('/allClassify').then(function (ans) {
     let str2 = '';
@@ -46,27 +63,7 @@ function comment() {
     });
 }
 
-function onfourth() {
-        let movieType = $('.gyf-comment').html();
-        if(movieType){
-            let movieSug = movieType.split('：')[1].split(',')[0];
-            $.post('/classMovies', { comment: movieSug }, function (ans) {
-                let add = '';
-                for (let i = 1; i <= 4; i++) {
-                    add += `<div class="col-md-3">
-                                <a href="moviecontain.html?id=${ans[i].id}&name=${myurl[0]}">
-                                    <img src="${ans[i].movieimg}" alt="${ans[i].name}" class="center-block Cui-image"/>
-                                    <p style="text-align: center">${ans[i].name}</p>
-                                </a>
-                       </div>`
-                } 
-                console.log();
-                $('#Cui-movie').append(add);
-            });
-        }
-    }
 $(document).ready(function () {
-    onfourth();
     $(".yhx-movie-btn").on('click', function () {
         let str = '<embed src="https://imgcache.qq.com/tencentvideo_v1/playerv3/TPout.swf?max_age=86400&v=20161117&vid=e0024d8adt2&auto=0" allowFullScreen="true" quality="high" width="568" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>';
         bootbox.dialog({
@@ -74,7 +71,6 @@ $(document).ready(function () {
             message: str
         });
     });
-    
 });
 $('#commentBottom').on('click', function (e) {
     e.preventDefault();
@@ -90,7 +86,7 @@ $('#commentBottom').on('click', function (e) {
             comment();
             $('#text').val('');
         });
-    }else {
+    } else {
         alert('请登陆！')
     }
 
