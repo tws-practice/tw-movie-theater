@@ -182,4 +182,3 @@ $('.cr-mysubmit').on('click',function () {
     }
 
 });
-

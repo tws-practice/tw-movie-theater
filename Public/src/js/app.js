@@ -1,11 +1,5 @@
 axios.post('/allMovies').then(function (ans) {
     let str = '';
-    let mynum = parseInt((ans.data.length/16)+1);
-    let myourstr = '';
-    for(let j = 1;j<=mynum;j++){
-        myourstr += `<li><a href="#">${j}</a></li>`;
-    }
-    $('.ttx-my-number').append(myourstr);
     for (let i = 0; i < ans.data.length; i++) {
         str += '<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 ttx-movie">';
         str += `<a href="/moviecontain.html?id=${ans.data[i].id}"><img class="center-block ttx-movie-photo" src="${ans.data[i].movieimg}" width="65%" height="100%" alt=""></a>`;
@@ -121,12 +115,6 @@ $(document).ready(function () {
         if(myselect === '全部影片'){
             axios.post('/allMovies').then(function (ans) {
                 let str = '';
-                let mynum = parseInt((ans.data.length/16)+1);
-                let myourstr = '';
-                for(let j = 1;j<=mynum;j++){
-                    myourstr += `<li><a href="#">${j}</a></li>`;
-                }
-                $('.ttx-my-number').append(myourstr);
                 for (let i = 0; i < ans.data.length; i++) {
                     str += '<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 ttx-movie">';
                     str += `<a href="/moviecontain.html?id=${ans.data[i].id}"><img class="center-block ttx-movie-photo" src="${ans.data[i].movieimg}" width="65%" height="100%" alt=""></a>`;
