@@ -49,20 +49,21 @@ $("#search_btn").click(function () {
         displayTypeInfo(movies);
     });
 });
+
 function displayTypeInfo(movies) {
     let len=movies.length;
     let tr=document.getElementById('similar-movies-info');
     tr.innerHTML='';
-    for(let i=1;i<len;i++){
+    for(let i=1;i<len && len<7;i++){
         let td = document.createElement("td"),
             img = document.createElement("img"),
             div = document.createElement("div");
         img.setAttribute("src", movies[i].ImgUrl);
         div.setAttribute("class", "name");
         div.innerHTML = movies[i].MovieName;
-        tr.appendChild(td);
         td.appendChild(img);
         td.appendChild(div);
+        tr.appendChild(td);
     }
 }
 
