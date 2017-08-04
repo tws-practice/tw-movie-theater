@@ -27,7 +27,7 @@ app.get('/index',function (req ,res) {
 
 app.get('/search_movie',function (req,res) {
     let movie_name =  req.query.search_keywords;
-    db.all("select MovieDetails.*,Movies.MovieGrade from MovieDetails,Movies WHERE Movies.MovieId=MovieDetails.MovieId and Movies.MovieName='"+movie_name+"'", function (err, result) {
+    db.all("select a.*,MovieComment.Content comment from (select MovieDetails.*,Movies.MovieGrade from MovieDetails,Movies WHERE Movies.MovieId=MovieDetails.MovieId and Movies.MovieName='"+movie_name+"') a ,MovieComment where MovieComment.MovieId = a.MovieId", function (err, result) {
         if (!err) {
             //console.log(result);
             res.send(result);
