@@ -39,9 +39,9 @@
                         <select class="form-control cr-search-select " id="comment">
                             <option role="presentation"><a href="#">全部电影</a></option>
                         </select>
-                        <input type="text" class="form-control cr-myinput" placeholder="搜索电影" id="moviename">
+                        <input type="text" class="form-control cr-myinput" placeholder="搜索电影">
                     </div>
-                    <button  class="btn btn-default cr-mysubmit" onclick="searchMovie()"><span class="glyphicon glyphicon-search"></span></button>
+                    <button  class="btn btn-default cr-mysubmit"><span class="glyphicon glyphicon-search"></span></button>
                 </div>
             </div>
         </div>
@@ -69,7 +69,9 @@
                         <br/>
                         <div class="row myttx">
                             <div class="alert alert-info" role="alert">
-                                <h3>影片简介</h3>
+                                <h3>影片简介<button class="btn btn-primary yhx-movie-btn">在线播放 <span class="glyphicon glyphicon-hd-video"></span></button>
+                                </h3>
+
                                 <p class="gyf-detail"></p>
                             </div>
                         </div>
@@ -89,9 +91,7 @@
                             </div>
                         </form>
                             <div class="alert alert-info row" role="alert" onload="onfourth()" id="Cui-movie">
-                                <h3>影片推荐</h3>
-                            </div>
-
+                                </div>
                     </div>
                 </div>
 
