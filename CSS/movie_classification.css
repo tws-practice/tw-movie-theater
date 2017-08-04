@@ -1,0 +1,17 @@
+/**{*/
+    /*margin: 0;*/
+    /*padding: 0;*/
+/*}*/
+body{
+    width: 1200px;               /*页面宽度*/
+    margin: 0 auto;
+}
+/*.whole{*/
+    /*background-color: #ffda66;*/
+/*}*/
+.left{
+    background-color: #343f51;
+}
+.left .operate{
+    width: 100%;
+}
