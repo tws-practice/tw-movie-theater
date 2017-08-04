@@ -140,7 +140,7 @@ app.post("/getComment",urlencodedParser, function (req, res) {
                 comments[i].username=people[0].name;
                 /*如果是最后一条评论将结果返回*/
                 if(i===comments.length-1){
-                    res.send(comments);
+                    res.send(JSON.stringify(comments));
                 }
             });
         }
@@ -170,39 +170,33 @@ app.post("/register",urlencodedParser,function (req,res) {
 });
 /*将评论存入数据库*/
 app.post("/commentstorage",urlencodedParser,function (req,res) {
+    console.log(req.body);
+    // req.body=JSON.parse(req.body);
     let username=req.body.username;
-    let date=req.body.date;
+    let date=new Date();
     let content=req.body.content;
     let movieid=req.body.movieid;
-    req.models.T_user.create({userid:userid,content:content,date: date,
+    req.models.T_comment.create({username:username,content:content,date: date,
         movieid:movieid},function (err) {
         if(err) throw err;
         else res.send(true);
     });
-    req.models.T_user.find({userid:userid},function (err,users) {
-        res.send(users);
-    });
+
 });
 /*登录*/
 app.get('/login', function (req, res) {
     let username = req.query.username;
     let password = req.query.password;
-    req.models.T_users.exists({name: username, pasword: password}, function (err, exists) {
-        if (err) {
-            console.log('error!');
-            throw err;
-        }
-        if (exists) {
-            console.log('true');
-            res.send('correct');
-        }else{
-            console.log('false');
-            res.send('incorrect');
-        }
+    console.log(username,password);
+    req.models.T_user.find({name: username, pasword: password}, function (err, users) {
+       if(users.length===0){
+           res.send(false);
+       }
+       else{
+           res.send(users[0]);
+       }
     });
 });
-
-
 
 let server = app.listen(8081, function () {
     let host = server.address().address;

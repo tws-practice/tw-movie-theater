@@ -1,18 +1,28 @@
 axios.post('/allMovies').then(function (ans) {
+    let mynum = parseInt((ans.data.length/16))+1;
     let str = '';
-    let mynum = parseInt((ans.data.length/16)+1);
-    let myourstr = '';
-    for(let j = 1;j<=mynum;j++){
-        myourstr += `<li><a href="#">${j}</a></li>`;
-    }
-    $('.ttx-my-number').append(myourstr);
-    for (let i = 0; i < ans.data.length; i++) {
-        str += '<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 ttx-movie">';
-        str += `<a href="/moviecontain.html?id=${ans.data[i].id}"><img class="center-block ttx-movie-photo" src="${ans.data[i].movieimg}" width="65%" height="100%" alt=""></a>`;
-        str += `<p class="ttx-movie-text"><a href="/moviecontain.html?id=${ans.data[i].id}">${ans.data[i].name}</a><strong>${ans.data[i].score}</strong></p>`;
-        str += `</div>`;
-    }
-    $(".ttx-movie-container").append(str);
+    $('.ttx-my-number').jqPaginator({
+        totalPages: mynum,
+        visiblePages: 20,
+        currentPage: 1,
+        onPageChange: function (num, type) {
+            let str = '';
+            let mycurrentnum = (num-1)*16;
+            let myendnum = num*16 - 1;
+            if(myendnum > ans.data.length - 1){
+                myendnum = ans.data.length - 1;
+            }
+            console.log(mycurrentnum + '' + myendnum);
+            for (let i = mycurrentnum; i <=myendnum; i++) {
+                str += '<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 ttx-movie">';
+                str += `<a href="/moviecontain.html?id=${ans.data[i].id}"><img class="center-block ttx-movie-photo" src="${ans.data[i].movieimg}" width="65%" height="100%" alt=""></a>`;
+                str += `<p class="ttx-movie-text"><a href="/moviecontain.html?id=${ans.data[i].id}">${ans.data[i].name}</a><strong>${ans.data[i].score}</strong></p>`;
+                str += `</div>`;
+            }
+            $(".ttx-movie-container").empty().append(str);
+        }
+    });
+
 });
 axios.get('/allClassify').then(function (ans) {
     let str = '';
@@ -26,6 +36,8 @@ axios.get('/allClassify').then(function (ans) {
     }
     $('.cr-search-select').append(str2);
 });
+
+/*登录*/
 $('.yhx-login').on('click',function () {
     let str = `<div class="form-group">
     <label for="exampleInputName1">账号</label>
@@ -40,17 +52,35 @@ $('.yhx-login').on('click',function () {
         message: str,
         buttons: {
             cancel: {
-                label: '<i class="fa fa-times"></i> 取消'
+                label: '<i class="fa fa-times" ></i> 取消'
             },
             confirm: {
                 label: '<i class="fa fa-check"></i> 确认'
             }
         },
         callback: function (result) {
+            if(result){
+                let username=$('#exampleInputName1').val();
+                let password=$('#exampleInputPassword1').val();
+                console.log(username,password);
+                $.get('/login',{username:username,password:password},function (data) {
+                    if(!data){
+                        alert("登录失败！");
+                    }else {
+                        alert("登录成功！");
+                        $('#login').empty();
+                        let newinfor=` <div class="ysjLogin">亲爱的${username}欢迎来到无组的小影屋！</div>`;
+                        $('#login').html(newinfor);
+                    }
+                });
+            }
             console.log('This was logged in the callback: ' + result);
+
         }
     });
 });
+
+
 $('.yhx-signin').on('click',function () {
     let str = `<div class="form-group">
     <label for="exampleInputName2">账号</label>
@@ -73,6 +103,25 @@ $('.yhx-signin').on('click',function () {
             }
         },
         callback: function (result) {
+            if(result){
+                let username=$('#exampleInputName2').val();
+                let password=$('#exampleInputPassword2').val();
+                console.log(username,password);
+                $.post('/judgeusername',{username:username},function (data) {
+                    if(!data){
+                        alert("用户名已存在！");
+                        return;
+                    }else{
+                        $.post('/register',{username:username,password:password,content:'无'},function (data) {
+                            if(data){
+                                alert("注册成功");
+                            }else {
+                                alert("注册失败");
+                            }
+                        });
+                    }
+                });
+            }
             console.log('This was logged in the callback: ' + result);
         }
     });
@@ -121,12 +170,6 @@ $(document).ready(function () {
         if(myselect === '全部影片'){
             axios.post('/allMovies').then(function (ans) {
                 let str = '';
-                let mynum = parseInt((ans.data.length/16)+1);
-                let myourstr = '';
-                for(let j = 1;j<=mynum;j++){
-                    myourstr += `<li><a href="#">${j}</a></li>`;
-                }
-                $('.ttx-my-number').append(myourstr);
                 for (let i = 0; i < ans.data.length; i++) {
                     str += '<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 ttx-movie">';
                     str += `<a href="/moviecontain.html?id=${ans.data[i].id}"><img class="center-block ttx-movie-photo" src="${ans.data[i].movieimg}" width="65%" height="100%" alt=""></a>`;
