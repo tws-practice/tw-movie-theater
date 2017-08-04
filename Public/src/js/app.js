@@ -12,7 +12,6 @@ axios.post('/allMovies').then(function (ans) {
             if(myendnum > ans.data.length - 1){
                 myendnum = ans.data.length - 1;
             }
-            console.log(mycurrentnum + '' + myendnum);
             for (let i = mycurrentnum; i <=myendnum; i++) {
                 str += '<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 ttx-movie">';
                 str += `<a href="/moviecontain.html?id=${ans.data[i].id}"><img class="center-block ttx-movie-photo" src="${ans.data[i].movieimg}" width="65%" height="100%" alt=""></a>`;
@@ -62,7 +61,6 @@ $('.yhx-login').on('click',function () {
             if(result){
                 let username=$('#exampleInputName1').val();
                 let password=$('#exampleInputPassword1').val();
-                console.log(username,password);
                 $.get('/login',{username:username,password:password},function (data) {
                     if(!data){
                         alert("登录失败！");
@@ -74,8 +72,6 @@ $('.yhx-login').on('click',function () {
                     }
                 });
             }
-            console.log('This was logged in the callback: ' + result);
-
         }
     });
 });
@@ -106,7 +102,6 @@ $('.yhx-signin').on('click',function () {
             if(result){
                 let username=$('#exampleInputName2').val();
                 let password=$('#exampleInputPassword2').val();
-                console.log(username,password);
                 $.post('/judgeusername',{username:username},function (data) {
                     if(!data){
                         alert("用户名已存在！");
@@ -122,7 +117,6 @@ $('.yhx-signin').on('click',function () {
                     }
                 });
             }
-            console.log('This was logged in the callback: ' + result);
         }
     });
 });
@@ -182,7 +176,6 @@ $(document).ready(function () {
                         if(myendnum > ans.data.length - 1){
                             myendnum = ans.data.length - 1;
                         }
-                        console.log(mycurrentnum + '' + myendnum);
                         for (let i = mycurrentnum; i <=myendnum; i++) {
                             str += '<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 ttx-movie">';
                             str += `<a href="/moviecontain.html?id=${ans.data[i].id}"><img class="center-block ttx-movie-photo" src="${ans.data[i].movieimg}" width="65%" height="100%" alt=""></a>`;
