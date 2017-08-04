@@ -75,14 +75,22 @@ $(document).ready(function () {
 });
 $('#commentBottom').on('click', function (e) {
     e.preventDefault();
-    let datas = {};
-    datas.username = $('#username').val();
-    datas.content = $('#text').val();
-    datas.movieid = myurl[1];
-    // datas=JSON.stringify(datas);
-    $.post('/commentstorage', datas, function () {
-        alert('提交成功');
-    });
+    if (myurl[0]) {
+        let datas = {};
+        datas.username = myurl[0];
+        alert(myurl[0]);
+        datas.content = $('#text').val();
+        datas.movieid = myurl[1];
+        // datas=JSON.stringify(datas);
+        $.post('/commentstorage', datas, function () {
+            alert('提交成功');
+            comment();
+            $('#text').val('');
+        });
+    }else {
+        alert('请登陆！')
+    }
+
 });
 $('.yhx-login').on('click', function () {
     let str = `<div class="form-group">

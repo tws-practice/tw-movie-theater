@@ -176,11 +176,15 @@ app.post("/commentstorage",urlencodedParser,function (req,res) {
     let date=new Date();
     let content=req.body.content;
     let movieid=req.body.movieid;
-    req.models.T_comment.create({username:username,content:content,date: date,
-        movieid:movieid},function (err) {
-        if(err) throw err;
-        else res.send(true);
+    req.models.T_user.find({name: username}, function (err, user) {
+        let userid = user[0].id;
+        req.models.T_comment.create({userid:userid,content:content,date: date,
+            movieid:movieid},function (err) {
+            if(err) throw err;
+            else res.send(true);
+        });
     });
+
 
 });
 /*登录*/
