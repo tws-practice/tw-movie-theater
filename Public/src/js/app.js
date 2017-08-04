@@ -1,3 +1,14 @@
+function myonclickhrf(myid) {
+    let myname = $('.ysj-login-name').html();
+    if(myname){
+        window.location.href = "/moviecontain.html?id="+myid+"&name="+myname
+    }else {
+        window.location.href = "/moviecontain.html?id="+myid+"&name="
+    }
+
+   // href="/moviecontain.html?id=${ans.data[i].id}"
+}
+
 axios.post('/allMovies').then(function (ans) {
     let mynum = parseInt((ans.data.length/16))+1;
     let str = '';
@@ -14,7 +25,7 @@ axios.post('/allMovies').then(function (ans) {
             }
             for (let i = mycurrentnum; i <=myendnum; i++) {
                 str += '<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 ttx-movie">';
-                str += `<a href="/moviecontain.html?id=${ans.data[i].id}"><img class="center-block ttx-movie-photo" src="${ans.data[i].movieimg}" width="65%" height="100%" alt=""></a>`;
+                str += `<a onclick="myonclickhrf(${ans.data[i].id})"><img class="center-block ttx-movie-photo" src="${ans.data[i].movieimg}" width="65%" height="100%" alt=""></a>`;
                 str += `<p class="ttx-movie-text"><a href="/moviecontain.html?id=${ans.data[i].id}">${ans.data[i].name}</a><strong>${ans.data[i].score}</strong></p>`;
                 str += `</div>`;
             }
@@ -67,7 +78,7 @@ $('.yhx-login').on('click',function () {
                     }else {
                         alert("登录成功！");
                         $('#login').empty();
-                        let newinfor=` <div class="ysjLogin">亲爱的${username}欢迎来到无组的小影屋！</div>`;
+                        let newinfor=` <div class="ysjLogin">你好，<span class="ysj-login-name">${username}</span>!</div>`;
                         $('#login').html(newinfor);
                     }
                 });
