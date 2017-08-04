@@ -40,7 +40,8 @@ axios.get('/allClassify').then(function (ans) {
     $('#ttx-comment-first').after(str);
     let str2='';
     for(let i = 0; i<ans.data.length;i++){
-        str2+= `<option role="presentation"><a href="#">${ans.data[i].commentcontent}</a></option>`
+        str2+= `<option role="presentation"><a h
+        ref="#">${ans.data[i].commentcontent}</a></option>`
     }
     $('.cr-search-select').append(str2);
 });
@@ -141,7 +142,7 @@ $(document).ready(function () {
                        for (let i = 0; i < ans.length; i++) {
                            str += '<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 ttx-movie">';
                            str += `<a onclick="myonclickhrf(${ans[i].id})"><img class="center-block ttx-movie-photo" src="${ans[i].movieimg}" width="65%" height="100%" alt=""></a>`;
-                           str += `<p class="ttx-movie-text"><a onclick="myonclickhrf(${ans[i].id})" >${ans.name}</a><strong>${ans[i].score}</strong></p>`;
+                           str += `<p class="ttx-movie-text"><a onclick="myonclickhrf(${ans[i].id})" >${ans[i].name}</a><strong>${ans[i].score}</strong></p>`;
                            str += `</div>`;
                        }
                        $(".ttx-movie-container").empty().append(str);
@@ -154,7 +155,7 @@ $(document).ready(function () {
                       for (let i = 0; i < ans.length; i++) {
                            str += '<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 ttx-movie">';
                            str += `<a onclick="myonclickhrf(${ans[i].id})"><img class="center-block ttx-movie-photo" src="${ans[i].movieimg}" width="65%" height="100%" alt=""></a>`;
-                           str += `<p class="ttx-movie-text"><a onclick="myonclickhrf(${ans[i].id})" >${ans.name}</a><strong>${ans[i].score}</strong></p>`;
+                           str += `<p class="ttx-movie-text"><a onclick="myonclickhrf(${ans[i].id})" >${ans[i].name}</a><strong>${ans[i].score}</strong></p>`;
                            str += `</div>`;
                        }
                        $(".ttx-movie-container").empty().append(str);
@@ -203,7 +204,7 @@ $(document).ready(function () {
                 for (let i = 0; i < ans.length; i++) {
                            str += '<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 ttx-movie">';
                            str += `<a onclick="myonclickhrf(${ans[i].id})"><img class="center-block ttx-movie-photo" src="${ans[i].movieimg}" width="65%" height="100%" alt=""></a>`;
-                           str += `<p class="ttx-movie-text"><a onclick="myonclickhrf(${ans[i].id})" >${ans.name}</a><strong>${ans[i].score}</strong></p>`;
+                           str += `<p class="ttx-movie-text"><a onclick="myonclickhrf(${ans[i].id})" >${ans[i].name}</a><strong>${ans[i].score}</strong></p>`;
                            str += `</div>`;
                        }
                 $('.ttx-bread').html(` <li>全部影片</li><li class="active">${myselect}</li>`);

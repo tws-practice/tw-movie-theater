@@ -66,7 +66,8 @@ $(document).ready(function () {
                                     <p style="text-align: center">${ans[i].name}</p>
                                 </a>
                        </div>`
-                }
+                } 
+                console.log();
                 $('#Cui-movie').append(add);
             });
         }
