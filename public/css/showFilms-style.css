@@ -1,0 +1,86 @@
+body{
+    background-color: white;
+    color: black;
+    font-size: 12px;
+}
+
+
+.content{
+    width: 90%;
+}
+.c1{
+    color: #333333;
+    font-family: 微软雅黑;
+    font-size: 18px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.c2{
+    font-size: 12px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+#r1{
+    position: relative;
+    float: left;
+}
+#r2{
+    position: relative;
+    float: left;
+}
+#recommend{
+    margin-left: 70px;
+    height: 300px;
+    width: 1000px;
+}
+
+.r1 {
+    width: 188px;
+    height: 200px;
+    background-color: #05E0D8;
+    float: left;
+    margin-right: 15px;
+}
+.r1:hover{
+    background-color: #c7254e;
+}
+.r2 {
+    width: 188px;
+    height: 200px;
+    background-color: #303fa9;
+    float: left;
+}
+.myName{
+    width: 600px!important;
+    height: 30px;
+    border-top: #adadad 3px solid;
+    border-left:  #adadad 3px solid;
+    margin-bottom: 15px;
+    border-top-left-radius: 9px;
+}
+.mycomment{
+    position: absolute;
+    margin-top: 50px;
+    margin-left: -600px;
+    background: #f8f8f8;
+    border-top: #adadad 3px solid;
+    border-left:  #adadad 3px solid;
+    text-shadow: #999999;
+    margin-bottom: 30px;
+    border-top-left-radius: 15px;
+}
+#commitComment{
+    position: absolute;
+    margin-top: 200px;
+    margin-left: -600px;
+    width: 80px;
+    height: 30px;
+    margin-bottom: 30px;
+    border-top-left-radius: 4px;
+    background-image: url("/image/b1.png");
+}
+#comments{
+    position: absolute;
+    margin-top: 300px;
+    margin-left: -600px;
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>思沃影院</title>
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="jqthumb-master/dist/jqthumb.min.js"></script>
+    <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.css">
+    <script src="/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="myStyle.css" type="text/css">
+    <script>
+        $(function(){
+            $('.r1 img').jqthumb({
+                height : '100%',
+                width  : 188,   // DEFAULT: 100
+
+                // DEFAULT: 100
+                position: {
+                    x : '50%',   // DEFAULT: '50%'
+                    y : '30%' // DEFAULT: '50%'
+                }
+            });
+            $('.r2 img').jqthumb({
+                height : '100%',
+                width  : 188,   // DEFAULT: 100
+
+                // DEFAULT: 100
+                position: {
+                    x : '50%',   // DEFAULT: '50%'
+                    y : '30%' // DEFAULT: '50%'
+                }
+            });
+        })
+
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="container content con">
+            <h4 class="c1">**电影的剧情简介......</h4>
+            <p class="c2">陈惊（徐璐饰）是一个古灵精怪、敢爱敢恨的姑娘，江湖人称“神经”。作为音乐附中的奇葩人物，陈惊人缘欠佳
+                只有男闺蜜“油渣”（彭昱畅饰）甘愿为她鞍前马后。自信满满的陈惊恋上了校草师哥，不料却遭到校草的嘲笑
+                和奚落，还引起了校园两大院系之间的大混战。为了向师哥证明自己，陈惊联手“502宿舍”神秘人物组成2.5次
+                元乐团，挑战权威、破除成见，上演了一幕幕生猛搞笑的青春趣事。一个懵懂怪力的少女，一场默默守护的爱恋
+                ，一群奇葩义气的小伙伴，“神经女孩”如何逆袭成为“闪光少女”？2017年暑期《闪光少女》放肆揭晓——不一样，又怎样！
+            </p>
+            <hr style="width: 970px"/>
+        </div>
+        <!--<div class="container content">-->
+            <!--<h4 class="c1">为你推荐</h4>-->
+            <!--<div class="content">-->
+                <!--<div class="grid" id="recommend1">-->
+                    <!--<figure class="effect-sadie" id="r1">-->
+                        <!--<img src="image/2.jpg" alt="img02"/>-->
+                        <!--<figcaption>-->
+                            <!--<h2>组件方式开发Web App全站<span>Sadie</span></h2>-->
+                            <!--<p>用HTML5/CSS3/JS流行技术，以组件式开发WebApp全站 <br>She had a dark soul.</p>-->
+                            <!--<a href="#">View more</a>-->
+                        <!--</figcaption>-->
+                    <!--</figure>-->
+                    <!--<figure class="effect-sadie" id="r2">-->
+                        <!--<img src="image/2.jpg" alt="img14"/>-->
+                        <!--<figcaption>-->
+                            <!--<h2>Holy <span>Sadie</span></h2>-->
+                            <!--<p>Sadie never took her eyes off me. <br>She had a dark soul.</p>-->
+                            <!--<a href="#">View more</a>-->
+                        <!--</figcaption>-->
+                    <!--</figure>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <div class="content" id="recommend">
+            <h4 class="c1">为你推荐</h4>
+            <div class="r1">
+                <img src="/image/2.jpg" id=""/>
+            </div>
+            <div class="r1">
+                <img src="/image/mov5.jpg"/>
+            </div>
+            <div class="r1">
+                <img src="/image/mov1.jpg"/>
+
+            </div>
+            <div class="r1">
+                <img src="/image/mov2.jpg"/>
+
+            </div>
+            <div class="r2">
+                <img src="/image/mov3.jpg"/>
+
+            </div>
+
+        </div>
+        <div class="container content">
+            <hr style="width: 970px"/>
+            <h4 class="c1">评论</h4>
+            <input type="text" class="myName" id="userName" placeholder="Name (Required) 注册">
+
+            </input>
+            <input type="text" class="myName" id="email" placeholder="Email (Required and Privacy)">
+
+            </input>
+            <input type="text" class="myName" id="website" placeholder="Website">
+
+            </input>
+            <textarea rows="6" cols="123" class="mycomment" id="comment" placeholder="Comment">
+
+            </textarea>
+            <button id="commitComment" >
+                发送
+            </button>
+            <textarea rows="3" cols="123" class="mycomment" id="comments" placeholder="Comment">
+
+            </textarea>
+        </div>
+
+
+    </div>
+
+</body>
+</html>
