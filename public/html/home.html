@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../插件/jQuery.js"></script>
+    <script src="../插件/jqthumb-master/dist/jqthumb.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="../插件/csshake/dist/csshake.css">
+    <link type="text/css" rel="stylesheet" href="../插件/bootstrap/css/bootstrap.css">
+    <link type="text/css" rel="stylesheet" href="../css/home-style.css">
+    <style type="text/css">
+        .thumbnail{
+            border-radius: 0;
+        }
+    </style>
+</head>
+<body>
+<script type="text/javascript">
+    $(function () {
+        $('.example1').jqthumb({  <!--框架的名字为jqthumb-->
+            width: '100%',
+            height:180,
+            position:{
+                x:'50%',
+                y:'50%'
+            }
+        })
+    });
+</script>
+<header id="header">
+    <form id="search-form-home" method="post" target="_blank">
+        <input type="text" id="search" name="keywaords" value="">
+        <input type="submit" value id="search-go">
+    </form>
+    <div id="web-logo">
+        <a href="#">
+            <img src="../img/logo.png">
+        </a>
+    </div>
+    <nav id="mainNav">
+        <ul class="nav">
+            <li id="nav-li1"><span class="nav-side"></span><a href="#">动作片</a></li>
+            <li id="nav-li2"><span class="nav-side"></span><a href="#">爱情片</a></li>
+            <li id="nav-li3"><span class="nav-side"></span><a href="#">喜剧片</a></span></li>
+            <li id="nav-li4"><span class="nav-side"></span><a href="#">悬疑片</a></li>
+            <li id="nav-li5"><span class="nav-side"></span><a href="#" style="color: darkorange">科幻</a></li>
+            <li id="nav-li6"><span class="nav-side"></span><a href="#" style="color: greenyellow;">青春</a></li>
+        </ul>
+    </nav>
+</header>
+<div class="gallery-box clear"></div>
+<div class="container-fluid " style="padding-left: 75px;padding-right: 75px;">
+    <div class="row" id="first-row">
+        <div class="col-xs-6 col-md-3 shake shake-slow" id="image_div1">
+            <figure>
+                <a href="#" class="thumbnail">
+                    <img src="../img/5.jpg" alt="..." class="example1">
+                </a>
+                <figcaption class="changeMask">
+                    <div>指环王</div>
+                    <a class="ds-button" href="#">
+                        <span class="ds-button-inner">查看详情</span>
+                    </a>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="col-xs-6 col-md-3 shake shake-slow">
+            <figure>
+                <a href="#" class="thumbnail">
+                    <img src="../img/2.jpg" alt="..." class="example1">
+                </a>
+                <figcaption class="changeMask">
+                    <a class="ds-button" href="#">
+                        <span class="ds-button-inner">查看详情</span>
+                    </a>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="col-xs-6 col-md-3 shake shake-slow">
+            <figure>
+                <a href="#" class="thumbnail">
+                    <img src="../img/3.jpg" alt="..." class="example1">
+                </a>
+                <figcaption class="changeMask">
+                    <a class="ds-button" href="#">
+                        <span class="ds-button-inner">查看详情</span>
+                    </a>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="col-xs-6 col-md-3 shake shake-slow">
+            <figure>
+                <a href="#" class="thumbnail">
+                    <img src="../img/8.jpg" alt="..." class="example1">
+                </a>
+                <figcaption class="changeMask">
+                    <a class="ds-button" href="#">
+                        <span class="ds-button-inner">查看详情</span>
+                    </a>
+                </figcaption>
+            </figure>
+        </div>
+    </div>
+    <div class="row" id="second-row">
+        <div class="col-xs-6 col-md-3 shake shake-slow">
+            <figure>
+                <a href="#" class="thumbnail">
+                    <img src="../img/10.jpg" alt="..." class="example1">
+                </a>
+                <figcaption class="changeMask">
+                    <a class="ds-button" href="#">
+                        <span class="ds-button-inner">查看详情</span>
+                    </a>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="col-xs-6 col-md-3 shake shake-slow">
+            <figure>
+                <a href="#" class="thumbnail">
+                    <img src="../img/11.jpg" alt="..." class="example1">
+                </a>
+                <figcaption class="changeMask">
+                    <a class="ds-button" href="#">
+                        <span class="ds-button-inner">查看详情</span>
+                    </a>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="col-xs-6 col-md-3 shake shake-slow">
+            <figure>
+                <a href="#" class="thumbnail">
+                    <img src="../img/12.jpg" alt="..." class="example1">
+                </a>
+                <figcaption class="changeMask">
+                    <a class="ds-button" href="#">
+                        <span class="ds-button-inner">查看详情</span>
+                    </a>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="col-xs-6 col-md-3 shake shake-slow">
+            <figure>
+                <a href="#" class="thumbnail">
+                    <img src="../img/13.jpg" alt="..." class="example1">
+                </a>
+                <figcaption class="changeMask">
+                    <a class="ds-button" href="#">
+                        <span class="ds-button-inner">查看详情</span>
+                    </a>
+                </figcaption>
+            </figure>
+        </div>
+    </div>
+    <div class="row" id="third-row">
+        <div class="col-xs-6 col-md-3 shake shake-slow">
+            <figure>
+                <a href="#" class="thumbnail">
+                    <img src="../img/14.jpg" alt="..." class="example1">
+                </a>
+                <figcaption class="changeMask">
+                    <a class="ds-button" href="#">
+                        <span class="ds-button-inner">查看详情</span>
+                    </a>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="col-xs-6 col-md-3 shake shake-slow">
+            <figure>
+                <a href="#" class="thumbnail">
+                    <img src="../img/15.jpg" alt="..." class="example1">
+                </a>
+                <figcaption class="changeMask">
+                    <a class="ds-button" href="#">
+                        <span class="ds-button-inner">查看详情</span>
+                    </a>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="col-xs-6 col-md-3 shake shake-slow">
+            <figure>
+                <a href="#" class="thumbnail">
+                    <img src="../img/16.jpg" alt="..." class="example1">
+                </a>
+                <figcaption class="changeMask">
+                    <a class="ds-button" href="#">
+                        <span class="ds-button-inner">查看详情</span>
+                    </a>
+                </figcaption>
+            </figure>
+        </div>
+        <div class="col-xs-6 col-md-3 shake shake-slow">
+            <figure>
+                <a href="#" class="thumbnail">
+                    <img src="../img/17.jpg" alt="..." class="example1">
+                </a>
+                <figcaption class="changeMask">
+                    <a class="ds-button" href="#">
+                        <span class="ds-button-inner">查看详情</span>
+                    </a>
+                </figcaption>
+            </figure>
+        </div>
+    </div>
+</div>
+<span id = "pageShow">
+    <br clear="all">
+    <div id="ListPageN">
+        <b>111</b>
+        &nbsp;
+        <a href="#">110</a>
+        <a href="#">109</a>
+        <a href="#">108</a>
+        <a href="#">107</a>
+        <a href="#"><small>></small></a>
+    </div>
+</span>
+<div class="clear"></div>
+<footer id="footer" style="opacity:0.8;">
+    <div class="fl" style="text-align: center;margin-left: 75px">
+        没位道酷站欣赏 | Web Design Inspiration
+    </div>
+    <div class="fr" style="margin-right: 75px">
+        <p>©2010-2016没位道酷站欣赏 All Rights Reserved. | Made by Designers Site Program.</p>
+    </div>
+</footer>
+<script>
+    window.onload = function(){
+        document.getElementById("search").onfocus = function(){
+            this.style.width = "150px";
+        };
+        document.getElementById("search").onblur = function(){
+            this.style.width = "100px";
+        };
+    };
+
+    window.onscroll = function(){
+        var header = document.getElementById("header");
+        var scrollTop = document.body.scrollTop;
+        if(scrollTop>10){
+            header.style.opacity = 0.8;
+        }
+        else{
+            header.style.opacity = 1;
+        }
+    };
+</script>
+</body>
+</html>

@@ -108,7 +108,10 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     transition: .2s ease-in-out;
     color: #fff;
     padding: 0 !important;
+<<<<<<< HEAD
     background-color:transparent !important;
+=======
+>>>>>>> 3afc95a25d92accc914eddb42076ea70f5d9cca2
 }
 #mainNav ul.nav li a:hover{
     color: black !important;

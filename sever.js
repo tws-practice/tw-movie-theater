@@ -8,7 +8,7 @@ var app = express();
 app.use(bodyparser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
-app.use(orm.express("sqlite:/home/chj/WebstormProjects/tw-movie-theater/testDB.db", {
+app.use(orm.express("sqlite:/home/xxx/Documents/tw-movie-theater/testDB.db", {
     define: function (db, models, next) {
         models.movies = db.define("movieInformation", {
             id:Number,
@@ -19,9 +19,11 @@ app.use(orm.express("sqlite:/home/chj/WebstormProjects/tw-movie-theater/testDB.d
             nation:String,
             language:String,
             runningTime:Number,
+            director:String,
             review:String,
             director:String,
             actor:String
+        
         });
         models.types=db.define("GENRE",{
             id:Number,
@@ -52,10 +54,8 @@ app.get('/movies/:id/types',function (req,res) {
 });
 app.get('/', function (req, res) {
 
-
-    //res.sendFile( __dirname+"");
-console.log(__dirname);
-    res.sendFile( __dirname+"/public/home.html")
+    res.sendFile( __dirname+"/public/html/home.html");
+    
 });
 //获得所有的电影
 app.get('/movies', function (req, res) {
@@ -94,7 +94,6 @@ app.get('/types/:id', function (req, res) {
                 res.send(movies);
             })
     });
-
 });
 
 var server = app.listen(8081, function () {
