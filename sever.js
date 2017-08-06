@@ -20,6 +20,7 @@ app.use(orm.express("sqlite:/home/chj/WebstormProjects/tw-movie-theater/testDB.d
             language:String,
             runningTime:Number,
             review:String,
+            director:String,
             actor:String
         });
         models.types=db.define("GENRE",{
@@ -34,21 +35,37 @@ app.use(orm.express("sqlite:/home/chj/WebstormProjects/tw-movie-theater/testDB.d
     }
 
 }));
-app.get('/', function (req, res) {
-
-    //res.sendFile( __dirname+"");
-    req.models.movies.find(null,3,function (err, movies) {
-        console.log(movies);
-       res.send(movies);
+app.get('/movies/:id/types',function (req,res) {
+    let id=req.params.id;
+    req.models.movies.get(id,function (err, movie) {
+        console.log(movie);
+        req.models.movieToType.find({movieId:movie.id},function (err,typeIds) {
+            let ids=[];
+            for(let i=0;i<typeIds.length;i++){
+                ids.push(typeIds[i].genreId)
+            }
+            req.models.types.find({id:ids},function (err,types) {
+                res.send(types);
+            })
+        })
     });
 });
+app.get('/', function (req, res) {
+
+
+    //res.sendFile( __dirname+"");
+console.log(__dirname);
+    res.sendFile( __dirname+"/public/home.html")
+});
+//获得所有的电影
 app.get('/movies', function (req, res) {
 
-    req.models.movies.find(null,12,function (err, movies) {
+    req.models.movies.find(null,function (err, movies) {
         console.log(movies);
         res.send(movies);
     });
 });
+//获得某一部电影
 app.get('/movies/:id', function (req, res) {
     let id=req.params.id;
     req.models.movies.get(id,function (err, movie) {
@@ -56,22 +73,30 @@ app.get('/movies/:id', function (req, res) {
         res.send(movie);
     });
 });
+
+//获得所有的类型
 app.get('/types', function (req, res) {
     req.models.types.find(null,function (err, types) {
         console.log(types);
         res.send(types);
     });
 });
+//获得某一种类型的全部电影
 app.get('/types/:id', function (req, res) {
     let id=req.params.id;
     req.models.movieToType.find({genreId:id},function (err,movieToType) {
-            req.models.movies.find({id:movieToType[0].movieId},12,function (err,movies) {
+        let movieIds=[];
+            for(let i=0;i<movieToType.length;i++){
+                movieIds.push(movieToType[i].movieId)
+            }
+            req.models.movies.find({id:movieIds},function (err,movies) {
                 console.log(movies);
                 res.send(movies);
             })
     });
 
 });
+
 var server = app.listen(8081, function () {
     var host = server.address().address;
     var port = server.address().port;
