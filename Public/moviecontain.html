@@ -10,107 +10,115 @@
     <script src="./src/js/bootstrap.min.js"></script>
     <script src="./src/js/axios.min.js"></script>
     <link rel="stylesheet" href="src/css/main.css">
+    <link rel="stylesheet" href="src/semantic.min.css">
+    <script src="src/semantic.min.js"></script>
     <script src="./src/js/bootbox.min.js"></script>
     <title>电影详情</title>
 </head>
 
 <body onload="comment()">
-    <header class="cr-header">
-        <nav class="navbar navbar-inverse">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+<header class="cr-header">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1"
                         aria-expanded="false">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                    <a class="navbar-brand" href="index.html">无组的小影屋</a>
-                </div>
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right ysjLogin">
-                        <li><a class="yhx-login" href="#">登录</a></li>
-                        <li><a class="yhx-signin" href="#">注册</a></li>
-                    </ul>
-                    <div class="navbar-form navbar-right">
-                        <div class="form-group">
-                            <select class="form-control cr-search-select " id="comment">
+                <a class="navbar-brand" href="index.html">无组的小影屋</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                </ul>
+                <ul class="nav navbar-nav navbar-right ysjLogin">
+                    <li><a class="yhx-login" href="#">登录</a></li>
+                    <li><a class="yhx-signin" href="#">注册</a></li>
+                </ul>
+                <div class="navbar-form navbar-right">
+                    <div class="form-group">
+                        <select class="form-control cr-search-select " id="comment">
                             <option role="presentation"><a href="#">全部电影</a></option>
                         </select>
-                            <input type="text" class="form-control cr-myinput" placeholder="搜索电影">
-                        </div>
-                        <button class="btn btn-default cr-mysubmit"><span class="glyphicon glyphicon-search"></span></button>
+                        <input type="text" class="form-control cr-myinput" placeholder="搜索电影">
                     </div>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <section>
-        <div class="container">
-            <div class="panel panel-danger">
-                <div class="panel-heading gyf-panel-title">
-                    <h2 class="panel-heading-title"></h2>
-                </div>
-                <div class="panel-body">
-                    <div class="gyf-my">
-                        <div class="row ttx-search-contain">
-                            <div class="row myttx">
-                                <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1  col-sm-3  col-xs-12 gyf-movie-photo">
-                                    <img class="movie-img img-thumbnail center-block" width="auto" height="auto" src="#">
-                                </div>
-                                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
-                                    <h2 class="gyf-origin_title text-info"></h2>
-                                    <h2 class="gyf-directors text-info"></h2>
-                                    <h2 class="gyf-score text-danger"></h2>
-                                    <h2 class="gyf-comment text-muted"></h2>
-                                    <span class="gyf-casts text-muted"></span>
-                                </div>
-                            </div>
-                            <br/>
-                            <div class="row myttx">
-                                <div class="alert alert-info" role="alert">
-                                    <h3>影片简介<button class="btn btn-primary yhx-movie-btn">在线播放 <span class="glyphicon glyphicon-hd-video"></span></button>
-                                    </h3>
-
-                                    <p class="gyf-detail"></p>
-                                </div>
-                            </div>
-                            <div class="panel panel-primary">
-                                <div class="panel-heading"><h3>电影评论</h3></div>
-                                <div class="panel-body">
-                                    <div class="row myttx" id="gyf_gundong">
-                                        <div class="alert alert-info" role="alert" id="gyf_third">
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <form id="form">
-                                <div class="form-group">
-                                    <textarea class="form-control" rows="3" id="text" placeholder=""></textarea>
-                                </div>
-                                <div class="form-group">
-                                    <div>
-                                        <button type="submit" class="btn btn-default" id="commentBottom">提交</button>
-                                    </div>
-                                </div>
-                            </form>
-                            <div class="alert alert-info" role="alert">
-                                <h3>电影推荐</h3>
-                                <div class="row" id="Cui-movie">
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
+                    <button class="btn btn-default cr-mysubmit"><span class="glyphicon glyphicon-search"></span>
+                    </button>
                 </div>
             </div>
         </div>
-    </section>
+    </nav>
+</header>
+<section>
+    <div class="container">
+        <div class="ui grid myttx">
+            <div class="five wide column gyf-movie-photo">
+                <div style="text-align: center">
+                    <span class="ui h2 tt" style="display: inline-block">
+                    </span><br/>
+                    <img class="movie-img ui small image" width="auto" height="auto"
+                         src="#" style="margin-left: 28%">
+                </div>
+
+            </div>
+            <div class="five wide column ">
+                <h3 class="gyf-origin_title text-info ui blue header"></h3>
+                <h3 class="gyf-directors text-info ui green header"></h3>
+                <h3 class="gyf-score text-danger ui red header"></h3>
+                <h3 class="gyf-comment text-muted ui grey header"></h3>
+                <span class="gyf-casts text-muted"></span>
+            </div>
+            
+        </div>
+        <br/>
+        <div class="row myttx">
+
+            <h3 class=" ui top attached header">
+                影片简介
+                <!--播放按钮-->
+                <div class="circular ui blue button ">
+                    <i class="play icon"></i>
+                    Play
+                </div>
+            </h3>
+            <div class="ui segment attached">
+                <p class="gyf-detail"></p>
+            </div>
+
+        </div>
+        <div class="">
+            <div class=""><h3>电影评论</h3></div>
+            <div class="">
+                <div class="row myttx" id="gyf_gundong">
+                    <div class="alert alert-info" role="alert" id="gyf_third">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <form id="form">
+            <div class="form-group">
+                <textarea class="form-control" rows="3" id="text" placeholder=""></textarea>
+            </div>
+            <div class="form-group">
+                <div>
+                    <button type="submit" class="btn btn-default" id="commentBottom">提交</button>
+                </div>
+            </div>
+        </form>
+        <div class="alert alert-info" role="alert">
+            <h3>电影推荐</h3>
+            <div class="row" id="Cui-movie">
+
+            </div>
+        </div>
+    </div>
+
+
+</section>
 </body>
 <script src="src/js/moviecontain.js"></script>
 

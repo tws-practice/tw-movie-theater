@@ -7,7 +7,7 @@ if (myurl[0]) {
     $('.ysjLogin').html("你好,游客！");
 }
 axios.get('/getMovie/' + myurl[1]).then(function (ans) {
-    $('.panel-heading-title').html(ans.data[0].name + `<small>(${ans.data[0].release})</small>`);
+    $('.tt').html(ans.data[0].name + `<small>(${ans.data[0].release})</small>`);
     $('.movie-img').attr('src', ans.data[0].movieimg);
     $('.gyf-directors').html(`导演：` + ans.data[0].directors);
     $('.gyf-score').html(`评分：` + ans.data[0].score);
