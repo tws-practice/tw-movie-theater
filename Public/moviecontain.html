@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="src/css/bootstrap.min.css">
+    <script src="./src/js/jquery-3.2.1.min.js"></script>
+    <script src="./src/js/bootstrap.min.js"></script>
+    <script src="./src/js/axios.min.js"></script>
+    <link rel="stylesheet" href="src/css/main.css">
+    <link rel="stylesheet" href="src/semantic.min.css">
+    <script src="src/semantic.min.js"></script>
+    <script src="./src/js/bootbox.min.js"></script>
+    <title>电影详情</title>
+</head>
+
+<body onload="comment()">
+<header class="cr-header">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1"
+                        aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">无组的小影屋</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                </ul>
+                <ul class="nav navbar-nav navbar-right ysjLogin">
+                    <li><a class="yhx-login" href="#">登录</a></li>
+                    <li><a class="yhx-signin" href="#">注册</a></li>
+                </ul>
+                <div class="navbar-form navbar-right">
+                    <div class="form-group">
+                        <select class="form-control cr-search-select " id="comment">
+                            <option role="presentation"><a href="#">全部电影</a></option>
+                        </select>
+                        <input type="text" class="form-control cr-myinput" placeholder="搜索电影">
+                    </div>
+                    <button class="btn btn-default cr-mysubmit"><span class="glyphicon glyphicon-search"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<section>
+    <div class="container">
+        <div class="ui grid myttx">
+            <div class="five wide column gyf-movie-photo">
+                <div style="text-align: center">
+                    <span class="ui h2 tt" style="display: inline-block">
+                    </span><br/>
+                    <img class="movie-img ui small image" width="auto" height="auto"
+                         src="#" style="margin-left: 28%">
+                </div>
+
+            </div>
+            <div class="five wide column ">
+                <h3 class="gyf-origin_title text-info ui blue header"></h3>
+                <h3 class="gyf-directors text-info ui green header"></h3>
+                <h3 class="gyf-score text-danger ui red header"></h3>
+                <h3 class="gyf-comment text-muted ui grey header"></h3>
+                <span class="gyf-casts text-muted"></span>
+            </div>
+            
+        </div>
+        <br/>
+        <div class="row myttx">
+
+            <h3 class=" ui top attached header">
+                影片简介
+                <!--播放按钮-->
+                <div class="circular ui blue button ">
+                    <i class="play icon"></i>
+                    Play
+                </div>
+            </h3>
+            <div class="ui segment attached">
+                <p class="gyf-detail"></p>
+            </div>
+
+        </div>
+        <div class="">
+            <div class=""><h3>电影评论</h3></div>
+            <div class="">
+                <div class="row myttx" id="gyf_gundong">
+                    <div class="alert alert-info" role="alert" id="gyf_third">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <form id="form">
+            <div class="form-group">
+                <textarea class="form-control" rows="3" id="text" placeholder=""></textarea>
+            </div>
+            <div class="form-group">
+                <div>
+                    <button type="submit" class="btn btn-default" id="commentBottom">提交</button>
+                </div>
+            </div>
+        </form>
+        <div class="alert alert-info" role="alert">
+            <h3>电影推荐</h3>
+            <div class="row" id="Cui-movie">
+
+            </div>
+        </div>
+    </div>
+
+
+</section>
+</body>
+<script src="src/js/moviecontain.js"></script>
+
+</html>
